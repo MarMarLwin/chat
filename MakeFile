@@ -1,0 +1,12 @@
+# Makefile for Flutter project 
+#it name specify the make command name
+# make -f MakeFile [watch]
+build:
+	flutter build apk
+test:
+	flutter test
+
+watch:
+	dart run build_runner watch  
+clean:
+	flutter clean
