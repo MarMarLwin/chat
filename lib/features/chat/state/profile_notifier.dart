@@ -1,7 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:chat_supabase/features/chat/data/chat_repository.dart';
-
 import '../../auth/domain/profile.dart';
 
 class ProfileNotifier extends StateNotifier<AsyncValue<void>> {
@@ -23,11 +21,8 @@ class ProfileNotifier extends StateNotifier<AsyncValue<void>> {
   }
 
   Future<Profile> getProfile(String userId) async {
-    state = const AsyncValue.loading();
+    profile = await chatRepository.getProfile(userId);
 
-    state = await AsyncValue.guard(() async {
-      profile = await chatRepository.getProfile(userId);
-    });
     return profile!;
   }
 }

@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:timeago/timeago.dart';
@@ -17,17 +16,14 @@ class ChatBubble extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Future<Profile> getProfile(String userId) async {
-      final profileNotifier = ref.read(profileNotifierProvider.notifier);
-      final profile = await profileNotifier.getProfile(userId);
-      return profile;
-    }
+    final profileNotifier = ref.read(profileNotifierProvider.notifier);
 
     List<Widget> chatContents = [
       if (!message.isMine)
         CircleAvatar(
           child: FutureBuilder(
-              future: getProfile(message.userId),
+              initialData: profileNotifier.profile,
+              future: profileNotifier.getProfile(message.userId),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   final profile = snapshot.data as Profile;
