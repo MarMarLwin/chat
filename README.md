@@ -1,7 +1,6 @@
 
 # chat_supabase
 
-
 ## Features
 - Register account with email and password(at least 6)
 - Login with email and password
