@@ -1,4 +1,5 @@
 import 'package:chat_supabase/common_widget/empty_placeholder_widget.dart';
+import 'package:chat_supabase/features/auth/data/auth_repository.dart';
 import 'package:chat_supabase/features/auth/state/auth_notifier.dart';
 import 'package:chat_supabase/features/chat/state/chat_notifier.dart';
 import 'package:chat_supabase/utils/extensions.dart';
@@ -28,6 +29,18 @@ class _ChartPageState extends ConsumerState<ChatPage> {
         appBar: AppBar(
           title: const Text('Chat'),
           actions: [
+            GestureDetector(
+              onTap: () {
+                final profileId =
+                    ref.read(authRepositoryProvider).getCurrentUserId();
+                context.pushNamed(AppRoute.profile.name,
+                    pathParameters: {'profileId': profileId});
+              },
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(Icons.account_circle_rounded),
+              ),
+            ),
             GestureDetector(
                 onTap: () {
                   ConfirmDialog.show(

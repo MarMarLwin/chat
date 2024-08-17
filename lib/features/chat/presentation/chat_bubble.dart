@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:timeago/timeago.dart';
 
 import 'package:chat_supabase/features/chat/state/profile_notifier.dart';
 
+import '../../../routing/app_router.dart';
 import '../../auth/domain/profile.dart';
 import '../domain/chat.dart';
 
@@ -20,17 +22,23 @@ class ChatBubble extends ConsumerWidget {
 
     List<Widget> chatContents = [
       if (!message.isMine)
-        CircleAvatar(
-          child: FutureBuilder(
-              initialData: profileNotifier.profile,
-              future: profileNotifier.getProfile(message.userId),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  final profile = snapshot.data as Profile;
-                  return Text(profile.username.substring(0, 2));
-                }
-                return const CircularProgressIndicator.adaptive();
-              }),
+        GestureDetector(
+          onTap: () {
+            context.pushNamed(AppRoute.profile.name,
+                pathParameters: {'profileId': message.userId});
+          },
+          child: CircleAvatar(
+            child: FutureBuilder(
+                initialData: profileNotifier.profile,
+                future: profileNotifier.getProfile(message.userId),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    final profile = snapshot.data as Profile;
+                    return Text(profile.username.substring(0, 2));
+                  }
+                  return const CircularProgressIndicator.adaptive();
+                }),
+          ),
         ),
       const SizedBox(width: 12),
       Flexible(
