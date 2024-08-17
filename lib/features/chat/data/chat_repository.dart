@@ -54,13 +54,14 @@ class ChatRepository {
 
   Future<Stream<List<Profile>>> getTypingProfiles() async {
     try {
-      final data = supabase.from('users').stream(primaryKey: [
-        'isTyping'
-      ]).inFilter('isTyping', [true]).map((maps) => maps
-          .map((map) => Profile.fromMap(map))
-          .toList()
-          .where((profile) => profile.id != supabase.auth.currentUser!.id)
-          .toList());
+      final data = supabase.from('users').stream(primaryKey: ['isTyping']).map(
+          (maps) => maps
+              .map((map) => Profile.fromMap(map))
+              .toList()
+              .where((profile) =>
+                  profile.id != supabase.auth.currentUser!.id &&
+                  profile.isTyping == true)
+              .toList());
 
       return data;
     } on Exception catch (error) {
