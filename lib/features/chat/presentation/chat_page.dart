@@ -27,6 +27,7 @@ class _ChartPageState extends ConsumerState<ChatPage> {
 
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: const Text('Chat'),
           actions: [
             GestureDetector(

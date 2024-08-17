@@ -1,18 +1,20 @@
 
 # chat_supabase
 
-A new Flutter project.
 
-## Getting Started
+## Features
+- Register account with email and password(at least 6)
+- Login with email and password
+- Real time messaging with single channel 
+- Show message bubbles with sender info and timestamp
+- Typing indicator
+- Profile information with seperate page and in front of message bubbles
+- 
 
-This project is a starting point for a Flutter application.
+## Statemanagement
+- riverpod
 
-A few resources to get you started if this is your first Flutter project:
+## Generating riverpod generated files
+- make -f MakeFile watch [in terminal]
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
