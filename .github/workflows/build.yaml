@@ -19,11 +19,7 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Set up Flutter
-<<<<<<< HEAD
         uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d660601 # v2.16.0
-=======
-        uses: subosito/flutter-action@62f096cacda5168a3bd7b795cb49e8d9d0ea0686 # v2.16.0
->>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
         with:
           flutter-version: '3.24.0'
           channel: stable
