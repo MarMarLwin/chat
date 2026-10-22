@@ -107,6 +107,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                       children: <Widget>[
                         15.height,
 
+<<<<<<< HEAD
                         TextFormField(
                           controller: _email,
                           decoration: const InputDecoration(
@@ -153,6 +154,19 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                         8.height,
 
                         _buildToggleFormTypeRow(),
+=======
+                        _buildEmailField(),
+                        8.height,
+                        // Password field
+                        _buildPasswordField(),
+
+                        8.height,
+                        _buildSubmitButton(state),
+
+                        8.height,
+
+                        _buildChangeFormTypeRow(),
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
                       ],
                     ),
                   ),
@@ -163,23 +177,80 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         ));
   }
 
+<<<<<<< HEAD
   String? _emailValidator(String? email) {
+=======
+  String? _validateEmail(String? email) {
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
     if (!_submitted) return null;
     return email!.isEmpty ? AppLabels.emptyEmail : null;
   }
 
+<<<<<<< HEAD
   String? _passwordValidator(String? password) {
+=======
+  String? _validatePassword(String? password) {
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
     if (!_submitted) return null;
     return password!.isEmpty ? AppLabels.emptyPassword : null;
   }
 
+<<<<<<< HEAD
   Icon _passwordVisibilityIcon() {
+=======
+  Widget _buildEmailField() {
+    return TextFormField(
+      controller: _email,
+      decoration: const InputDecoration(
+          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: _validateEmail,
+      inputFormatters: <TextInputFormatter>[
+        ValidatorInputFormatter(editingValidator: EmailEditingRegexValidator()),
+      ],
+      autocorrect: false,
+      textInputAction: TextInputAction.next,
+      keyboardType: TextInputType.emailAddress,
+      keyboardAppearance: Brightness.light,
+    );
+  }
+
+  Widget _buildPasswordVisibilityIcon() {
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
     return _passwordVisible
         ? const Icon(Icons.visibility_off)
         : const Icon(Icons.visibility);
   }
 
+<<<<<<< HEAD
   Widget _buildLoginButton(AsyncValue state) {
+=======
+  Widget _buildPasswordField() {
+    return TextFormField(
+      controller: _passwordController,
+      decoration: InputDecoration(
+        hintText: AppLabels.password,
+        prefixIcon: const Icon(Icons.lock),
+        suffixIcon: GestureDetector(
+            onTap: () {
+              setState(() {
+                _passwordVisible = !_passwordVisible;
+              });
+            },
+            child: _buildPasswordVisibilityIcon()),
+      ),
+      validator: _validatePassword,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      obscureText: _passwordVisible ? true : false,
+      autocorrect: false,
+      textInputAction: TextInputAction.done,
+      keyboardAppearance: Brightness.light,
+      onEditingComplete: () => _passwordEditingComplete(),
+    );
+  }
+
+  Widget _buildSubmitButton(AsyncValue state) {
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
     return PrimaryButton(
       text: _loginType ? AppLabels.login : AppLabels.signUp,
       isLoading: state.isLoading,
@@ -187,7 +258,11 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     );
   }
 
+<<<<<<< HEAD
   Widget _buildToggleFormTypeRow() {
+=======
+  Widget _buildChangeFormTypeRow() {
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

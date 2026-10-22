@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "generated_at": "2026-10-22T17:50:46.005971+00:00",
   "git_commit": "55854353ebdd6da7dd76e5175c7462ea32fb4092",
   "dirty_files": [
@@ -10,6 +11,16 @@
     "pipeline/runs/chat/stage3_applied_claude-code_few_shot_in_place.json",
     "pipeline/runs/chat/stage3_applied_claude-code_repository_aware_in_place.json",
     "pipeline/runs/chat/stage3_results_claude-code.json"
+=======
+  "generated_at": "2026-10-22T18:15:18.789057+00:00",
+  "git_commit": "55854353ebdd6da7dd76e5175c7462ea32fb4092",
+  "dirty_files": [
+    "README.md",
+    "pipeline/runs/chat/chroma_db/chroma.sqlite3",
+    "pipeline/runs/chat/chroma_db/e3b9ca25-f452-4339-bbf3-e04461819068/data_level0.bin",
+    "pipeline/runs/chat/stage1_snippets.json",
+    "pipeline/runs/chat/stage2_prompts.json"
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
   ],
   "dirty_target_files": [],
   "settings": {
@@ -22,11 +33,19 @@
     "context_budget_tokens": 1500,
     "embedding_model": "all-MiniLM-L6-v2",
     "vector_index": {
+<<<<<<< HEAD
       "chunking": "dart_ast",
       "git_commit": "2ce6007024993a3fecdf8182050e82b18689594e",
       "built_at": "2026-10-22T04:30:55.487404+00:00",
       "hnsw:space": "cosine",
       "embedding_model": "all-MiniLM-L6-v2"
+=======
+      "built_at": "2026-10-22T04:30:55.487404+00:00",
+      "chunking": "dart_ast",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "git_commit": "2ce6007024993a3fecdf8182050e82b18689594e",
+      "hnsw:space": "cosine"
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
     },
     "max_symbol_matches": 3,
     "min_vector_score": 0.45,
