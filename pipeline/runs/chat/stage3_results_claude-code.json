@@ -2,13 +2,13 @@
   {
     "file_path": ".github/workflows/build.yaml",
     "rule": "githubactions:S7637",
-    "original_snippet": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999695d4f9d5745e3f4bba48f # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+    "original_snippet": "      - name: Set up Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
     "results": {
       "zero_shot": {
-        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999695d4f9d5745e3f4bba48f1 # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
-        "prompt_tokens": 753,
-        "completion_tokens": 5823,
-        "total_tokens": 6576,
+        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999695d5b6ec3a2400ec14f41 # v2.16.1\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+        "prompt_tokens": 682,
+        "completion_tokens": 375,
+        "total_tokens": 1057,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -17,12 +17,12 @@
         "finish_reason": "end_turn",
         "served_by": "claude-sonnet-5",
         "usage": {
-          "input_tokens": 753,
+          "input_tokens": 682,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
-          "output_tokens": 5823,
+          "output_tokens": 375,
           "output_tokens_details": {
-            "thinking_tokens": 5721
+            "thinking_tokens": 273
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -36,8 +36,8 @@
           "inference_geo": "global",
           "iterations": [
             {
-              "input_tokens": 753,
-              "output_tokens": 5823,
+              "input_tokens": 682,
+              "output_tokens": 375,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 0,
               "cache_creation": {
@@ -51,114 +51,114 @@
         },
         "model_usage": {
           "claude-haiku-4-5-20251001": {
-            "inputTokens": 817,
+            "inputTokens": 787,
+            "outputTokens": 21,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000892,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 682,
+            "outputTokens": 375,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.007671,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.008563,
+        "duration_ms": 4616,
+        "prompt_sha256": "748e016e6ece35c4"
+      },
+      "few_shot": {
+        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999653d83fa42bebf62476a62 # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+        "prompt_tokens": 890,
+        "completion_tokens": 270,
+        "total_tokens": 1160,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 890,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 270,
+          "output_tokens_details": {
+            "thinking_tokens": 171
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 890,
+              "output_tokens": 270,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 959,
             "outputTokens": 14,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.000887,
+            "costUSD": 0.001029,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
             "provider": "firstParty"
           },
           "claude-sonnet-5": {
-            "inputTokens": 753,
-            "outputTokens": 5823,
+            "inputTokens": 890,
+            "outputTokens": 270,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.089604,
+            "costUSD": 0.006719999999999999,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.090491,
-        "duration_ms": 60712,
-        "prompt_sha256": "c347145e36a84013"
-      },
-      "few_shot": {
-        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999695d4f9d5745e3f4bba48f0 # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
-        "prompt_tokens": 921,
-        "completion_tokens": 3326,
-        "total_tokens": 4247,
-        "model": "claude-code",
-        "settings": {
-          "via": "claude-code",
-          "effort": "high"
-        },
-        "finish_reason": "end_turn",
-        "served_by": "claude-sonnet-5",
-        "usage": {
-          "input_tokens": 921,
-          "cache_creation_input_tokens": 0,
-          "cache_read_input_tokens": 0,
-          "output_tokens": 3326,
-          "output_tokens_details": {
-            "thinking_tokens": 3223
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 0,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "global",
-          "iterations": [
-            {
-              "input_tokens": 921,
-              "output_tokens": 3326,
-              "cache_read_input_tokens": 0,
-              "cache_creation_input_tokens": 0,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 0
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard"
-        },
-        "model_usage": {
-          "claude-haiku-4-5-20251001": {
-            "inputTokens": 989,
-            "outputTokens": 16,
-            "cacheReadInputTokens": 0,
-            "cacheCreationInputTokens": 0,
-            "webSearchRequests": 0,
-            "costUSD": 0.001069,
-            "contextWindow": 200000,
-            "maxOutputTokens": 32000,
-            "canonicalModel": "claude-haiku-4-5",
-            "provider": "firstParty"
-          },
-          "claude-sonnet-5": {
-            "inputTokens": 921,
-            "outputTokens": 3326,
-            "cacheReadInputTokens": 0,
-            "cacheCreationInputTokens": 0,
-            "webSearchRequests": 0,
-            "costUSD": 0.052653,
-            "contextWindow": 1000000,
-            "maxOutputTokens": 64000,
-            "canonicalModel": "claude-sonnet-5",
-            "provider": "firstParty"
-          }
-        },
-        "equivalent_api_cost_usd": 0.053722,
-        "duration_ms": 30956,
-        "prompt_sha256": "de080734bd62c3f9"
+        "equivalent_api_cost_usd": 0.007748999999999999,
+        "duration_ms": 4579,
+        "prompt_sha256": "dd6da56e359ac755"
       },
       "repository_aware": {
-        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999695d4f9d5745e3f4bba48fa # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
-        "prompt_tokens": 1256,
-        "completion_tokens": 2861,
-        "total_tokens": 4117,
+        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@62f096cacda5168a3bd7b795cb49e8d9d0ea0686 # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+        "prompt_tokens": 1276,
+        "completion_tokens": 408,
+        "total_tokens": 1684,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -168,11 +168,11 @@
         "served_by": "claude-sonnet-5",
         "usage": {
           "input_tokens": 1,
-          "cache_creation_input_tokens": 1255,
-          "cache_read_input_tokens": 0,
-          "output_tokens": 2861,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1275,
+          "output_tokens": 408,
           "output_tokens_details": {
-            "thinking_tokens": 2759
+            "thinking_tokens": 304
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -180,19 +180,19 @@
           },
           "service_tier": "standard",
           "cache_creation": {
-            "ephemeral_1h_input_tokens": 1255,
+            "ephemeral_1h_input_tokens": 0,
             "ephemeral_5m_input_tokens": 0
           },
           "inference_geo": "global",
           "iterations": [
             {
               "input_tokens": 1,
-              "output_tokens": 2861,
-              "cache_read_input_tokens": 0,
-              "cache_creation_input_tokens": 1255,
+              "output_tokens": 408,
+              "cache_read_input_tokens": 1275,
+              "cache_creation_input_tokens": 0,
               "cache_creation": {
                 "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 1255
+                "ephemeral_1h_input_tokens": 0
               },
               "type": "message"
             }
@@ -201,12 +201,12 @@
         },
         "model_usage": {
           "claude-haiku-4-5-20251001": {
-            "inputTokens": 1248,
+            "inputTokens": 1258,
             "outputTokens": 14,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.001318,
+            "costUSD": 0.001328,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -214,20 +214,20 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 1,
-            "outputTokens": 2861,
-            "cacheReadInputTokens": 0,
-            "cacheCreationInputTokens": 1255,
+            "outputTokens": 408,
+            "cacheReadInputTokens": 1275,
+            "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.050448,
+            "costUSD": 0.0065055,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.051766,
-        "duration_ms": 29982,
-        "prompt_sha256": "498a9fc0f7c0a122"
+        "equivalent_api_cost_usd": 0.0078335,
+        "duration_ms": 5870,
+        "prompt_sha256": "418387b79115fcb3"
       }
     },
     "issue_key": "AaD2avxO8OHgBNPXEUrR",

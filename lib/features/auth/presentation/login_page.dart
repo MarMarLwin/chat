@@ -107,80 +107,17 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                       children: <Widget>[
                         15.height,
 
-                        TextFormField(
-                          controller: _email,
-                          decoration: const InputDecoration(
-                              hintText: AppLabels.email,
-                              prefixIcon: Icon(Icons.person)),
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          validator: (email) => !_submitted
-                              ? null
-                              : (email!.isEmpty ? AppLabels.emptyEmail : null),
-                          inputFormatters: <TextInputFormatter>[
-                            ValidatorInputFormatter(
-                                editingValidator: EmailEditingRegexValidator()),
-                          ],
-                          autocorrect: false,
-                          textInputAction: TextInputAction.next,
-                          keyboardType: TextInputType.emailAddress,
-                          keyboardAppearance: Brightness.light,
-                        ),
+                        _buildEmailField(),
                         8.height,
                         // Password field
-                        TextFormField(
-                          controller: _passwordController,
-                          decoration: InputDecoration(
-                            hintText: AppLabels.password,
-                            prefixIcon: const Icon(Icons.lock),
-                            suffixIcon: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    _passwordVisible = !_passwordVisible;
-                                  });
-                                },
-                                child: _passwordVisible
-                                    ? const Icon(Icons.visibility_off)
-                                    : const Icon(Icons.visibility)),
-                          ),
-                          validator: (password) => !_submitted
-                              ? null
-                              : (password!.isEmpty
-                                  ? AppLabels.emptyPassword
-                                  : null),
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          obscureText: _passwordVisible ? true : false,
-                          autocorrect: false,
-                          textInputAction: TextInputAction.done,
-                          keyboardAppearance: Brightness.light,
-                          onEditingComplete: () => _passwordEditingComplete(),
-                        ),
+                        _buildPasswordField(),
 
                         8.height,
-                        PrimaryButton(
-                          text: _loginType ? AppLabels.login : AppLabels.signUp,
-                          isLoading: state.isLoading,
-                          onPressed:
-                              state.isLoading ? () => {} : () => _submit(),
-                        ),
+                        _buildSubmitButton(state),
 
                         8.height,
 
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(!_loginType
-                                ? 'Already account?'
-                                : 'Create an account'),
-                            CustomTextButton(
-                              text: _loginType
-                                  ? AppLabels.signUp
-                                  : AppLabels.login,
-                              style: const TextStyle(
-                                  decoration: TextDecoration.underline),
-                              onPressed: _changeFormType,
-                            ),
-                          ],
-                        )
+                        _buildChangeFormTypeRow(),
                       ],
                     ),
                   ),
@@ -189,5 +126,84 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             ),
           ),
         ));
+  }
+
+  String? _validateEmail(String? email) {
+    if (!_submitted) return null;
+    return email!.isEmpty ? AppLabels.emptyEmail : null;
+  }
+
+  String? _validatePassword(String? password) {
+    if (!_submitted) return null;
+    return password!.isEmpty ? AppLabels.emptyPassword : null;
+  }
+
+  Widget _buildEmailField() {
+    return TextFormField(
+      controller: _email,
+      decoration: const InputDecoration(
+          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: _validateEmail,
+      inputFormatters: <TextInputFormatter>[
+        ValidatorInputFormatter(editingValidator: EmailEditingRegexValidator()),
+      ],
+      autocorrect: false,
+      textInputAction: TextInputAction.next,
+      keyboardType: TextInputType.emailAddress,
+      keyboardAppearance: Brightness.light,
+    );
+  }
+
+  Widget _buildPasswordVisibilityIcon() {
+    return _passwordVisible
+        ? const Icon(Icons.visibility_off)
+        : const Icon(Icons.visibility);
+  }
+
+  Widget _buildPasswordField() {
+    return TextFormField(
+      controller: _passwordController,
+      decoration: InputDecoration(
+        hintText: AppLabels.password,
+        prefixIcon: const Icon(Icons.lock),
+        suffixIcon: GestureDetector(
+            onTap: () {
+              setState(() {
+                _passwordVisible = !_passwordVisible;
+              });
+            },
+            child: _buildPasswordVisibilityIcon()),
+      ),
+      validator: _validatePassword,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      obscureText: _passwordVisible ? true : false,
+      autocorrect: false,
+      textInputAction: TextInputAction.done,
+      keyboardAppearance: Brightness.light,
+      onEditingComplete: () => _passwordEditingComplete(),
+    );
+  }
+
+  Widget _buildSubmitButton(AsyncValue state) {
+    return PrimaryButton(
+      text: _loginType ? AppLabels.login : AppLabels.signUp,
+      isLoading: state.isLoading,
+      onPressed: state.isLoading ? () => {} : () => _submit(),
+    );
+  }
+
+  Widget _buildChangeFormTypeRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(!_loginType ? 'Already account?' : 'Create an account'),
+        CustomTextButton(
+          text: _loginType ? AppLabels.signUp : AppLabels.login,
+          style: const TextStyle(decoration: TextDecoration.underline),
+          onPressed: _changeFormType,
+        ),
+      ],
+    );
   }
 }

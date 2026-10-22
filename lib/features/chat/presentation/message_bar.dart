@@ -107,8 +107,8 @@ class _MessageBarState extends ConsumerState<MessageBar> {
     } on PostgrestException catch (error) {
       debugPrint('error =>$error');
       // context.showErrorSnackBar(message: error.message);
-    } catch (_) {
-      debugPrint('error =>$_');
+    } catch (e) {
+      debugPrint('error =>$e');
       // context.showErrorSnackBar(message: unexpectedErrorMessage);
     }
   }
