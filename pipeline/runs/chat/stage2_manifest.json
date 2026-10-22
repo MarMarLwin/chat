@@ -1,28 +1,19 @@
 {
-  "generated_at": "2026-10-22T04:05:08.915553+00:00",
-  "git_commit": "0291f92bd50d5fa07027df987be207147f691f71",
+  "generated_at": "2026-10-22T17:50:46.005971+00:00",
+  "git_commit": "55854353ebdd6da7dd76e5175c7462ea32fb4092",
   "dirty_files": [
-    ".github/workflows/build.yaml",
-    "README.md",
-    "pipeline/README.md",
-    "pipeline/cli.py",
-    "pipeline/runs/chat/legacy/stage2_prompts_rag.json",
-    "pipeline/runs/chat/legacy/stage2_prompts_shots.json",
+    "pipeline/runs/chat/chroma_db/chroma.sqlite3",
+    "pipeline/runs/chat/chroma_db/e3b9ca25-f452-4339-bbf3-e04461819068/data_level0.bin",
     "pipeline/runs/chat/stage1_snippets.json",
     "pipeline/runs/chat/stage2_manifest.json",
     "pipeline/runs/chat/stage2_prompts.json",
-    "pipeline/runs/chat/stage3_results_claude-code.json",
-    "pipeline/stage3/apply.py",
-    "pipeline/stage3/providers/__init__.py",
-    "pipeline/stage3/refactor.py",
-    "pipeline/tests/test_apply.py",
-    "pipeline/workspace.py"
+    "pipeline/runs/chat/stage3_applied_claude-code_few_shot_in_place.json",
+    "pipeline/runs/chat/stage3_applied_claude-code_repository_aware_in_place.json",
+    "pipeline/runs/chat/stage3_results_claude-code.json"
   ],
-  "dirty_target_files": [
-    ".github/workflows/build.yaml"
-  ],
+  "dirty_target_files": [],
   "settings": {
-    "repo": "/Users/popo/development/chat",
+    "repo": "/Users/popo/development/slack_chat/chat",
     "strategies": [
       "zero_shot",
       "few_shot",
@@ -31,11 +22,11 @@
     "context_budget_tokens": 1500,
     "embedding_model": "all-MiniLM-L6-v2",
     "vector_index": {
-      "hnsw:space": "cosine",
-      "git_commit": "0291f92bd50d5fa07027df987be207147f691f71",
-      "embedding_model": "all-MiniLM-L6-v2",
       "chunking": "dart_ast",
-      "built_at": "2026-10-22T03:57:55.743504+00:00"
+      "git_commit": "2ce6007024993a3fecdf8182050e82b18689594e",
+      "built_at": "2026-10-22T04:30:55.487404+00:00",
+      "hnsw:space": "cosine",
+      "embedding_model": "all-MiniLM-L6-v2"
     },
     "max_symbol_matches": 3,
     "min_vector_score": 0.45,
@@ -45,17 +36,17 @@
   "strategies": {
     "zero_shot": {
       "prompts": 6,
-      "approx_tokens": 2678,
+      "approx_tokens": 2666,
       "context_chunks": 0
     },
     "few_shot": {
       "prompts": 6,
-      "approx_tokens": 3721,
+      "approx_tokens": 3709,
       "context_chunks": 10
     },
     "repository_aware": {
       "prompts": 6,
-      "approx_tokens": 6342,
+      "approx_tokens": 6363,
       "context_chunks": 31
     }
   },

@@ -113,9 +113,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                               hintText: AppLabels.email,
                               prefixIcon: Icon(Icons.person)),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
-                          validator: (email) => !_submitted
-                              ? null
-                              : (email!.isEmpty ? AppLabels.emptyEmail : null),
+                          validator: _emailValidator,
                           inputFormatters: <TextInputFormatter>[
                             ValidatorInputFormatter(
                                 editingValidator: EmailEditingRegexValidator()),
@@ -138,17 +136,11 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                     _passwordVisible = !_passwordVisible;
                                   });
                                 },
-                                child: _passwordVisible
-                                    ? const Icon(Icons.visibility_off)
-                                    : const Icon(Icons.visibility)),
+                                child: _passwordVisibilityIcon()),
                           ),
-                          validator: (password) => !_submitted
-                              ? null
-                              : (password!.isEmpty
-                                  ? AppLabels.emptyPassword
-                                  : null),
+                          validator: _passwordValidator,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
-                          obscureText: _passwordVisible ? true : false,
+                          obscureText: _passwordVisible,
                           autocorrect: false,
                           textInputAction: TextInputAction.done,
                           keyboardAppearance: Brightness.light,
@@ -156,31 +148,11 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                         ),
 
                         8.height,
-                        PrimaryButton(
-                          text: _loginType ? AppLabels.login : AppLabels.signUp,
-                          isLoading: state.isLoading,
-                          onPressed:
-                              state.isLoading ? () => {} : () => _submit(),
-                        ),
+                        _buildLoginButton(state),
 
                         8.height,
 
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(!_loginType
-                                ? 'Already account?'
-                                : 'Create an account'),
-                            CustomTextButton(
-                              text: _loginType
-                                  ? AppLabels.signUp
-                                  : AppLabels.login,
-                              style: const TextStyle(
-                                  decoration: TextDecoration.underline),
-                              onPressed: _changeFormType,
-                            ),
-                          ],
-                        )
+                        _buildToggleFormTypeRow(),
                       ],
                     ),
                   ),
@@ -189,5 +161,43 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             ),
           ),
         ));
+  }
+
+  String? _emailValidator(String? email) {
+    if (!_submitted) return null;
+    return email!.isEmpty ? AppLabels.emptyEmail : null;
+  }
+
+  String? _passwordValidator(String? password) {
+    if (!_submitted) return null;
+    return password!.isEmpty ? AppLabels.emptyPassword : null;
+  }
+
+  Icon _passwordVisibilityIcon() {
+    return _passwordVisible
+        ? const Icon(Icons.visibility_off)
+        : const Icon(Icons.visibility);
+  }
+
+  Widget _buildLoginButton(AsyncValue state) {
+    return PrimaryButton(
+      text: _loginType ? AppLabels.login : AppLabels.signUp,
+      isLoading: state.isLoading,
+      onPressed: state.isLoading ? () => {} : () => _submit(),
+    );
+  }
+
+  Widget _buildToggleFormTypeRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(!_loginType ? 'Already account?' : 'Create an account'),
+        CustomTextButton(
+          text: _loginType ? AppLabels.signUp : AppLabels.login,
+          style: const TextStyle(decoration: TextDecoration.underline),
+          onPressed: _changeFormType,
+        ),
+      ],
+    );
   }
 }
