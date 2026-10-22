@@ -3,8 +3,3618 @@
   "organization": "marmarlwin",
   "branch": null,
   "pull_request": null,
-  "total": 13,
+  "total": 44,
   "issues": [
+    {
+      "key": "AaFk8szvmsHzL2tLt_Ts",
+      "rule": "python:S8572",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+      "project": "MarMarLwin_chat",
+      "line": 55,
+      "hash": "ba89e48f07e993b3302980f4f3ca7670",
+      "textRange": {
+        "startLine": 55,
+        "endLine": 55,
+        "startOffset": 15,
+        "endOffset": 20
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Use \"logging.exception()\" instead.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "exception",
+        "logging"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szvmsHzL2tLt_Ty",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+      "project": "MarMarLwin_chat",
+      "line": 156,
+      "hash": "291eccc0bcbd2bf5593cd12dd9de3d0a",
+      "textRange": {
+        "startLine": 156,
+        "endLine": 156,
+        "startOffset": 8,
+        "endOffset": 95
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 156,
+                "endLine": 156,
+                "startOffset": 8,
+                "endOffset": 95
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 156,
+                "endLine": 156,
+                "startOffset": 72,
+                "endOffset": 94
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 18,
+                "endOffset": 39
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 4,
+                "endOffset": 17
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 243,
+                "endLine": 243,
+                "startOffset": 17,
+                "endOffset": 60
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 247,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘issue’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 239,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 4,
+                "endOffset": 37
+              },
+              "msg": "A malicious value can be assigned to variable ‘issues’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 13,
+                "endOffset": 37
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 12,
+                "endOffset": 31
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 19,
+                "endOffset": 31
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in extract.process_issue()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szvmsHzL2tLt_Tz",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+      "project": "MarMarLwin_chat",
+      "line": 166,
+      "hash": "b30cdeee05c56263ca7b30a660b1130a",
+      "textRange": {
+        "startLine": 166,
+        "endLine": 166,
+        "startOffset": 8,
+        "endOffset": 98
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 166,
+                "endLine": 166,
+                "startOffset": 8,
+                "endOffset": 98
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 4,
+                "endOffset": 38
+              },
+              "msg": "A malicious value can be assigned to variable ‘key’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 10,
+                "endOffset": 38
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 18,
+                "endOffset": 39
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 4,
+                "endOffset": 17
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 243,
+                "endLine": 243,
+                "startOffset": 17,
+                "endOffset": 60
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 247,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘issue’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 239,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 4,
+                "endOffset": 37
+              },
+              "msg": "A malicious value can be assigned to variable ‘issues’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 13,
+                "endOffset": 37
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 12,
+                "endOffset": 31
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 19,
+                "endOffset": 31
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in extract.process_issue()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szvmsHzL2tLt_T0",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+      "project": "MarMarLwin_chat",
+      "line": 173,
+      "hash": "104511fd5c211d0083d0f14b0944e225",
+      "textRange": {
+        "startLine": 173,
+        "endLine": 173,
+        "startOffset": 8,
+        "endOffset": 80
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 173,
+                "endLine": 173,
+                "startOffset": 8,
+                "endOffset": 80
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 164,
+                "endLine": 164,
+                "startOffset": 4,
+                "endOffset": 39
+              },
+              "msg": "A malicious value can be assigned to variable ‘text_range’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 164,
+                "endLine": 164,
+                "startOffset": 17,
+                "endOffset": 39
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 18,
+                "endOffset": 39
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 4,
+                "endOffset": 17
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 243,
+                "endLine": 243,
+                "startOffset": 17,
+                "endOffset": 60
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 247,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘issue’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 239,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 4,
+                "endOffset": 37
+              },
+              "msg": "A malicious value can be assigned to variable ‘issues’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 13,
+                "endOffset": 37
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 12,
+                "endOffset": 31
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 19,
+                "endOffset": 31
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in extract.process_issue()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szvmsHzL2tLt_Tu",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+      "project": "MarMarLwin_chat",
+      "line": 178,
+      "hash": "b353984631915c691fbad11f0abfd9ba",
+      "textRange": {
+        "startLine": 178,
+        "endLine": 178,
+        "startOffset": 8,
+        "endOffset": 93
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 178,
+                "endLine": 178,
+                "startOffset": 8,
+                "endOffset": 93
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 4,
+                "endOffset": 38
+              },
+              "msg": "A malicious value can be assigned to variable ‘key’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 10,
+                "endOffset": 38
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 18,
+                "endOffset": 39
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 4,
+                "endOffset": 17
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 243,
+                "endLine": 243,
+                "startOffset": 17,
+                "endOffset": 60
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 247,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘issue’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 239,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 4,
+                "endOffset": 37
+              },
+              "msg": "A malicious value can be assigned to variable ‘issues’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 13,
+                "endOffset": 37
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 12,
+                "endOffset": 31
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 19,
+                "endOffset": 31
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in extract.process_issue()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szvmsHzL2tLt_Tw",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+      "project": "MarMarLwin_chat",
+      "line": 186,
+      "hash": "8be8890c8d216d65594d5af8af9bffc0",
+      "textRange": {
+        "startLine": 186,
+        "endLine": 186,
+        "startOffset": 8,
+        "endOffset": 66
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 186,
+                "endLine": 186,
+                "startOffset": 8,
+                "endOffset": 66
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 4,
+                "endOffset": 38
+              },
+              "msg": "A malicious value can be assigned to variable ‘key’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 10,
+                "endOffset": 38
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 18,
+                "endOffset": 39
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 4,
+                "endOffset": 17
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 243,
+                "endLine": 243,
+                "startOffset": 17,
+                "endOffset": 60
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 247,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘issue’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 239,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 4,
+                "endOffset": 37
+              },
+              "msg": "A malicious value can be assigned to variable ‘issues’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 13,
+                "endOffset": 37
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 12,
+                "endOffset": 31
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 19,
+                "endOffset": 31
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in extract.process_issue()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szvmsHzL2tLt_Tt",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+      "project": "MarMarLwin_chat",
+      "line": 189,
+      "hash": "a024fe1e1286775ee1553a933df1d48b",
+      "textRange": {
+        "startLine": 189,
+        "endLine": 189,
+        "startOffset": 8,
+        "endOffset": 69
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 189,
+                "endLine": 189,
+                "startOffset": 8,
+                "endOffset": 69
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 4,
+                "endOffset": 38
+              },
+              "msg": "A malicious value can be assigned to variable ‘key’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 10,
+                "endOffset": 38
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 18,
+                "endOffset": 39
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 4,
+                "endOffset": 17
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 243,
+                "endLine": 243,
+                "startOffset": 17,
+                "endOffset": 60
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 247,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘issue’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 239,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 4,
+                "endOffset": 37
+              },
+              "msg": "A malicious value can be assigned to variable ‘issues’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 13,
+                "endOffset": 37
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 12,
+                "endOffset": 31
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 19,
+                "endOffset": 31
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in extract.process_issue()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szvmsHzL2tLt_Tv",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+      "project": "MarMarLwin_chat",
+      "line": 192,
+      "hash": "445a39ac4a659dbf827ed0a2b47679f6",
+      "textRange": {
+        "startLine": 192,
+        "endLine": 192,
+        "startOffset": 8,
+        "endOffset": 80
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 192,
+                "endLine": 192,
+                "startOffset": 8,
+                "endOffset": 80
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 4,
+                "endOffset": 38
+              },
+              "msg": "A malicious value can be assigned to variable ‘key’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 152,
+                "endLine": 152,
+                "startOffset": 10,
+                "endOffset": 38
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 18,
+                "endOffset": 39
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 4,
+                "endOffset": 17
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 243,
+                "endLine": 243,
+                "startOffset": 17,
+                "endOffset": 60
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 247,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘issue’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 239,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 4,
+                "endOffset": 37
+              },
+              "msg": "A malicious value can be assigned to variable ‘issues’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 13,
+                "endOffset": 37
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 12,
+                "endOffset": 31
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 19,
+                "endOffset": 31
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in extract.process_issue()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szvmsHzL2tLt_Tx",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+      "project": "MarMarLwin_chat",
+      "line": 241,
+      "hash": "7868703a9dd142debe8577b7b1ef5955",
+      "textRange": {
+        "startLine": 241,
+        "endLine": 241,
+        "startOffset": 12,
+        "endOffset": 72
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 241,
+                "endLine": 241,
+                "startOffset": 12,
+                "endOffset": 72
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 247,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘issue’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 239,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 4,
+                "endOffset": 37
+              },
+              "msg": "A malicious value can be assigned to variable ‘issues’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 13,
+                "endOffset": 37
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 12,
+                "endOffset": 31
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 19,
+                "endOffset": 31
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in extract.extract_snippets()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8sz1msHzL2tLt_T1",
+      "rule": "python:S5713",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+      "project": "MarMarLwin_chat",
+      "line": 47,
+      "hash": "0dbab844f7876b51f9b803cb6c2c7e09",
+      "textRange": {
+        "startLine": 47,
+        "endLine": 47,
+        "startOffset": 12,
+        "endOffset": 33
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 47,
+                "endLine": 47,
+                "startOffset": 35,
+                "endOffset": 42
+              },
+              "msg": "Parent class."
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Remove this redundant Exception class; it derives from another which is already caught.",
+      "effort": "1min",
+      "debt": "1min",
+      "tags": [
+        "bad-practice",
+        "error-handling",
+        "unused"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "LOGICAL",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8sz1msHzL2tLt_T2",
+      "rule": "python:S3776",
+      "severity": "CRITICAL",
+      "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+      "project": "MarMarLwin_chat",
+      "line": 51,
+      "hash": "0b4e05043dc65efca94ff73cb0473812",
+      "textRange": {
+        "startLine": 51,
+        "endLine": 51,
+        "startOffset": 4,
+        "endOffset": 16
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 55,
+                "endLine": 55,
+                "startOffset": 18,
+                "endOffset": 20
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 56,
+                "endLine": 56,
+                "startOffset": 4,
+                "endOffset": 6
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 58,
+                "endLine": 58,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 58,
+                "endLine": 58,
+                "startOffset": 17,
+                "endOffset": 20
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 65,
+                "endLine": 65,
+                "startOffset": 4,
+                "endOffset": 9
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 68,
+                "endLine": 68,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 70,
+                "endLine": 70,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 72,
+                "endLine": 72,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 77,
+                "endLine": 77,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 78,
+                "endLine": 78,
+                "startOffset": 22,
+                "endOffset": 24
+              },
+              "msg": "+3 (incl 2 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 80,
+                "endLine": 80,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 85,
+                "endLine": 85,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 85,
+                "endLine": 85,
+                "startOffset": 50,
+                "endOffset": 52
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 94,
+                "endLine": 94,
+                "startOffset": 34,
+                "endOffset": 36
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 94,
+                "endLine": 94,
+                "startOffset": 73,
+                "endOffset": 75
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.",
+      "effort": "15min",
+      "debt": "15min",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8sz1msHzL2tLt_T3",
+      "rule": "python:S5713",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+      "project": "MarMarLwin_chat",
+      "line": 80,
+      "hash": "5057329397bf202ac50df48f5bc0e2b3",
+      "textRange": {
+        "startLine": 80,
+        "endLine": 80,
+        "startOffset": 16,
+        "endOffset": 37
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 80,
+                "endLine": 80,
+                "startOffset": 39,
+                "endOffset": 46
+              },
+              "msg": "Parent class."
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Remove this redundant Exception class; it derives from another which is already caught.",
+      "effort": "1min",
+      "debt": "1min",
+      "tags": [
+        "bad-practice",
+        "error-handling",
+        "unused"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "LOGICAL",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8sz1msHzL2tLt_T4",
+      "rule": "python:S3358",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+      "project": "MarMarLwin_chat",
+      "line": 94,
+      "hash": "e55291f1c9156a53b30f8c50cf451aed",
+      "textRange": {
+        "startLine": 94,
+        "endLine": 94,
+        "startOffset": 49,
+        "endOffset": 96
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/fetch.py",
+              "textRange": {
+                "startLine": 94,
+                "endLine": 94,
+                "startOffset": 34,
+                "endOffset": 36
+              },
+              "msg": "Parent conditional expression."
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Extract this nested conditional expression into an independent statement.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "confusing"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8sz_msHzL2tLt_T5",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage1/scoping.py",
+      "project": "MarMarLwin_chat",
+      "line": 149,
+      "hash": "eb824b36f85fe69ff099b5149ae2651a",
+      "textRange": {
+        "startLine": 149,
+        "endLine": 150,
+        "startOffset": 12,
+        "endOffset": 81
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/scoping.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 150,
+                "startOffset": 12,
+                "endOffset": 81
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/scoping.py",
+              "textRange": {
+                "startLine": 136,
+                "endLine": 136,
+                "startOffset": 18,
+                "endOffset": 27
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/scoping.py",
+              "textRange": {
+                "startLine": 136,
+                "endLine": 136,
+                "startOffset": 4,
+                "endOffset": 17
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 134,
+                "endLine": 134,
+                "startOffset": 16,
+                "endOffset": 80
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 114,
+                "endLine": 114,
+                "startOffset": 70,
+                "endOffset": 79
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 114,
+                "endLine": 114,
+                "startOffset": 4,
+                "endOffset": 19
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 183,
+                "endLine": 184,
+                "startOffset": 23,
+                "endOffset": 83
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 184,
+                "endLine": 184,
+                "startOffset": 39,
+                "endOffset": 56
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 18,
+                "endOffset": 39
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 149,
+                "endLine": 149,
+                "startOffset": 4,
+                "endOffset": 17
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 243,
+                "endLine": 243,
+                "startOffset": 17,
+                "endOffset": 60
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 247,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘issue’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 239,
+                "endLine": 239,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 4,
+                "endOffset": 37
+              },
+              "msg": "A malicious value can be assigned to variable ‘issues’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 228,
+                "endLine": 228,
+                "startOffset": 13,
+                "endOffset": 37
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 12,
+                "endOffset": 31
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage1/extract.py",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 19,
+                "endOffset": 31
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in scoping.resolve_scope()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szgmsHzL2tLt_Tl",
+      "rule": "python:S8572",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/generator.py",
+      "project": "MarMarLwin_chat",
+      "line": 27,
+      "hash": "4df0ea446da82fdf099e78bcd9a336af",
+      "textRange": {
+        "startLine": 27,
+        "endLine": 27,
+        "startOffset": 15,
+        "endOffset": 20
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Use \"logging.exception()\" instead.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "exception",
+        "logging"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szgmsHzL2tLt_Tm",
+      "rule": "pythonsecurity:S5145",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/generator.py",
+      "project": "MarMarLwin_chat",
+      "line": 38,
+      "hash": "5a4f60b6cae30e7c44e5c71ccf0640ca",
+      "textRange": {
+        "startLine": 38,
+        "endLine": 39,
+        "startOffset": 12,
+        "endOffset": 91
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage2/generator.py",
+              "textRange": {
+                "startLine": 38,
+                "endLine": 39,
+                "startOffset": 12,
+                "endOffset": 91
+              },
+              "msg": "Sink: this invocation is not safe; a malicious value can be used as argument"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage2/generator.py",
+              "textRange": {
+                "startLine": 39,
+                "endLine": 39,
+                "startOffset": 85,
+                "endOffset": 90
+              },
+              "msg": "This instruction can propagate malicious content"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage2/generator.py",
+              "textRange": {
+                "startLine": 34,
+                "endLine": 40,
+                "startOffset": 4,
+                "endOffset": 4
+              },
+              "msg": "A malicious value can be assigned to variable ‘entry’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage2/generator.py",
+              "textRange": {
+                "startLine": 34,
+                "endLine": 34,
+                "startOffset": 8,
+                "endOffset": 13
+              },
+              "msg": "A malicious value was previously assigned to this data structure"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage2/generator.py",
+              "textRange": {
+                "startLine": 22,
+                "endLine": 22,
+                "startOffset": 8,
+                "endOffset": 59
+              },
+              "msg": "A malicious value can be assigned to variable ‘data’"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage2/generator.py",
+              "textRange": {
+                "startLine": 22,
+                "endLine": 22,
+                "startOffset": 15,
+                "endOffset": 59
+              },
+              "msg": "This invocation can propagate malicious content to its return value"
+            },
+            {
+              "component": "MarMarLwin_chat:pipeline/stage2/generator.py",
+              "textRange": {
+                "startLine": 22,
+                "endLine": 22,
+                "startOffset": 26,
+                "endOffset": 58
+              },
+              "msg": "Source: a user can craft an HTTP request with malicious content"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Log Injection via file content in generator.load_issue_records()",
+      "effort": "30min",
+      "debt": "30min",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "VULNERABILITY",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [
+        "taint"
+      ],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szZmsHzL2tLt_Th",
+      "rule": "python:S6353",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/retrieval/import_graph.py",
+      "project": "MarMarLwin_chat",
+      "line": 16,
+      "hash": "1b16be0752998f0b132da2ea3d220cbf",
+      "textRange": {
+        "startLine": 16,
+        "endLine": 16,
+        "startOffset": 34,
+        "endOffset": 46
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Use concise character class syntax '\\w' instead of '[A-Za-z0-9_]'.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "regex"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szZmsHzL2tLt_Ti",
+      "rule": "python:S7504",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/retrieval/import_graph.py",
+      "project": "MarMarLwin_chat",
+      "line": 77,
+      "hash": "cf4b7d6aca29ddbb60c4525dd212a866",
+      "textRange": {
+        "startLine": 77,
+        "endLine": 77,
+        "startOffset": 23,
+        "endOffset": 27
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Remove this unnecessary `list()` call on an already iterable object.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szdmsHzL2tLt_Tj",
+      "rule": "python:S8572",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/retrieval/vector_index.py",
+      "project": "MarMarLwin_chat",
+      "line": 34,
+      "hash": "2ef6875ca80f98c31b57ff8a1ffd3b71",
+      "textRange": {
+        "startLine": 34,
+        "endLine": 34,
+        "startOffset": 15,
+        "endOffset": 20
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Use \"logging.exception()\" instead.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "exception",
+        "logging"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szdmsHzL2tLt_Tk",
+      "rule": "python:S8572",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/retrieval/vector_index.py",
+      "project": "MarMarLwin_chat",
+      "line": 191,
+      "hash": "1f02c213948f871dd79b2590c3a7298c",
+      "textRange": {
+        "startLine": 191,
+        "endLine": 191,
+        "startOffset": 19,
+        "endOffset": 24
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Use \"logging.exception()\" instead.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "exception",
+        "logging"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szrmsHzL2tLt_Tq",
+      "rule": "python:S8786",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/rules.py",
+      "project": "MarMarLwin_chat",
+      "line": 49,
+      "hash": "08e13b69d4f41021a4ac3c595c1b3ffe",
+      "textRange": {
+        "startLine": 49,
+        "endLine": 49,
+        "startOffset": 20,
+        "endOffset": 28
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Simplify this regular expression to reduce its runtime, as it has super-linear performance due to backtracking.",
+      "effort": "20min",
+      "debt": "20min",
+      "tags": [
+        "performance",
+        "regex"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "EFFICIENT",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "RELIABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szrmsHzL2tLt_Tr",
+      "rule": "python:S5713",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/rules.py",
+      "project": "MarMarLwin_chat",
+      "line": 125,
+      "hash": "afc3e6f2ab7fccdbd436393fd2c5959f",
+      "textRange": {
+        "startLine": 125,
+        "endLine": 125,
+        "startOffset": 16,
+        "endOffset": 37
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage2/rules.py",
+              "textRange": {
+                "startLine": 125,
+                "endLine": 125,
+                "startOffset": 39,
+                "endOffset": 46
+              },
+              "msg": "Parent class."
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Remove this redundant Exception class; it derives from another which is already caught.",
+      "effort": "1min",
+      "debt": "1min",
+      "tags": [
+        "bad-practice",
+        "error-handling",
+        "unused"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "LOGICAL",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szmmsHzL2tLt_Tn",
+      "rule": "python:S1172",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/strategies/few_shot.py",
+      "project": "MarMarLwin_chat",
+      "line": 31,
+      "hash": "8f7580567265541da174d754a8637084",
+      "textRange": {
+        "startLine": 31,
+        "endLine": 31,
+        "startOffset": 40,
+        "endOffset": 54
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Remove the unused function parameter \"rule\".",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "unused"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szomsHzL2tLt_To",
+      "rule": "python:S1172",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/strategies/zero_shot.py",
+      "project": "MarMarLwin_chat",
+      "line": 11,
+      "hash": "8f7580567265541da174d754a8637084",
+      "textRange": {
+        "startLine": 11,
+        "endLine": 11,
+        "startOffset": 20,
+        "endOffset": 38
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Remove the unused function parameter \"issue\".",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "unused"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8szomsHzL2tLt_Tp",
+      "rule": "python:S1172",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage2/strategies/zero_shot.py",
+      "project": "MarMarLwin_chat",
+      "line": 11,
+      "hash": "8f7580567265541da174d754a8637084",
+      "textRange": {
+        "startLine": 11,
+        "endLine": 11,
+        "startOffset": 40,
+        "endOffset": 54
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Remove the unused function parameter \"rule\".",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "unused"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0OmsHzL2tLt_UC",
+      "rule": "python:S3776",
+      "severity": "CRITICAL",
+      "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+      "project": "MarMarLwin_chat",
+      "line": 137,
+      "hash": "f07036376074173877c94d3e5c3ba797",
+      "textRange": {
+        "startLine": 137,
+        "endLine": 137,
+        "startOffset": 4,
+        "endOffset": 18
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 141,
+                "endLine": 141,
+                "startOffset": 4,
+                "endOffset": 7
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 145,
+                "endLine": 145,
+                "startOffset": 36,
+                "endOffset": 39
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 146,
+                "endLine": 146,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 153,
+                "endLine": 153,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 156,
+                "endLine": 156,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 159,
+                "endLine": 159,
+                "startOffset": 12,
+                "endOffset": 14
+              },
+              "msg": "+3 (incl 2 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 161,
+                "endLine": 161,
+                "startOffset": 12,
+                "endOffset": 16
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 172,
+                "endLine": 172,
+                "startOffset": 4,
+                "endOffset": 7
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 174,
+                "endLine": 174,
+                "startOffset": 4,
+                "endOffset": 7
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 178,
+                "endLine": 178,
+                "startOffset": 8,
+                "endOffset": 11
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/apply.py",
+              "textRange": {
+                "startLine": 185,
+                "endLine": 185,
+                "startOffset": 49,
+                "endOffset": 51
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.",
+      "effort": "8min",
+      "debt": "8min",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0GmsHzL2tLt_T8",
+      "rule": "python:S5886",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage3/providers/__init__.py",
+      "project": "MarMarLwin_chat",
+      "line": 39,
+      "hash": "c0f213b198b315000aec3a064f6045be",
+      "textRange": {
+        "startLine": 39,
+        "endLine": 39,
+        "startOffset": 19,
+        "endOffset": 54
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/__init__.py",
+              "textRange": {
+                "startLine": 30,
+                "endLine": 30,
+                "startOffset": 4,
+                "endOffset": 21
+              },
+              "msg": "Function definition."
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/__init__.py",
+              "textRange": {
+                "startLine": 32,
+                "endLine": 32,
+                "startOffset": 55,
+                "endOffset": 65
+              },
+              "msg": "Type hint."
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Return a value of type \"Refactorer\" instead of \"ClaudeCodeRefactorer\" or update function \"create_refactorer\" type hint.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "typing"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "LOGICAL",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0GmsHzL2tLt_T9",
+      "rule": "python:S5886",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage3/providers/__init__.py",
+      "project": "MarMarLwin_chat",
+      "line": 41,
+      "hash": "59eb149fd4c7a7f59244d5bf20cc5532",
+      "textRange": {
+        "startLine": 41,
+        "endLine": 41,
+        "startOffset": 15,
+        "endOffset": 46
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/__init__.py",
+              "textRange": {
+                "startLine": 30,
+                "endLine": 30,
+                "startOffset": 4,
+                "endOffset": 21
+              },
+              "msg": "Function definition."
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/__init__.py",
+              "textRange": {
+                "startLine": 32,
+                "endLine": 32,
+                "startOffset": 55,
+                "endOffset": 65
+              },
+              "msg": "Type hint."
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Return a value of type \"Refactorer\" instead of \"ClaudeRefactorer\" or update function \"create_refactorer\" type hint.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "typing"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "LOGICAL",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0GmsHzL2tLt_T-",
+      "rule": "python:S5886",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage3/providers/__init__.py",
+      "project": "MarMarLwin_chat",
+      "line": 46,
+      "hash": "c370c22ba9e45654f9b521d3a375f1d2",
+      "textRange": {
+        "startLine": 46,
+        "endLine": 46,
+        "startOffset": 15,
+        "endOffset": 67
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/__init__.py",
+              "textRange": {
+                "startLine": 30,
+                "endLine": 30,
+                "startOffset": 4,
+                "endOffset": 21
+              },
+              "msg": "Function definition."
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/__init__.py",
+              "textRange": {
+                "startLine": 32,
+                "endLine": 32,
+                "startOffset": 55,
+                "endOffset": 65
+              },
+              "msg": "Type hint."
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Return a value of type \"Refactorer\" instead of \"OpenAICompatibleRefactorer\" or update function \"create_refactorer\" type hint.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "typing"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "LOGICAL",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0EmsHzL2tLt_T6",
+      "rule": "python:S7498",
+      "severity": "MINOR",
+      "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+      "project": "MarMarLwin_chat",
+      "line": 64,
+      "hash": "7fac471dafb194031c7030d70273fcc0",
+      "textRange": {
+        "startLine": 64,
+        "endLine": 64,
+        "startOffset": 17,
+        "endOffset": 21
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Replace this constructor call with a literal.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0EmsHzL2tLt_T7",
+      "rule": "python:S3776",
+      "severity": "CRITICAL",
+      "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+      "project": "MarMarLwin_chat",
+      "line": 76,
+      "hash": "a7d19a4e5d065dcc7e8530014f9838f4",
+      "textRange": {
+        "startLine": 76,
+        "endLine": 76,
+        "startOffset": 8,
+        "endOffset": 11
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 80,
+                "endLine": 80,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 84,
+                "endLine": 84,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 87,
+                "endLine": 87,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 90,
+                "endLine": 90,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 91,
+                "endLine": 91,
+                "startOffset": 12,
+                "endOffset": 14
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 96,
+                "endLine": 96,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 100,
+                "endLine": 100,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 103,
+                "endLine": 103,
+                "startOffset": 8,
+                "endOffset": 14
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 105,
+                "endLine": 105,
+                "startOffset": 12,
+                "endOffset": 14
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 105,
+                "endLine": 105,
+                "startOffset": 50,
+                "endOffset": 52
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 116,
+                "endLine": 116,
+                "startOffset": 70,
+                "endOffset": 72
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 119,
+                "endLine": 119,
+                "startOffset": 56,
+                "endOffset": 58
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 120,
+                "endLine": 120,
+                "startOffset": 51,
+                "endOffset": 53
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 128,
+                "endLine": 128,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 130,
+                "endLine": 130,
+                "startOffset": 58,
+                "endOffset": 60
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 132,
+                "endLine": 132,
+                "startOffset": 8,
+                "endOffset": 12
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 134,
+                "endLine": 134,
+                "startOffset": 8,
+                "endOffset": 12
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/stage3/providers/claude.py",
+              "textRange": {
+                "startLine": 136,
+                "endLine": 136,
+                "startOffset": 8,
+                "endOffset": 12
+              },
+              "msg": "+1"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.",
+      "effort": "11min",
+      "debt": "11min",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0KmsHzL2tLt_T_",
+      "rule": "python:S8572",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage3/refactor.py",
+      "project": "MarMarLwin_chat",
+      "line": 64,
+      "hash": "4df0ea446da82fdf099e78bcd9a336af",
+      "textRange": {
+        "startLine": 64,
+        "endLine": 64,
+        "startOffset": 15,
+        "endOffset": 20
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Use \"logging.exception()\" instead.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "exception",
+        "logging"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0KmsHzL2tLt_UA",
+      "rule": "python:S8572",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage3/refactor.py",
+      "project": "MarMarLwin_chat",
+      "line": 221,
+      "hash": "ff8ea67ba518c19f62fdced99f49fb84",
+      "textRange": {
+        "startLine": 221,
+        "endLine": 221,
+        "startOffset": 15,
+        "endOffset": 20
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Use \"logging.exception()\" instead.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "exception",
+        "logging"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0KmsHzL2tLt_UB",
+      "rule": "python:S8572",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/stage3/refactor.py",
+      "project": "MarMarLwin_chat",
+      "line": 256,
+      "hash": "ff8ea67ba518c19f62fdced99f49fb84",
+      "textRange": {
+        "startLine": 256,
+        "endLine": 256,
+        "startOffset": 15,
+        "endOffset": 20
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Use \"logging.exception()\" instead.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "exception",
+        "logging"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8syAmsHzL2tLt_Tg",
+      "rule": "python:S5778",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/tests/test_stage3.py",
+      "project": "MarMarLwin_chat",
+      "line": 161,
+      "hash": "d6459a1afd70e385e0a53b570f545b9d",
+      "textRange": {
+        "startLine": 161,
+        "endLine": 161,
+        "startOffset": 8,
+        "endOffset": 51
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tests/test_stage3.py",
+              "textRange": {
+                "startLine": 162,
+                "endLine": 162,
+                "startOffset": 17,
+                "endOffset": 59
+              },
+              "msg": "Invocation possibly throwing an exception."
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tests/test_stage3.py",
+              "textRange": {
+                "startLine": 162,
+                "endLine": 162,
+                "startOffset": 31,
+                "endOffset": 44
+              },
+              "msg": "Invocation possibly throwing an exception."
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this exception test to have only one invocation possibly throwing an exception.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "pytest",
+        "tests",
+        "unittest"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0SmsHzL2tLt_UD",
+      "rule": "dart:S3776",
+      "severity": "CRITICAL",
+      "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+      "project": "MarMarLwin_chat",
+      "line": 158,
+      "hash": "4ca5e13e4edd0541f5aa558dce43a86e",
+      "textRange": {
+        "startLine": 158,
+        "endLine": 158,
+        "startOffset": 7,
+        "endOffset": 18
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+              "textRange": {
+                "startLine": 160,
+                "endLine": 160,
+                "startOffset": 4,
+                "endOffset": 7
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+              "textRange": {
+                "startLine": 162,
+                "endLine": 162,
+                "startOffset": 6,
+                "endOffset": 8
+              },
+              "msg": "+2 (incl 1 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+              "textRange": {
+                "startLine": 164,
+                "endLine": 164,
+                "startOffset": 12,
+                "endOffset": 13
+              },
+              "msg": "+3 (incl 2 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+              "textRange": {
+                "startLine": 166,
+                "endLine": 166,
+                "startOffset": 16,
+                "endOffset": 17
+              },
+              "msg": "+4 (incl 3 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+              "textRange": {
+                "startLine": 171,
+                "endLine": 171,
+                "startOffset": 8,
+                "endOffset": 12
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+              "textRange": {
+                "startLine": 173,
+                "endLine": 173,
+                "startOffset": 12,
+                "endOffset": 13
+              },
+              "msg": "+3 (incl 2 for nesting)"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+              "textRange": {
+                "startLine": 178,
+                "endLine": 178,
+                "startOffset": 8,
+                "endOffset": 12
+              },
+              "msg": "+1"
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+              "textRange": {
+                "startLine": 179,
+                "endLine": 179,
+                "startOffset": 8,
+                "endOffset": 11
+              },
+              "msg": "+3 (incl 2 for nesting)"
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.",
+      "effort": "6min",
+      "debt": "6min",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
+    {
+      "key": "AaFk8s0SmsHzL2tLt_UE",
+      "rule": "dart:S3358",
+      "severity": "MAJOR",
+      "component": "MarMarLwin_chat:pipeline/tools/dart_ast/bin/dart_ast.dart",
+      "project": "MarMarLwin_chat",
+      "line": 165,
+      "hash": "8ef0a77fcf2b5c6764fd0456f7c6fec2",
+      "textRange": {
+        "startLine": 165,
+        "endLine": 167,
+        "startOffset": 14,
+        "endOffset": 26
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "effort": "5min",
+      "debt": "5min",
+      "tags": [
+        "confusing"
+      ],
+      "creationDate": "2026-10-22T17:32:44+0000",
+      "updateDate": "2026-10-22T18:49:12+0000",
+      "type": "CODE_SMELL",
+      "organization": "marmarlwin",
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "projectName": "chat",
+      "internalTags": [],
+      "lastChangeAnalysisUuid": "c0acae3a-e88c-4ad5-b534-2761ccdb91d9",
+      "lastChangeSource": "ANALYSIS"
+    },
     {
       "key": "AaD2avxO8OHgBNPXEUrR",
       "rule": "githubactions:S7637",
@@ -202,381 +3812,6 @@
       "organization": "marmarlwin",
       "cleanCodeAttribute": "CLEAR",
       "cleanCodeAttributeCategory": "INTENTIONAL",
-      "impacts": [
-        {
-          "softwareQuality": "MAINTAINABILITY",
-          "severity": "MEDIUM"
-        }
-      ],
-      "issueStatus": "OPEN",
-      "projectName": "chat",
-      "internalTags": [],
-      "lastChangeAnalysisUuid": "f1167cec-6a3e-4e41-8c6f-8ae33f38eb9a",
-      "lastChangeSource": "ANALYSIS"
-    },
-    {
-      "key": "AaD2avwn8OHgBNPXEUrL",
-      "rule": "text:S8569",
-      "severity": "MAJOR",
-      "component": "MarMarLwin_chat:android/build.gradle",
-      "project": "MarMarLwin_chat",
-      "flows": [],
-      "status": "OPEN",
-      "message": "Dependency versions are not predictable if the lock file (gradle.lockfile or gradle/verification-metadata.xml) is missing.",
-      "effort": "5min",
-      "debt": "5min",
-      "assignee": "MarMarLwin-qJVDI@github",
-      "tags": [],
-      "creationDate": "2024-08-17T07:53:58+0000",
-      "updateDate": "2026-10-01T07:42:32+0000",
-      "type": "VULNERABILITY",
-      "organization": "marmarlwin",
-      "cleanCodeAttribute": "COMPLETE",
-      "cleanCodeAttributeCategory": "INTENTIONAL",
-      "impacts": [
-        {
-          "softwareQuality": "SECURITY",
-          "severity": "MEDIUM"
-        }
-      ],
-      "issueStatus": "OPEN",
-      "projectName": "chat",
-      "internalTags": [],
-      "lastChangeAnalysisUuid": "f1167cec-6a3e-4e41-8c6f-8ae33f38eb9a",
-      "lastChangeSource": "ANALYSIS"
-    },
-    {
-      "key": "AaD2avwS8OHgBNPXEUrH",
-      "rule": "dart:S3776",
-      "severity": "CRITICAL",
-      "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-      "project": "MarMarLwin_chat",
-      "line": 81,
-      "hash": "27bad62df76e267bd8e5158c080c6f1a",
-      "textRange": {
-        "startLine": 81,
-        "endLine": 81,
-        "startOffset": 9,
-        "endOffset": 14
-      },
-      "flows": [
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 117,
-                "endLine": 117,
-                "startOffset": 30,
-                "endOffset": 31
-              },
-              "msg": "+2 (incl 1 for nesting)"
-            }
-          ]
-        },
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 118,
-                "endLine": 118,
-                "startOffset": 48,
-                "endOffset": 49
-              },
-              "msg": "+3 (incl 2 for nesting)"
-            }
-          ]
-        },
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 142,
-                "endLine": 142,
-                "startOffset": 36,
-                "endOffset": 37
-              },
-              "msg": "+1"
-            }
-          ]
-        },
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 146,
-                "endLine": 146,
-                "startOffset": 30,
-                "endOffset": 31
-              },
-              "msg": "+2 (incl 1 for nesting)"
-            }
-          ]
-        },
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 148,
-                "endLine": 148,
-                "startOffset": 34,
-                "endOffset": 35
-              },
-              "msg": "+3 (incl 2 for nesting)"
-            }
-          ]
-        },
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 151,
-                "endLine": 151,
-                "startOffset": 56,
-                "endOffset": 57
-              },
-              "msg": "+1"
-            }
-          ]
-        },
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 160,
-                "endLine": 160,
-                "startOffset": 43,
-                "endOffset": 44
-              },
-              "msg": "+1"
-            }
-          ]
-        },
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 163,
-                "endLine": 163,
-                "startOffset": 46,
-                "endOffset": 47
-              },
-              "msg": "+1"
-            }
-          ]
-        },
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 172,
-                "endLine": 172,
-                "startOffset": 32,
-                "endOffset": 33
-              },
-              "msg": "+1"
-            }
-          ]
-        },
-        {
-          "locations": [
-            {
-              "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-              "textRange": {
-                "startLine": 176,
-                "endLine": 176,
-                "startOffset": 34,
-                "endOffset": 35
-              },
-              "msg": "+1"
-            }
-          ]
-        }
-      ],
-      "status": "OPEN",
-      "message": "Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.",
-      "effort": "6min",
-      "debt": "6min",
-      "assignee": "MarMarLwin-qJVDI@github",
-      "tags": [
-        "brain-overload"
-      ],
-      "creationDate": "2024-08-17T07:53:58+0000",
-      "updateDate": "2026-10-01T07:42:32+0000",
-      "type": "CODE_SMELL",
-      "organization": "marmarlwin",
-      "cleanCodeAttribute": "FOCUSED",
-      "cleanCodeAttributeCategory": "ADAPTABLE",
-      "impacts": [
-        {
-          "softwareQuality": "MAINTAINABILITY",
-          "severity": "HIGH"
-        }
-      ],
-      "issueStatus": "OPEN",
-      "projectName": "chat",
-      "internalTags": [],
-      "lastChangeAnalysisUuid": "f1167cec-6a3e-4e41-8c6f-8ae33f38eb9a",
-      "lastChangeSource": "ANALYSIS"
-    },
-    {
-      "key": "AaD2avwS8OHgBNPXEUrI",
-      "rule": "dart:S3358",
-      "severity": "MAJOR",
-      "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-      "project": "MarMarLwin_chat",
-      "line": 118,
-      "hash": "136ec59f4b5270e0e1d8d9d716c01c41",
-      "textRange": {
-        "startLine": 118,
-        "endLine": 118,
-        "startOffset": 33,
-        "endOffset": 77
-      },
-      "flows": [],
-      "status": "OPEN",
-      "message": "Extract this nested ternary operation into an independent statement.",
-      "effort": "5min",
-      "debt": "5min",
-      "assignee": "MarMarLwin-qJVDI@github",
-      "tags": [
-        "confusing"
-      ],
-      "creationDate": "2024-08-17T07:53:58+0000",
-      "updateDate": "2026-10-01T07:42:32+0000",
-      "type": "CODE_SMELL",
-      "organization": "marmarlwin",
-      "cleanCodeAttribute": "CLEAR",
-      "cleanCodeAttributeCategory": "INTENTIONAL",
-      "impacts": [
-        {
-          "softwareQuality": "MAINTAINABILITY",
-          "severity": "MEDIUM"
-        }
-      ],
-      "issueStatus": "OPEN",
-      "projectName": "chat",
-      "internalTags": [],
-      "lastChangeAnalysisUuid": "f1167cec-6a3e-4e41-8c6f-8ae33f38eb9a",
-      "lastChangeSource": "ANALYSIS"
-    },
-    {
-      "key": "AaD2avwS8OHgBNPXEUrJ",
-      "rule": "dart:S3358",
-      "severity": "MAJOR",
-      "component": "MarMarLwin_chat:lib/features/auth/presentation/login_page.dart",
-      "project": "MarMarLwin_chat",
-      "line": 147,
-      "hash": "22c81218961e3cb715eb474660dbba4e",
-      "textRange": {
-        "startLine": 147,
-        "endLine": 149,
-        "startOffset": 33,
-        "endOffset": 40
-      },
-      "flows": [],
-      "status": "OPEN",
-      "message": "Extract this nested ternary operation into an independent statement.",
-      "effort": "5min",
-      "debt": "5min",
-      "assignee": "MarMarLwin-qJVDI@github",
-      "tags": [
-        "confusing"
-      ],
-      "creationDate": "2024-08-17T07:53:58+0000",
-      "updateDate": "2026-10-01T07:42:32+0000",
-      "type": "CODE_SMELL",
-      "organization": "marmarlwin",
-      "cleanCodeAttribute": "CLEAR",
-      "cleanCodeAttributeCategory": "INTENTIONAL",
-      "impacts": [
-        {
-          "softwareQuality": "MAINTAINABILITY",
-          "severity": "MEDIUM"
-        }
-      ],
-      "issueStatus": "OPEN",
-      "projectName": "chat",
-      "internalTags": [],
-      "lastChangeAnalysisUuid": "f1167cec-6a3e-4e41-8c6f-8ae33f38eb9a",
-      "lastChangeSource": "ANALYSIS"
-    },
-    {
-      "key": "AaD2avwJ8OHgBNPXEUrG",
-      "rule": "dart:S7115",
-      "severity": "CRITICAL",
-      "component": "MarMarLwin_chat:lib/features/chat/presentation/chat_page.dart",
-      "project": "MarMarLwin_chat",
-      "line": 57,
-      "hash": "91fb23c9ab85636ec44d644bc2a1850f",
-      "textRange": {
-        "startLine": 57,
-        "endLine": 57,
-        "startOffset": 26,
-        "endOffset": 33
-      },
-      "flows": [],
-      "status": "OPEN",
-      "message": "Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.",
-      "effort": "5min",
-      "debt": "5min",
-      "assignee": "MarMarLwin-qJVDI@github",
-      "tags": [
-        "unpredictable"
-      ],
-      "creationDate": "2024-08-17T07:53:58+0000",
-      "updateDate": "2026-10-01T07:42:32+0000",
-      "type": "BUG",
-      "organization": "marmarlwin",
-      "cleanCodeAttribute": "LOGICAL",
-      "cleanCodeAttributeCategory": "INTENTIONAL",
-      "impacts": [
-        {
-          "softwareQuality": "RELIABILITY",
-          "severity": "HIGH"
-        }
-      ],
-      "issueStatus": "OPEN",
-      "projectName": "chat",
-      "internalTags": [],
-      "lastChangeAnalysisUuid": "f1167cec-6a3e-4e41-8c6f-8ae33f38eb9a",
-      "lastChangeSource": "ANALYSIS"
-    },
-    {
-      "key": "AaD2avt48OHgBNPXEUrF",
-      "rule": "dart:S7055",
-      "severity": "MAJOR",
-      "component": "MarMarLwin_chat:lib/features/chat/presentation/message_bar.dart",
-      "project": "MarMarLwin_chat",
-      "line": 111,
-      "hash": "0834fdd9da37eb49e2c6f7e01a63be88",
-      "textRange": {
-        "startLine": 111,
-        "endLine": 111,
-        "startOffset": 27,
-        "endOffset": 28
-      },
-      "flows": [],
-      "status": "OPEN",
-      "message": "The referenced identifier is a wildcard.",
-      "effort": "5min",
-      "debt": "5min",
-      "assignee": "MarMarLwin-qJVDI@github",
-      "tags": [],
-      "creationDate": "2024-08-17T07:53:58+0000",
-      "updateDate": "2026-10-01T07:42:32+0000",
-      "type": "CODE_SMELL",
-      "organization": "marmarlwin",
-      "cleanCodeAttribute": "CONVENTIONAL",
-      "cleanCodeAttributeCategory": "CONSISTENT",
       "impacts": [
         {
           "softwareQuality": "MAINTAINABILITY",
