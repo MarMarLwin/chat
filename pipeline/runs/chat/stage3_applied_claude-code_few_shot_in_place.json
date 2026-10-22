@@ -1,13 +1,13 @@
 {
-  "applied_at": "2026-10-22T04:37:19.816400+00:00",
+  "applied_at": "2026-10-22T17:53:32.423053+00:00",
   "model": "claude-code",
   "strategy": "few_shot",
   "target": "working tree",
   "results_file": "stage3_results_claude-code.json",
-  "applied": 3,
+  "applied": 4,
   "already_applied": 0,
   "conflict": 2,
-  "skipped": 1,
+  "skipped": 0,
   "issues": [
     {
       "issue_key": "AaD2avxO8OHgBNPXEUrR",
@@ -17,8 +17,9 @@
         21,
         26
       ],
-      "status": "skipped",
-      "reason": "file content at these lines differs from the snippet sent to the model (changed or not committed)"
+      "status": "applied",
+      "new_line_count": 6,
+      "reindented": false
     },
     {
       "issue_key": "AaD2avwS8OHgBNPXEUrH",
@@ -29,7 +30,7 @@
         192
       ],
       "status": "applied",
-      "new_line_count": 130,
+      "new_line_count": 123,
       "reindented": false
     },
     {

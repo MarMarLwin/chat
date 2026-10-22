@@ -5,10 +5,17 @@
     "original_snippet": "      - name: Set up Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
     "results": {
       "zero_shot": {
+<<<<<<< HEAD
+        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999802d4b807e3256d5a3f9d1 # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+        "prompt_tokens": 682,
+        "completion_tokens": 439,
+        "total_tokens": 1121,
+=======
         "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999695d5b6ec3a2400ec14f41 # v2.16.1\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
         "prompt_tokens": 682,
         "completion_tokens": 375,
         "total_tokens": 1057,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -20,9 +27,15 @@
           "input_tokens": 682,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
+<<<<<<< HEAD
+          "output_tokens": 439,
+          "output_tokens_details": {
+            "thinking_tokens": 337
+=======
           "output_tokens": 375,
           "output_tokens_details": {
             "thinking_tokens": 273
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -37,7 +50,11 @@
           "iterations": [
             {
               "input_tokens": 682,
+<<<<<<< HEAD
+              "output_tokens": 439,
+=======
               "output_tokens": 375,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 0,
               "cache_creation": {
@@ -52,11 +69,19 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 787,
+<<<<<<< HEAD
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000867,
+=======
             "outputTokens": 21,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
             "costUSD": 0.000892,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -64,17 +89,36 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 682,
+<<<<<<< HEAD
+            "outputTokens": 439,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.008631,
+=======
             "outputTokens": 375,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
             "costUSD": 0.007671,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
+<<<<<<< HEAD
+        "equivalent_api_cost_usd": 0.009498,
+        "duration_ms": 7472,
+        "prompt_sha256": "748e016e6ece35c4"
+      },
+      "few_shot": {
+        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d660601 # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+        "prompt_tokens": 890,
+        "completion_tokens": 483,
+        "total_tokens": 1373,
+=======
         "equivalent_api_cost_usd": 0.008563,
         "duration_ms": 4616,
         "prompt_sha256": "748e016e6ece35c4"
@@ -84,6 +128,7 @@
         "prompt_tokens": 890,
         "completion_tokens": 270,
         "total_tokens": 1160,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -95,9 +140,15 @@
           "input_tokens": 890,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
+<<<<<<< HEAD
+          "output_tokens": 483,
+          "output_tokens_details": {
+            "thinking_tokens": 384
+=======
           "output_tokens": 270,
           "output_tokens_details": {
             "thinking_tokens": 171
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -112,7 +163,11 @@
           "iterations": [
             {
               "input_tokens": 890,
+<<<<<<< HEAD
+              "output_tokens": 483,
+=======
               "output_tokens": 270,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 0,
               "cache_creation": {
@@ -127,11 +182,19 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 959,
+<<<<<<< HEAD
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001034,
+=======
             "outputTokens": 14,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
             "costUSD": 0.001029,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -139,17 +202,36 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 890,
+<<<<<<< HEAD
+            "outputTokens": 483,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.009915,
+=======
             "outputTokens": 270,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
             "costUSD": 0.006719999999999999,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
+<<<<<<< HEAD
+        "equivalent_api_cost_usd": 0.010949,
+        "duration_ms": 8877,
+        "prompt_sha256": "dd6da56e359ac755"
+      },
+      "repository_aware": {
+        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+        "prompt_tokens": 1276,
+        "completion_tokens": 411,
+        "total_tokens": 1687,
+=======
         "equivalent_api_cost_usd": 0.007748999999999999,
         "duration_ms": 4579,
         "prompt_sha256": "dd6da56e359ac755"
@@ -159,6 +241,7 @@
         "prompt_tokens": 1276,
         "completion_tokens": 408,
         "total_tokens": 1684,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -168,11 +251,19 @@
         "served_by": "claude-sonnet-5",
         "usage": {
           "input_tokens": 1,
+<<<<<<< HEAD
+          "cache_creation_input_tokens": 1275,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 411,
+          "output_tokens_details": {
+            "thinking_tokens": 311
+=======
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 1275,
           "output_tokens": 408,
           "output_tokens_details": {
             "thinking_tokens": 304
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -180,19 +271,32 @@
           },
           "service_tier": "standard",
           "cache_creation": {
+<<<<<<< HEAD
+            "ephemeral_1h_input_tokens": 1275,
+=======
             "ephemeral_1h_input_tokens": 0,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
             "ephemeral_5m_input_tokens": 0
           },
           "inference_geo": "global",
           "iterations": [
             {
               "input_tokens": 1,
+<<<<<<< HEAD
+              "output_tokens": 411,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1275,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1275
+=======
               "output_tokens": 408,
               "cache_read_input_tokens": 1275,
               "cache_creation_input_tokens": 0,
               "cache_creation": {
                 "ephemeral_5m_input_tokens": 0,
                 "ephemeral_1h_input_tokens": 0
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
               },
               "type": "message"
             }
@@ -202,11 +306,19 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 1258,
+<<<<<<< HEAD
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001338,
+=======
             "outputTokens": 14,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
             "costUSD": 0.001328,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -214,19 +326,32 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 1,
+<<<<<<< HEAD
+            "outputTokens": 411,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1275,
+            "webSearchRequests": 0,
+            "costUSD": 0.013818,
+=======
             "outputTokens": 408,
             "cacheReadInputTokens": 1275,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
             "costUSD": 0.0065055,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
+<<<<<<< HEAD
+        "equivalent_api_cost_usd": 0.015156000000000001,
+        "duration_ms": 6949,
+=======
         "equivalent_api_cost_usd": 0.0078335,
         "duration_ms": 5870,
+>>>>>>> ab7966e3fc14212cf9bd2e44c8db11ecaeace50a
         "prompt_sha256": "418387b79115fcb3"
       }
     },
@@ -244,10 +369,10 @@
     "original_snippet": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        TextFormField(\n                          controller: _email,\n                          decoration: const InputDecoration(\n                              hintText: AppLabels.email,\n                              prefixIcon: Icon(Icons.person)),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n                          inputFormatters: <TextInputFormatter>[\n                            ValidatorInputFormatter(\n                                editingValidator: EmailEditingRegexValidator()),\n                          ],\n                          autocorrect: false,\n                          textInputAction: TextInputAction.next,\n                          keyboardType: TextInputType.emailAddress,\n                          keyboardAppearance: Brightness.light,\n                        ),\n                        8.height,\n                        // Password field\n                        TextFormField(\n                          controller: _passwordController,\n                          decoration: InputDecoration(\n                            hintText: AppLabels.password,\n                            prefixIcon: const Icon(Icons.lock),\n                            suffixIcon: GestureDetector(\n                                onTap: () {\n                                  setState(() {\n                                    _passwordVisible = !_passwordVisible;\n                                  });\n                                },\n                                child: _passwordVisible\n                                    ? const Icon(Icons.visibility_off)\n                                    : const Icon(Icons.visibility)),\n                          ),\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          obscureText: _passwordVisible ? true : false,\n                          autocorrect: false,\n                          textInputAction: TextInputAction.done,\n                          keyboardAppearance: Brightness.light,\n                          onEditingComplete: () => _passwordEditingComplete(),\n                        ),\n\n                        8.height,\n                        PrimaryButton(\n                          text: _loginType ? AppLabels.login : AppLabels.signUp,\n                          isLoading: state.isLoading,\n                          onPressed:\n                              state.isLoading ? () => {} : () => _submit(),\n                        ),\n\n                        8.height,\n\n                        Row(\n                          mainAxisAlignment: MainAxisAlignment.center,\n                          children: [\n                            Text(!_loginType\n                                ? 'Already account?'\n                                : 'Create an account'),\n                            CustomTextButton(\n                              text: _loginType\n                                  ? AppLabels.signUp\n                                  : AppLabels.login,\n                              style: const TextStyle(\n                                  decoration: TextDecoration.underline),\n                              onPressed: _changeFormType,\n                            ),\n                          ],\n                        )\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }",
     "results": {
       "zero_shot": {
-        "refactored_code": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n                        _buildEmailField(),\n                        8.height,\n                        _buildPasswordField(),\n                        8.height,\n                        _buildSubmitButton(state),\n                        8.height,\n                        _buildAccountToggleRow(),\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n\n  Widget _buildEmailField() {\n    return TextFormField(\n      controller: _email,\n      decoration: const InputDecoration(\n          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      validator: _validateEmail,\n      inputFormatters: <TextInputFormatter>[\n        ValidatorInputFormatter(\n            editingValidator: EmailEditingRegexValidator()),\n      ],\n      autocorrect: false,\n      textInputAction: TextInputAction.next,\n      keyboardType: TextInputType.emailAddress,\n      keyboardAppearance: Brightness.light,\n    );\n  }\n\n  String? _validateEmail(String? email) {\n    if (!_submitted) return null;\n    return email!.isEmpty ? AppLabels.emptyEmail : null;\n  }\n\n  Widget _buildPasswordField() {\n    return TextFormField(\n      controller: _passwordController,\n      decoration: InputDecoration(\n        hintText: AppLabels.password,\n        prefixIcon: const Icon(Icons.lock),\n        suffixIcon: GestureDetector(\n            onTap: _togglePasswordVisibility,\n            child: Icon(_passwordVisible\n                ? Icons.visibility_off\n                : Icons.visibility)),\n      ),\n      validator: _validatePassword,\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      obscureText: _passwordVisible,\n      autocorrect: false,\n      textInputAction: TextInputAction.done,\n      keyboardAppearance: Brightness.light,\n      onEditingComplete: () => _passwordEditingComplete(),\n    );\n  }\n\n  void _togglePasswordVisibility() {\n    setState(() {\n      _passwordVisible = !_passwordVisible;\n    });\n  }\n\n  String? _validatePassword(String? password) {\n    if (!_submitted) return null;\n    return password!.isEmpty ? AppLabels.emptyPassword : null;\n  }\n\n  Widget _buildSubmitButton(AsyncValue state) {\n    return PrimaryButton(\n      text: _loginType ? AppLabels.login : AppLabels.signUp,\n      isLoading: state.isLoading,\n      onPressed: state.isLoading ? () => {} : () => _submit(),\n    );\n  }\n\n  Widget _buildAccountToggleRow() {\n    return Row(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Text(!_loginType ? 'Already account?' : 'Create an account'),\n        CustomTextButton(\n          text: _loginType ? AppLabels.signUp : AppLabels.login,\n          style: const TextStyle(decoration: TextDecoration.underline),\n          onPressed: _changeFormType,\n        ),\n      ],\n    );\n  }",
-        "prompt_tokens": 2019,
-        "completion_tokens": 3376,
-        "total_tokens": 5395,
+        "refactored_code": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        _buildEmailField(),\n                        8.height,\n                        // Password field\n                        _buildPasswordField(),\n\n                        8.height,\n                        _buildLoginButton(state),\n\n                        8.height,\n\n                        _buildAccountTypeRow(),\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n\n  Widget _buildEmailField() {\n    return TextFormField(\n      controller: _email,\n      decoration: const InputDecoration(\n          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      validator: _emailValidator,\n      inputFormatters: <TextInputFormatter>[\n        ValidatorInputFormatter(\n            editingValidator: EmailEditingRegexValidator()),\n      ],\n      autocorrect: false,\n      textInputAction: TextInputAction.next,\n      keyboardType: TextInputType.emailAddress,\n      keyboardAppearance: Brightness.light,\n    );\n  }\n\n  String? _emailValidator(String? email) {\n    if (!_submitted) {\n      return null;\n    }\n    return email!.isEmpty ? AppLabels.emptyEmail : null;\n  }\n\n  Widget _buildPasswordField() {\n    return TextFormField(\n      controller: _passwordController,\n      decoration: InputDecoration(\n        hintText: AppLabels.password,\n        prefixIcon: const Icon(Icons.lock),\n        suffixIcon: _buildPasswordVisibilityToggle(),\n      ),\n      validator: _passwordValidator,\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      obscureText: _passwordVisible ? true : false,\n      autocorrect: false,\n      textInputAction: TextInputAction.done,\n      keyboardAppearance: Brightness.light,\n      onEditingComplete: () => _passwordEditingComplete(),\n    );\n  }\n\n  Widget _buildPasswordVisibilityToggle() {\n    return GestureDetector(\n        onTap: () {\n          setState(() {\n            _passwordVisible = !_passwordVisible;\n          });\n        },\n        child: _passwordVisible\n            ? const Icon(Icons.visibility_off)\n            : const Icon(Icons.visibility));\n  }\n\n  String? _passwordValidator(String? password) {\n    if (!_submitted) {\n      return null;\n    }\n    return password!.isEmpty ? AppLabels.emptyPassword : null;\n  }\n\n  Widget _buildLoginButton(AsyncValue state) {\n    return PrimaryButton(\n      text: _loginType ? AppLabels.login : AppLabels.signUp,\n      isLoading: state.isLoading,\n      onPressed: state.isLoading ? () => {} : () => _submit(),\n    );\n  }\n\n  Widget _buildAccountTypeRow() {\n    return Row(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Text(!_loginType ? 'Already account?' : 'Create an account'),\n        CustomTextButton(\n          text: _loginType ? AppLabels.signUp : AppLabels.login,\n          style: const TextStyle(decoration: TextDecoration.underline),\n          onPressed: _changeFormType,\n        ),\n      ],\n    );\n  }",
+        "prompt_tokens": 1979,
+        "completion_tokens": 4542,
+        "total_tokens": 6521,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -256,12 +381,12 @@
         "finish_reason": "end_turn",
         "served_by": "claude-sonnet-5",
         "usage": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 2017,
+          "input_tokens": 1,
+          "cache_creation_input_tokens": 1978,
           "cache_read_input_tokens": 0,
-          "output_tokens": 3376,
+          "output_tokens": 4542,
           "output_tokens_details": {
-            "thinking_tokens": 1935
+            "thinking_tokens": 3052
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -269,19 +394,19 @@
           },
           "service_tier": "standard",
           "cache_creation": {
-            "ephemeral_1h_input_tokens": 2017,
+            "ephemeral_1h_input_tokens": 1978,
             "ephemeral_5m_input_tokens": 0
           },
           "inference_geo": "global",
           "iterations": [
             {
-              "input_tokens": 2,
-              "output_tokens": 3376,
+              "input_tokens": 1,
+              "output_tokens": 4542,
               "cache_read_input_tokens": 0,
-              "cache_creation_input_tokens": 2017,
+              "cache_creation_input_tokens": 1978,
               "cache_creation": {
                 "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 2017
+                "ephemeral_1h_input_tokens": 1978
               },
               "type": "message"
             }
@@ -291,38 +416,38 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 1722,
-            "outputTokens": 15,
+            "outputTokens": 17,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.001797,
+            "costUSD": 0.001807,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
             "provider": "firstParty"
           },
           "claude-sonnet-5": {
-            "inputTokens": 2,
-            "outputTokens": 3376,
+            "inputTokens": 1,
+            "outputTokens": 4542,
             "cacheReadInputTokens": 0,
-            "cacheCreationInputTokens": 2017,
+            "cacheCreationInputTokens": 1978,
             "webSearchRequests": 0,
-            "costUSD": 0.062748,
+            "costUSD": 0.080001,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.06454499999999999,
-        "duration_ms": 25242,
+        "equivalent_api_cost_usd": 0.081808,
+        "duration_ms": 36068,
         "prompt_sha256": "037bbc4463ac4cbf"
       },
       "few_shot": {
-        "refactored_code": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        _buildEmailField(),\n                        8.height,\n                        // Password field\n                        _buildPasswordField(),\n\n                        8.height,\n                        _buildLoginButton(state),\n\n                        8.height,\n\n                        _buildSwitchFormTypeRow(),\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n\n  String? _validateEmail(String? email) {\n    if (!_submitted) return null;\n    return email!.isEmpty ? AppLabels.emptyEmail : null;\n  }\n\n  String? _validatePassword(String? password) {\n    if (!_submitted) return null;\n    return password!.isEmpty ? AppLabels.emptyPassword : null;\n  }\n\n  Widget _buildEmailField() {\n    return TextFormField(\n      controller: _email,\n      decoration: const InputDecoration(\n          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      validator: _validateEmail,\n      inputFormatters: <TextInputFormatter>[\n        ValidatorInputFormatter(\n            editingValidator: EmailEditingRegexValidator()),\n      ],\n      autocorrect: false,\n      textInputAction: TextInputAction.next,\n      keyboardType: TextInputType.emailAddress,\n      keyboardAppearance: Brightness.light,\n    );\n  }\n\n  Widget _buildPasswordVisibilityIcon() {\n    return GestureDetector(\n        onTap: () {\n          setState(() {\n            _passwordVisible = !_passwordVisible;\n          });\n        },\n        child: _passwordVisible\n            ? const Icon(Icons.visibility_off)\n            : const Icon(Icons.visibility));\n  }\n\n  Widget _buildPasswordField() {\n    return TextFormField(\n      controller: _passwordController,\n      decoration: InputDecoration(\n        hintText: AppLabels.password,\n        prefixIcon: const Icon(Icons.lock),\n        suffixIcon: _buildPasswordVisibilityIcon(),\n      ),\n      validator: _validatePassword,\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      obscureText: _passwordVisible,\n      autocorrect: false,\n      textInputAction: TextInputAction.done,\n      keyboardAppearance: Brightness.light,\n      onEditingComplete: () => _passwordEditingComplete(),\n    );\n  }\n\n  Widget _buildLoginButton(AsyncValue state) {\n    return PrimaryButton(\n      text: _loginType ? AppLabels.login : AppLabels.signUp,\n      isLoading: state.isLoading,\n      onPressed: state.isLoading ? () => {} : () => _submit(),\n    );\n  }\n\n  Widget _buildSwitchFormTypeRow() {\n    return Row(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Text(!_loginType ? 'Already account?' : 'Create an account'),\n        CustomTextButton(\n          text: _loginType ? AppLabels.signUp : AppLabels.login,\n          style: const TextStyle(decoration: TextDecoration.underline),\n          onPressed: _changeFormType,\n        ),\n      ],\n    );\n  }",
+        "refactored_code": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        TextFormField(\n                          controller: _email,\n                          decoration: const InputDecoration(\n                              hintText: AppLabels.email,\n                              prefixIcon: Icon(Icons.person)),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          validator: _emailValidator,\n                          inputFormatters: <TextInputFormatter>[\n                            ValidatorInputFormatter(\n                                editingValidator: EmailEditingRegexValidator()),\n                          ],\n                          autocorrect: false,\n                          textInputAction: TextInputAction.next,\n                          keyboardType: TextInputType.emailAddress,\n                          keyboardAppearance: Brightness.light,\n                        ),\n                        8.height,\n                        // Password field\n                        TextFormField(\n                          controller: _passwordController,\n                          decoration: InputDecoration(\n                            hintText: AppLabels.password,\n                            prefixIcon: const Icon(Icons.lock),\n                            suffixIcon: GestureDetector(\n                                onTap: () {\n                                  setState(() {\n                                    _passwordVisible = !_passwordVisible;\n                                  });\n                                },\n                                child: _passwordVisibilityIcon()),\n                          ),\n                          validator: _passwordValidator,\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          obscureText: _passwordVisible,\n                          autocorrect: false,\n                          textInputAction: TextInputAction.done,\n                          keyboardAppearance: Brightness.light,\n                          onEditingComplete: () => _passwordEditingComplete(),\n                        ),\n\n                        8.height,\n                        _buildLoginButton(state),\n\n                        8.height,\n\n                        _buildToggleFormTypeRow(),\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n\n  String? _emailValidator(String? email) {\n    if (!_submitted) return null;\n    return email!.isEmpty ? AppLabels.emptyEmail : null;\n  }\n\n  String? _passwordValidator(String? password) {\n    if (!_submitted) return null;\n    return password!.isEmpty ? AppLabels.emptyPassword : null;\n  }\n\n  Icon _passwordVisibilityIcon() {\n    return _passwordVisible\n        ? const Icon(Icons.visibility_off)\n        : const Icon(Icons.visibility);\n  }\n\n  Widget _buildLoginButton(AsyncValue state) {\n    return PrimaryButton(\n      text: _loginType ? AppLabels.login : AppLabels.signUp,\n      isLoading: state.isLoading,\n      onPressed: state.isLoading ? () => {} : () => _submit(),\n    );\n  }\n\n  Widget _buildToggleFormTypeRow() {\n    return Row(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Text(!_loginType ? 'Already account?' : 'Create an account'),\n        CustomTextButton(\n          text: _loginType ? AppLabels.signUp : AppLabels.login,\n          style: const TextStyle(decoration: TextDecoration.underline),\n          onPressed: _changeFormType,\n        ),\n      ],\n    );\n  }",
         "prompt_tokens": 2616,
-        "completion_tokens": 1822,
-        "total_tokens": 4438,
+        "completion_tokens": 2658,
+        "total_tokens": 5274,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -334,9 +459,9 @@
           "input_tokens": 1,
           "cache_creation_input_tokens": 2615,
           "cache_read_input_tokens": 0,
-          "output_tokens": 1822,
+          "output_tokens": 2658,
           "output_tokens_details": {
-            "thinking_tokens": 345
+            "thinking_tokens": 1206
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -351,7 +476,7 @@
           "iterations": [
             {
               "input_tokens": 1,
-              "output_tokens": 1822,
+              "output_tokens": 2658,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 2615,
               "cache_creation": {
@@ -366,11 +491,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 2225,
-            "outputTokens": 15,
+            "outputTokens": 17,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.0023,
+            "costUSD": 0.00231,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -378,26 +503,26 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 1,
-            "outputTokens": 1822,
+            "outputTokens": 2658,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 2615,
             "webSearchRequests": 0,
-            "costUSD": 0.043023000000000006,
+            "costUSD": 0.05556300000000001,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.045323,
-        "duration_ms": 14210,
+        "equivalent_api_cost_usd": 0.05787300000000001,
+        "duration_ms": 21967,
         "prompt_sha256": "5067aa8bf2444f9c"
       },
       "repository_aware": {
-        "refactored_code": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        _buildEmailField(),\n                        8.height,\n                        // Password field\n                        _buildPasswordField(),\n\n                        8.height,\n                        _buildSubmitButton(state),\n\n                        8.height,\n\n                        _buildChangeFormTypeRow(),\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n\n  String? _validateEmail(String? email) {\n    if (!_submitted) return null;\n    return email!.isEmpty ? AppLabels.emptyEmail : null;\n  }\n\n  String? _validatePassword(String? password) {\n    if (!_submitted) return null;\n    return password!.isEmpty ? AppLabels.emptyPassword : null;\n  }\n\n  Widget _buildEmailField() {\n    return TextFormField(\n      controller: _email,\n      decoration: const InputDecoration(\n          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      validator: _validateEmail,\n      inputFormatters: <TextInputFormatter>[\n        ValidatorInputFormatter(editingValidator: EmailEditingRegexValidator()),\n      ],\n      autocorrect: false,\n      textInputAction: TextInputAction.next,\n      keyboardType: TextInputType.emailAddress,\n      keyboardAppearance: Brightness.light,\n    );\n  }\n\n  Widget _buildPasswordVisibilityIcon() {\n    return _passwordVisible\n        ? const Icon(Icons.visibility_off)\n        : const Icon(Icons.visibility);\n  }\n\n  Widget _buildPasswordField() {\n    return TextFormField(\n      controller: _passwordController,\n      decoration: InputDecoration(\n        hintText: AppLabels.password,\n        prefixIcon: const Icon(Icons.lock),\n        suffixIcon: GestureDetector(\n            onTap: () {\n              setState(() {\n                _passwordVisible = !_passwordVisible;\n              });\n            },\n            child: _buildPasswordVisibilityIcon()),\n      ),\n      validator: _validatePassword,\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      obscureText: _passwordVisible ? true : false,\n      autocorrect: false,\n      textInputAction: TextInputAction.done,\n      keyboardAppearance: Brightness.light,\n      onEditingComplete: () => _passwordEditingComplete(),\n    );\n  }\n\n  Widget _buildSubmitButton(AsyncValue state) {\n    return PrimaryButton(\n      text: _loginType ? AppLabels.login : AppLabels.signUp,\n      isLoading: state.isLoading,\n      onPressed: state.isLoading ? () => {} : () => _submit(),\n    );\n  }\n\n  Widget _buildChangeFormTypeRow() {\n    return Row(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Text(!_loginType ? 'Already account?' : 'Create an account'),\n        CustomTextButton(\n          text: _loginType ? AppLabels.signUp : AppLabels.login,\n          style: const TextStyle(decoration: TextDecoration.underline),\n          onPressed: _changeFormType,\n        ),\n      ],\n    );\n  }",
+        "refactored_code": "  String? _emailValidator(String? email) {\n    if (!_submitted) return null;\n    return email!.isEmpty ? AppLabels.emptyEmail : null;\n  }\n\n  String? _passwordValidator(String? password) {\n    if (!_submitted) return null;\n    return password!.isEmpty ? AppLabels.emptyPassword : null;\n  }\n\n  Widget _buildPasswordVisibilityIcon() {\n    return GestureDetector(\n      onTap: () {\n        setState(() {\n          _passwordVisible = !_passwordVisible;\n        });\n      },\n      child: Icon(_passwordVisible ? Icons.visibility_off : Icons.visibility),\n    );\n  }\n\n  Widget _buildSubmitButton(AsyncValue state) {\n    return PrimaryButton(\n      text: _loginType ? AppLabels.login : AppLabels.signUp,\n      isLoading: state.isLoading,\n      onPressed: state.isLoading ? () => {} : () => _submit(),\n    );\n  }\n\n  Widget _buildFormTypeRow() {\n    return Row(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Text(!_loginType ? 'Already account?' : 'Create an account'),\n        CustomTextButton(\n          text: _loginType ? AppLabels.signUp : AppLabels.login,\n          style: const TextStyle(decoration: TextDecoration.underline),\n          onPressed: _changeFormType,\n        ),\n      ],\n    );\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        TextFormField(\n                          controller: _email,\n                          decoration: const InputDecoration(\n                              hintText: AppLabels.email,\n                              prefixIcon: Icon(Icons.person)),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          validator: _emailValidator,\n                          inputFormatters: <TextInputFormatter>[\n                            ValidatorInputFormatter(\n                                editingValidator: EmailEditingRegexValidator()),\n                          ],\n                          autocorrect: false,\n                          textInputAction: TextInputAction.next,\n                          keyboardType: TextInputType.emailAddress,\n                          keyboardAppearance: Brightness.light,\n                        ),\n                        8.height,\n                        // Password field\n                        TextFormField(\n                          controller: _passwordController,\n                          decoration: InputDecoration(\n                            hintText: AppLabels.password,\n                            prefixIcon: const Icon(Icons.lock),\n                            suffixIcon: _buildPasswordVisibilityIcon(),\n                          ),\n                          validator: _passwordValidator,\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          obscureText: _passwordVisible ? true : false,\n                          autocorrect: false,\n                          textInputAction: TextInputAction.done,\n                          keyboardAppearance: Brightness.light,\n                          onEditingComplete: () => _passwordEditingComplete(),\n                        ),\n\n                        8.height,\n                        _buildSubmitButton(state),\n\n                        8.height,\n\n                        _buildFormTypeRow(),\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }",
         "prompt_tokens": 4277,
-        "completion_tokens": 1888,
-        "total_tokens": 6165,
+        "completion_tokens": 1649,
+        "total_tokens": 5926,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -409,9 +534,9 @@
           "input_tokens": 1,
           "cache_creation_input_tokens": 4276,
           "cache_read_input_tokens": 0,
-          "output_tokens": 1888,
+          "output_tokens": 1649,
           "output_tokens_details": {
-            "thinking_tokens": 409
+            "thinking_tokens": 207
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -426,7 +551,7 @@
           "iterations": [
             {
               "input_tokens": 1,
-              "output_tokens": 1888,
+              "output_tokens": 1649,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 4276,
               "cache_creation": {
@@ -453,19 +578,19 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 1,
-            "outputTokens": 1888,
+            "outputTokens": 1649,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 4276,
             "webSearchRequests": 0,
-            "costUSD": 0.053979,
+            "costUSD": 0.050394,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.057453,
-        "duration_ms": 15434,
+        "equivalent_api_cost_usd": 0.053868,
+        "duration_ms": 11991,
         "prompt_sha256": "ea2db9c83d7f02bb"
       }
     },
@@ -483,10 +608,10 @@
     "original_snippet": "                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),",
     "results": {
       "zero_shot": {
-        "refactored_code": "                          validator: (email) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            if (email!.isEmpty) {\n                              return AppLabels.emptyEmail;\n                            }\n                            return null;\n                          },",
+        "refactored_code": "                          validator: (email) {\n                            if (!_submitted) return null;\n                            return email!.isEmpty ? AppLabels.emptyEmail : null;\n                          },",
         "prompt_tokens": 607,
-        "completion_tokens": 149,
-        "total_tokens": 756,
+        "completion_tokens": 184,
+        "total_tokens": 791,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -498,9 +623,9 @@
           "input_tokens": 607,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
-          "output_tokens": 149,
+          "output_tokens": 184,
           "output_tokens_details": {
-            "thinking_tokens": 63
+            "thinking_tokens": 119
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -515,7 +640,7 @@
           "iterations": [
             {
               "input_tokens": 607,
-              "output_tokens": 149,
+              "output_tokens": 184,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 0,
               "cache_creation": {
@@ -542,26 +667,26 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 607,
-            "outputTokens": 149,
+            "outputTokens": 184,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.004056000000000001,
+            "costUSD": 0.004581,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.004877,
-        "duration_ms": 3176,
+        "equivalent_api_cost_usd": 0.005402,
+        "duration_ms": 3865,
         "prompt_sha256": "084c00c7ef76603e"
       },
       "few_shot": {
-        "refactored_code": "                          validator: (email) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            return email!.isEmpty ? AppLabels.emptyEmail : null;\n                          },",
+        "refactored_code": "                          validator: (email) {\n                            if (!_submitted) return null;\n                            return email!.isEmpty ? AppLabels.emptyEmail : null;\n                          },",
         "prompt_tokens": 923,
-        "completion_tokens": 197,
-        "total_tokens": 1120,
+        "completion_tokens": 269,
+        "total_tokens": 1192,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -573,9 +698,9 @@
           "input_tokens": 923,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
-          "output_tokens": 197,
+          "output_tokens": 269,
           "output_tokens_details": {
-            "thinking_tokens": 124
+            "thinking_tokens": 204
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -590,7 +715,7 @@
           "iterations": [
             {
               "input_tokens": 923,
-              "output_tokens": 197,
+              "output_tokens": 269,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 0,
               "cache_creation": {
@@ -605,11 +730,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 983,
-            "outputTokens": 21,
+            "outputTokens": 17,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.001088,
+            "costUSD": 0.001068,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -617,26 +742,26 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 923,
-            "outputTokens": 197,
+            "outputTokens": 269,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.005724,
+            "costUSD": 0.006803999999999999,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.006812,
-        "duration_ms": 4152,
+        "equivalent_api_cost_usd": 0.007871999999999999,
+        "duration_ms": 4594,
         "prompt_sha256": "4dab7cff6e8b060f"
       },
       "repository_aware": {
-        "refactored_code": "                          validator: (email) {\n                            if (!_submitted) return null;\n                            return email!.isEmpty\n                                ? AppLabels.emptyEmail\n                                : null;\n                          },",
+        "refactored_code": "                          validator: (email) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            return email!.isEmpty\n                                ? AppLabels.emptyEmail\n                                : null;\n                          },",
         "prompt_tokens": 1320,
-        "completion_tokens": 255,
-        "total_tokens": 1575,
+        "completion_tokens": 139,
+        "total_tokens": 1459,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -648,9 +773,9 @@
           "input_tokens": 1,
           "cache_creation_input_tokens": 1319,
           "cache_read_input_tokens": 0,
-          "output_tokens": 255,
+          "output_tokens": 139,
           "output_tokens_details": {
-            "thinking_tokens": 184
+            "thinking_tokens": 60
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -665,7 +790,7 @@
           "iterations": [
             {
               "input_tokens": 1,
-              "output_tokens": 255,
+              "output_tokens": 139,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 1319,
               "cache_creation": {
@@ -680,11 +805,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 1266,
-            "outputTokens": 21,
+            "outputTokens": 17,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.001371,
+            "costUSD": 0.001351,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -692,19 +817,19 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 1,
-            "outputTokens": 255,
+            "outputTokens": 139,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 1319,
             "webSearchRequests": 0,
-            "costUSD": 0.011742,
+            "costUSD": 0.010002,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.013113000000000001,
-        "duration_ms": 3967,
+        "equivalent_api_cost_usd": 0.011353,
+        "duration_ms": 2621,
         "prompt_sha256": "2c24e58b6734e03c"
       }
     },
@@ -722,10 +847,10 @@
     "original_snippet": "                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),",
     "results": {
       "zero_shot": {
-        "refactored_code": "                          validator: (password) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            return password!.isEmpty\n                                ? AppLabels.emptyPassword\n                                : null;\n                          },",
+        "refactored_code": "                          validator: (password) {\n                            if (!_submitted) return null;\n                            return password!.isEmpty\n                                ? AppLabels.emptyPassword\n                                : null;\n                          },",
         "prompt_tokens": 617,
-        "completion_tokens": 162,
-        "total_tokens": 779,
+        "completion_tokens": 229,
+        "total_tokens": 846,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -737,9 +862,9 @@
           "input_tokens": 617,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
-          "output_tokens": 162,
+          "output_tokens": 229,
           "output_tokens_details": {
-            "thinking_tokens": 83
+            "thinking_tokens": 158
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -754,7 +879,7 @@
           "iterations": [
             {
               "input_tokens": 617,
-              "output_tokens": 162,
+              "output_tokens": 229,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 0,
               "cache_creation": {
@@ -781,26 +906,26 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 617,
-            "outputTokens": 162,
+            "outputTokens": 229,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.004281,
+            "costUSD": 0.005286000000000001,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.005112,
-        "duration_ms": 2832,
+        "equivalent_api_cost_usd": 0.006117000000000001,
+        "duration_ms": 3194,
         "prompt_sha256": "1c38b73b86096749"
       },
       "few_shot": {
-        "refactored_code": "                          validator: (password) {\n                            if (!_submitted) return null;\n                            if (password!.isEmpty) return AppLabels.emptyPassword;\n                            return null;\n                          },",
+        "refactored_code": "                          validator: (password) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            return password!.isEmpty\n                                ? AppLabels.emptyPassword\n                                : null;\n                          },",
         "prompt_tokens": 933,
-        "completion_tokens": 155,
-        "total_tokens": 1088,
+        "completion_tokens": 114,
+        "total_tokens": 1047,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -812,9 +937,9 @@
           "input_tokens": 933,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
-          "output_tokens": 155,
+          "output_tokens": 114,
           "output_tokens_details": {
-            "thinking_tokens": 85
+            "thinking_tokens": 35
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -829,7 +954,7 @@
           "iterations": [
             {
               "input_tokens": 933,
-              "output_tokens": 155,
+              "output_tokens": 114,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 0,
               "cache_creation": {
@@ -844,11 +969,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 993,
-            "outputTokens": 18,
+            "outputTokens": 19,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.001083,
+            "costUSD": 0.001088,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -856,26 +981,26 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 933,
-            "outputTokens": 155,
+            "outputTokens": 114,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.005124,
+            "costUSD": 0.004509000000000001,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.006207,
-        "duration_ms": 2772,
+        "equivalent_api_cost_usd": 0.005597000000000001,
+        "duration_ms": 2844,
         "prompt_sha256": "33a6f55a4e34b042"
       },
       "repository_aware": {
-        "refactored_code": "                          validator: (password) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            return password!.isEmpty\n                                ? AppLabels.emptyPassword\n                                : null;\n                          },",
+        "refactored_code": "                          validator: (password) {\n                            if (!_submitted) return null;\n                            if (password!.isEmpty) return AppLabels.emptyPassword;\n                            return null;\n                          },",
         "prompt_tokens": 1529,
-        "completion_tokens": 323,
-        "total_tokens": 1852,
+        "completion_tokens": 187,
+        "total_tokens": 1716,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -887,9 +1012,9 @@
           "input_tokens": 1,
           "cache_creation_input_tokens": 1528,
           "cache_read_input_tokens": 0,
-          "output_tokens": 323,
+          "output_tokens": 187,
           "output_tokens_details": {
-            "thinking_tokens": 244
+            "thinking_tokens": 117
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -904,7 +1029,7 @@
           "iterations": [
             {
               "input_tokens": 1,
-              "output_tokens": 323,
+              "output_tokens": 187,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 1528,
               "cache_creation": {
@@ -919,11 +1044,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 1409,
-            "outputTokens": 18,
+            "outputTokens": 19,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.0014990000000000001,
+            "costUSD": 0.0015040000000000001,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -931,19 +1056,19 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 1,
-            "outputTokens": 323,
+            "outputTokens": 187,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 1528,
             "webSearchRequests": 0,
-            "costUSD": 0.014016,
+            "costUSD": 0.011976,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.015515000000000001,
-        "duration_ms": 4787,
+        "equivalent_api_cost_usd": 0.01348,
+        "duration_ms": 3522,
         "prompt_sha256": "0530b767603e62ce"
       }
     },
@@ -961,10 +1086,10 @@
     "original_snippet": "                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });",
     "results": {
       "zero_shot": {
-        "refactored_code": "                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && mounted && context.mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });",
+        "refactored_code": "                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && context.mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });",
         "prompt_tokens": 759,
-        "completion_tokens": 115,
-        "total_tokens": 874,
+        "completion_tokens": 111,
+        "total_tokens": 870,
         "model": "claude-code",
         "settings": {
           "via": "claude-code",
@@ -976,7 +1101,7 @@
           "input_tokens": 759,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
-          "output_tokens": 115,
+          "output_tokens": 111,
           "output_tokens_details": {
             "thinking_tokens": 0
           },
@@ -993,7 +1118,7 @@
           "iterations": [
             {
               "input_tokens": 759,
-              "output_tokens": 115,
+              "output_tokens": 111,
               "cache_read_input_tokens": 0,
               "cache_creation_input_tokens": 0,
               "cache_creation": {
@@ -1008,11 +1133,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 836,
-            "outputTokens": 16,
+            "outputTokens": 19,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.000916,
+            "costUSD": 0.0009310000000000001,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -1020,19 +1145,19 @@
           },
           "claude-sonnet-5": {
             "inputTokens": 759,
-            "outputTokens": 115,
+            "outputTokens": 111,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.004002,
+            "costUSD": 0.003942,
             "contextWindow": 1000000,
             "maxOutputTokens": 64000,
             "canonicalModel": "claude-sonnet-5",
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.0049180000000000005,
-        "duration_ms": 2551,
+        "equivalent_api_cost_usd": 0.004873000000000001,
+        "duration_ms": 2607,
         "prompt_sha256": "ff268dae2fe3041e"
       },
       "few_shot": {
@@ -1083,11 +1208,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 960,
-            "outputTokens": 16,
+            "outputTokens": 21,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.0010400000000000001,
+            "costUSD": 0.001065,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -1106,8 +1231,8 @@
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.005444,
-        "duration_ms": 3049,
+        "equivalent_api_cost_usd": 0.005469,
+        "duration_ms": 2603,
         "prompt_sha256": "dc8f9523fd0873f8"
       },
       "repository_aware": {
@@ -1182,7 +1307,7 @@
           }
         },
         "equivalent_api_cost_usd": 0.015106,
-        "duration_ms": 2520,
+        "duration_ms": 1593,
         "prompt_sha256": "b1ba573f91d72743"
       }
     },
@@ -1247,11 +1372,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 737,
-            "outputTokens": 17,
+            "outputTokens": 16,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.000822,
+            "costUSD": 0.000817,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -1270,8 +1395,8 @@
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.003627,
-        "duration_ms": 2368,
+        "equivalent_api_cost_usd": 0.0036220000000000002,
+        "duration_ms": 2987,
         "prompt_sha256": "4a7141a06b64780f"
       },
       "few_shot": {
@@ -1322,11 +1447,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 888,
-            "outputTokens": 17,
+            "outputTokens": 19,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.000973,
+            "costUSD": 0.000983,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -1345,8 +1470,8 @@
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.004315,
-        "duration_ms": 1998,
+        "equivalent_api_cost_usd": 0.004325000000000001,
+        "duration_ms": 2782,
         "prompt_sha256": "abad124d1f35276d"
       },
       "repository_aware": {
@@ -1397,11 +1522,11 @@
         "model_usage": {
           "claude-haiku-4-5-20251001": {
             "inputTokens": 852,
-            "outputTokens": 18,
+            "outputTokens": 17,
             "cacheReadInputTokens": 0,
             "cacheCreationInputTokens": 0,
             "webSearchRequests": 0,
-            "costUSD": 0.000942,
+            "costUSD": 0.000937,
             "contextWindow": 200000,
             "maxOutputTokens": 32000,
             "canonicalModel": "claude-haiku-4-5",
@@ -1420,8 +1545,8 @@
             "provider": "firstParty"
           }
         },
-        "equivalent_api_cost_usd": 0.004215,
-        "duration_ms": 2584,
+        "equivalent_api_cost_usd": 0.00421,
+        "duration_ms": 2184,
         "prompt_sha256": "a411b7b51bf52e9c"
       }
     },
