@@ -1,0 +1,676 @@
+[
+  {
+    "issue_key": "AaD2avxO8OHgBNPXEUrR",
+    "rule": "githubactions:S7637",
+    "message": "Use full commit SHA hash for this dependency.",
+    "file_path": ".github/workflows/build.yaml",
+    "start_line": 22,
+    "end_line": 22,
+    "snippet_start_line": 21,
+    "snippet_end_line": 26,
+    "scope_kind": "yaml_step",
+    "target_snippet": "      - name: Set up Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+    "rule_info": {
+      "name": "External GitHub Actions and workflows should be pinned to a commit hash",
+      "type": "VULNERABILITY",
+      "impacts": [
+        "SECURITY/HIGH"
+      ],
+      "description_source": "curated"
+    },
+    "prompts": {
+      "zero_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: githubactions:S7637 (External GitHub Actions and workflows should be pinned to a commit hash)\nMessage: Use full commit SHA hash for this dependency.\nFile: .github/workflows/build.yaml\nFlagged lines: 22 (the code below covers lines 21-26)\n\n## Rule description\nReferencing an external action by a mutable tag or branch (for example\n\"@v2\" or \"@main\") lets the action's owner, or anyone who compromises the\naction's repository, change the code that runs in this workflow without any\nchange to the workflow file. Pin every external action to a full-length\ncommit SHA, and keep the human-readable version in a trailing comment\n(for example \"# v2.16.0\") so it can still be reviewed and updated.\n\n## Context\nNo additional context is provided.\n\n## Code to refactor\n```yaml\n      - name: Set up Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true\n```\n",
+        "sha256": "748e016e6ece35c4",
+        "approx_tokens": 256,
+        "context_tokens": 0,
+        "context": []
+      },
+      "few_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: githubactions:S7637 (External GitHub Actions and workflows should be pinned to a commit hash)\nMessage: Use full commit SHA hash for this dependency.\nFile: .github/workflows/build.yaml\nFlagged lines: 22 (the code below covers lines 21-26)\n\n## Rule description\nReferencing an external action by a mutable tag or branch (for example\n\"@v2\" or \"@main\") lets the action's owner, or anyone who compromises the\naction's repository, change the code that runs in this workflow without any\nchange to the workflow file. Pin every external action to a full-length\ncommit SHA, and keep the human-readable version in a trailing comment\n(for example \"# v2.16.0\") so it can still be reviewed and updated.\n\n## Context\nExamples of the same kind of refactoring, from other code:\n\nExample 1: Pin an action to a commit SHA\nBefore:\n```yaml\nsteps:\n  - uses: actions/checkout@v4\n  - uses: actions/setup-node@v4\n    with:\n      node-version: '20'\n```\nAfter:\n```yaml\nsteps:\n  - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n  - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0\n    with:\n      node-version: '20'\n```\n\n## Code to refactor\n```yaml\n      - name: Set up Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true\n```\n",
+        "sha256": "dd6da56e359ac755",
+        "approx_tokens": 358,
+        "context_tokens": 96,
+        "context": [
+          {
+            "text": "Example 1: Pin an action to a commit SHA\nBefore:\n```yaml\nsteps:\n  - uses: actions/checkout@v4\n  - uses: actions/setup-node@v4\n    with:\n      node-version: '20'\n```\nAfter:\n```yaml\nsteps:\n  - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n  - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0\n    with:\n      node-version: '20'\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Pin an action to a commit SHA",
+            "summary": false,
+            "approx_tokens": 96
+          }
+        ]
+      },
+      "repository_aware": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: githubactions:S7637 (External GitHub Actions and workflows should be pinned to a commit hash)\nMessage: Use full commit SHA hash for this dependency.\nFile: .github/workflows/build.yaml\nFlagged lines: 22 (the code below covers lines 21-26)\n\n## Rule description\nReferencing an external action by a mutable tag or branch (for example\n\"@v2\" or \"@main\") lets the action's owner, or anyone who compromises the\naction's repository, change the code that runs in this workflow without any\nchange to the workflow file. Pin every external action to a full-length\ncommit SHA, and keep the human-readable version in a trailing comment\n(for example \"# v2.16.0\") so it can still be reviewed and updated.\n\n## Context\nRelated code from this repository, for reference only. Do not return or modify it:\n\n```yaml\n# .github/workflows/build.yaml, lines 1-43: rest of the same file\nname: Build\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    types: [opened, synchronize, reopened]\njobs:\n  sonarqube:\n    name: SonarQube\n    runs-on: macos-latest\n    steps:\n      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n      - name: Set up Java\n        uses: actions/setup-java@v4\n        with:\n          distribution: temurin\n          java-version: '17'\n      # ... (the code to refactor goes here) ...\n      - name: Cache SonarQube packages\n        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0\n        with:\n          path: ~/.sonar/cache\n          key: ${{ runner.os }}-sonar\n          restore-keys: ${{ runner.os }}-sonar\n      # The analysis requires to retrieve dependencies and build successfully\n      - name: Build\n        run: flutter build apk\n      - name: SonarQube Scan\n        uses: SonarSource/sonarqube-scan-action@7006c4492b2e0ee0f816d36501671557c97f5995 # v8.1.0\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n        with:\n            args: >\n              -Dsonar.projectKey=MarMarLwin_chat\n              -Dsonar.organization=marmarlwin\n```\n\n## Code to refactor\n```yaml\n      - name: Set up Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true\n```\n",
+        "sha256": "418387b79115fcb3",
+        "approx_tokens": 603,
+        "context_tokens": 334,
+        "context": [
+          {
+            "text": "```yaml\n# .github/workflows/build.yaml, lines 1-43: rest of the same file\nname: Build\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    types: [opened, synchronize, reopened]\njobs:\n  sonarqube:\n    name: SonarQube\n    runs-on: macos-latest\n    steps:\n      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n      - name: Set up Java\n        uses: actions/setup-java@v4\n        with:\n          distribution: temurin\n          java-version: '17'\n      # ... (the code to refactor goes here) ...\n      - name: Cache SonarQube packages\n        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0\n        with:\n          path: ~/.sonar/cache\n          key: ${{ runner.os }}-sonar\n          restore-keys: ${{ runner.os }}-sonar\n      # The analysis requires to retrieve dependencies and build successfully\n      - name: Build\n        run: flutter build apk\n      - name: SonarQube Scan\n        uses: SonarSource/sonarqube-scan-action@7006c4492b2e0ee0f816d36501671557c97f5995 # v8.1.0\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n        with:\n            args: >\n              -Dsonar.projectKey=MarMarLwin_chat\n              -Dsonar.organization=marmarlwin\n```",
+            "method": "same_file",
+            "source_path": ".github/workflows/build.yaml",
+            "start_line": 1,
+            "end_line": 43,
+            "summary": true,
+            "approx_tokens": 334
+          }
+        ]
+      }
+    },
+    "skipped_strategies": {}
+  },
+  {
+    "issue_key": "AaD2avwS8OHgBNPXEUrH",
+    "rule": "dart:S3776",
+    "message": "Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+    "file_path": "lib/features/auth/presentation/login_page.dart",
+    "start_line": 81,
+    "end_line": 81,
+    "snippet_start_line": 80,
+    "snippet_end_line": 192,
+    "scope_kind": "member",
+    "target_snippet": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        TextFormField(\n                          controller: _email,\n                          decoration: const InputDecoration(\n                              hintText: AppLabels.email,\n                              prefixIcon: Icon(Icons.person)),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n                          inputFormatters: <TextInputFormatter>[\n                            ValidatorInputFormatter(\n                                editingValidator: EmailEditingRegexValidator()),\n                          ],\n                          autocorrect: false,\n                          textInputAction: TextInputAction.next,\n                          keyboardType: TextInputType.emailAddress,\n                          keyboardAppearance: Brightness.light,\n                        ),\n                        8.height,\n                        // Password field\n                        TextFormField(\n                          controller: _passwordController,\n                          decoration: InputDecoration(\n                            hintText: AppLabels.password,\n                            prefixIcon: const Icon(Icons.lock),\n                            suffixIcon: GestureDetector(\n                                onTap: () {\n                                  setState(() {\n                                    _passwordVisible = !_passwordVisible;\n                                  });\n                                },\n                                child: _passwordVisible\n                                    ? const Icon(Icons.visibility_off)\n                                    : const Icon(Icons.visibility)),\n                          ),\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          obscureText: _passwordVisible ? true : false,\n                          autocorrect: false,\n                          textInputAction: TextInputAction.done,\n                          keyboardAppearance: Brightness.light,\n                          onEditingComplete: () => _passwordEditingComplete(),\n                        ),\n\n                        8.height,\n                        PrimaryButton(\n                          text: _loginType ? AppLabels.login : AppLabels.signUp,\n                          isLoading: state.isLoading,\n                          onPressed:\n                              state.isLoading ? () => {} : () => _submit(),\n                        ),\n\n                        8.height,\n\n                        Row(\n                          mainAxisAlignment: MainAxisAlignment.center,\n                          children: [\n                            Text(!_loginType\n                                ? 'Already account?'\n                                : 'Create an account'),\n                            CustomTextButton(\n                              text: _loginType\n                                  ? AppLabels.signUp\n                                  : AppLabels.login,\n                              style: const TextStyle(\n                                  decoration: TextDecoration.underline),\n                              onPressed: _changeFormType,\n                            ),\n                          ],\n                        )\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }",
+    "rule_info": {
+      "name": "Cognitive Complexity of functions should not be too high",
+      "type": "CODE_SMELL",
+      "impacts": [
+        "MAINTAINABILITY/HIGH"
+      ],
+      "description_source": "curated"
+    },
+    "prompts": {
+      "zero_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S3776 (Cognitive Complexity of functions should not be too high)\nMessage: Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.\nFile: lib/features/auth/presentation/login_page.dart\nFlagged lines: 81 (the code below covers lines 80-192)\n\n## Rule description\nCognitive Complexity measures how hard a function's control flow is to\nunderstand. Each break in linear flow (if, else, ternary, loop, catch,\nswitch, logical-operator sequence) adds to the score, and nesting adds more.\nReduce it by extracting nested parts into well-named private methods or\nwidgets, using early returns, and flattening nested conditionals, while\nkeeping behavior unchanged.\n\n## Context\nNo additional context is provided.\n\n## Code to refactor\n```dart\n  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        TextFormField(\n                          controller: _email,\n                          decoration: const InputDecoration(\n                              hintText: AppLabels.email,\n                              prefixIcon: Icon(Icons.person)),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n                          inputFormatters: <TextInputFormatter>[\n                            ValidatorInputFormatter(\n                                editingValidator: EmailEditingRegexValidator()),\n                          ],\n                          autocorrect: false,\n                          textInputAction: TextInputAction.next,\n                          keyboardType: TextInputType.emailAddress,\n                          keyboardAppearance: Brightness.light,\n                        ),\n                        8.height,\n                        // Password field\n                        TextFormField(\n                          controller: _passwordController,\n                          decoration: InputDecoration(\n                            hintText: AppLabels.password,\n                            prefixIcon: const Icon(Icons.lock),\n                            suffixIcon: GestureDetector(\n                                onTap: () {\n                                  setState(() {\n                                    _passwordVisible = !_passwordVisible;\n                                  });\n                                },\n                                child: _passwordVisible\n                                    ? const Icon(Icons.visibility_off)\n                                    : const Icon(Icons.visibility)),\n                          ),\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          obscureText: _passwordVisible ? true : false,\n                          autocorrect: false,\n                          textInputAction: TextInputAction.done,\n                          keyboardAppearance: Brightness.light,\n                          onEditingComplete: () => _passwordEditingComplete(),\n                        ),\n\n                        8.height,\n                        PrimaryButton(\n                          text: _loginType ? AppLabels.login : AppLabels.signUp,\n                          isLoading: state.isLoading,\n                          onPressed:\n                              state.isLoading ? () => {} : () => _submit(),\n                        ),\n\n                        8.height,\n\n                        Row(\n                          mainAxisAlignment: MainAxisAlignment.center,\n                          children: [\n                            Text(!_loginType\n                                ? 'Already account?'\n                                : 'Create an account'),\n                            CustomTextButton(\n                              text: _loginType\n                                  ? AppLabels.signUp\n                                  : AppLabels.login,\n                              style: const TextStyle(\n                                  decoration: TextDecoration.underline),\n                              onPressed: _changeFormType,\n                            ),\n                          ],\n                        )\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n```\n",
+        "sha256": "037bbc4463ac4cbf",
+        "approx_tokens": 1422,
+        "context_tokens": 0,
+        "context": []
+      },
+      "few_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S3776 (Cognitive Complexity of functions should not be too high)\nMessage: Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.\nFile: lib/features/auth/presentation/login_page.dart\nFlagged lines: 81 (the code below covers lines 80-192)\n\n## Rule description\nCognitive Complexity measures how hard a function's control flow is to\nunderstand. Each break in linear flow (if, else, ternary, loop, catch,\nswitch, logical-operator sequence) adds to the score, and nesting adds more.\nReduce it by extracting nested parts into well-named private methods or\nwidgets, using early returns, and flattening nested conditionals, while\nkeeping behavior unchanged.\n\n## Context\nExamples of the same kind of refactoring, from other code:\n\nExample 1: Flatten nested conditionals with early returns\nBefore:\n```dart\nString status(Order o) {\n  if (o.paid) {\n    if (o.shipped) {\n      if (o.delivered) {\n        return 'Delivered';\n      } else {\n        return 'In transit';\n      }\n    } else {\n      return 'Awaiting shipment';\n    }\n  } else {\n    return 'Unpaid';\n  }\n}\n```\nAfter:\n```dart\nString status(Order o) {\n  if (!o.paid) return 'Unpaid';\n  if (!o.shipped) return 'Awaiting shipment';\n  return o.delivered ? 'Delivered' : 'In transit';\n}\n```\n\nExample 2: Extract part of a large build method into a helper\nBefore:\n```dart\n@override\nWidget build(BuildContext context) {\n  return Column(\n    children: [\n      if (items.isEmpty)\n        const Text('Empty')\n      else\n        for (final item in items)\n          item.isDone\n              ? ListTile(title: Text(item.name), trailing: const Icon(Icons.check))\n              : ListTile(title: Text(item.name)),\n      if (isLoading) const CircularProgressIndicator() else const SizedBox(),\n    ],\n  );\n}\n```\nAfter:\n```dart\n@override\nWidget build(BuildContext context) {\n  return Column(\n    children: [\n      ..._buildItems(),\n      if (isLoading) const CircularProgressIndicator() else const SizedBox(),\n    ],\n  );\n}\n\nList<Widget> _buildItems() {\n  if (items.isEmpty) return const [Text('Empty')];\n  return [for (final item in items) _buildItem(item)];\n}\n\nWidget _buildItem(Item item) {\n  return ListTile(\n    title: Text(item.name),\n    trailing: item.isDone ? const Icon(Icons.check) : null,\n  );\n}\n```\n\n## Code to refactor\n```dart\n  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        TextFormField(\n                          controller: _email,\n                          decoration: const InputDecoration(\n                              hintText: AppLabels.email,\n                              prefixIcon: Icon(Icons.person)),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n                          inputFormatters: <TextInputFormatter>[\n                            ValidatorInputFormatter(\n                                editingValidator: EmailEditingRegexValidator()),\n                          ],\n                          autocorrect: false,\n                          textInputAction: TextInputAction.next,\n                          keyboardType: TextInputType.emailAddress,\n                          keyboardAppearance: Brightness.light,\n                        ),\n                        8.height,\n                        // Password field\n                        TextFormField(\n                          controller: _passwordController,\n                          decoration: InputDecoration(\n                            hintText: AppLabels.password,\n                            prefixIcon: const Icon(Icons.lock),\n                            suffixIcon: GestureDetector(\n                                onTap: () {\n                                  setState(() {\n                                    _passwordVisible = !_passwordVisible;\n                                  });\n                                },\n                                child: _passwordVisible\n                                    ? const Icon(Icons.visibility_off)\n                                    : const Icon(Icons.visibility)),\n                          ),\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          obscureText: _passwordVisible ? true : false,\n                          autocorrect: false,\n                          textInputAction: TextInputAction.done,\n                          keyboardAppearance: Brightness.light,\n                          onEditingComplete: () => _passwordEditingComplete(),\n                        ),\n\n                        8.height,\n                        PrimaryButton(\n                          text: _loginType ? AppLabels.login : AppLabels.signUp,\n                          isLoading: state.isLoading,\n                          onPressed:\n                              state.isLoading ? () => {} : () => _submit(),\n                        ),\n\n                        8.height,\n\n                        Row(\n                          mainAxisAlignment: MainAxisAlignment.center,\n                          children: [\n                            Text(!_loginType\n                                ? 'Already account?'\n                                : 'Create an account'),\n                            CustomTextButton(\n                              text: _loginType\n                                  ? AppLabels.signUp\n                                  : AppLabels.login,\n                              style: const TextStyle(\n                                  decoration: TextDecoration.underline),\n                              onPressed: _changeFormType,\n                            ),\n                          ],\n                        )\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n```\n",
+        "sha256": "5067aa8bf2444f9c",
+        "approx_tokens": 1808,
+        "context_tokens": 380,
+        "context": [
+          {
+            "text": "Example 1: Flatten nested conditionals with early returns\nBefore:\n```dart\nString status(Order o) {\n  if (o.paid) {\n    if (o.shipped) {\n      if (o.delivered) {\n        return 'Delivered';\n      } else {\n        return 'In transit';\n      }\n    } else {\n      return 'Awaiting shipment';\n    }\n  } else {\n    return 'Unpaid';\n  }\n}\n```\nAfter:\n```dart\nString status(Order o) {\n  if (!o.paid) return 'Unpaid';\n  if (!o.shipped) return 'Awaiting shipment';\n  return o.delivered ? 'Delivered' : 'In transit';\n}\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Flatten nested conditionals with early returns",
+            "summary": false,
+            "approx_tokens": 128
+          },
+          {
+            "text": "Example 2: Extract part of a large build method into a helper\nBefore:\n```dart\n@override\nWidget build(BuildContext context) {\n  return Column(\n    children: [\n      if (items.isEmpty)\n        const Text('Empty')\n      else\n        for (final item in items)\n          item.isDone\n              ? ListTile(title: Text(item.name), trailing: const Icon(Icons.check))\n              : ListTile(title: Text(item.name)),\n      if (isLoading) const CircularProgressIndicator() else const SizedBox(),\n    ],\n  );\n}\n```\nAfter:\n```dart\n@override\nWidget build(BuildContext context) {\n  return Column(\n    children: [\n      ..._buildItems(),\n      if (isLoading) const CircularProgressIndicator() else const SizedBox(),\n    ],\n  );\n}\n\nList<Widget> _buildItems() {\n  if (items.isEmpty) return const [Text('Empty')];\n  return [for (final item in items) _buildItem(item)];\n}\n\nWidget _buildItem(Item item) {\n  return ListTile(\n    title: Text(item.name),\n    trailing: item.isDone ? const Icon(Icons.check) : null,\n  );\n}\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Extract part of a large build method into a helper",
+            "summary": false,
+            "approx_tokens": 252
+          }
+        ]
+      },
+      "repository_aware": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S3776 (Cognitive Complexity of functions should not be too high)\nMessage: Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.\nFile: lib/features/auth/presentation/login_page.dart\nFlagged lines: 81 (the code below covers lines 80-192)\n\n## Rule description\nCognitive Complexity measures how hard a function's control flow is to\nunderstand. Each break in linear flow (if, else, ternary, loop, catch,\nswitch, logical-operator sequence) adds to the score, and nesting adds more.\nReduce it by extracting nested parts into well-named private methods or\nwidgets, using early returns, and flattening nested conditionals, while\nkeeping behavior unchanged.\n\n## Context\nRelated code from this repository, for reference only. Do not return or modify it:\n\n```dart\n// lib/features/auth/presentation/login_page.dart, lines 24-193: enclosing class _LoginPageState (outline)\nclass _LoginPageState extends ConsumerState<LoginPage> {\n  final _formKey = GlobalKey<FormState>();\n  final _node = FocusScopeNode();\n  final _email = TextEditingController();\n  final _passwordController = TextEditingController();\n  String get email;\n  String get password;\n  bool _submitted = false;\n  bool _loginType = true;\n  bool _passwordVisible = true;\n  void dispose();\n  Future<void> _submit();\n  void _passwordEditingComplete();\n  void _changeFormType();\n  // Widget build(BuildContext context) ... (contains the code to refactor)\n}\n```\n\n```dart\n// lib/features/auth/state/auth_notifier.dart, lines 47-52: variable authNotifierProvider\nfinal authNotifierProvider =\n    StateNotifierProvider<AuthNotifier, AsyncValue<void>>((ref) {\n  final authRepository = ref.watch(authRepositoryProvider);\n\n  return AuthNotifier(authRepository: authRepository);\n});\n```\n\n```dart\n// lib/utils/async_value_ui.dart, lines 7-15: method AsyncValueUI.showAlertDialogOnError\n  void showAlertDialogOnError(BuildContext context) {\n    if (!isLoading && hasError) {\n      ConfirmDialog.show(\n        context: context,\n        title: 'Error',\n        content: error.toString(),\n      );\n    }\n  }\n```\n\n```dart\n// lib/utils/extensions.dart, lines 61-62: getter SizedBoxExtension.horizontalPadding\n  EdgeInsets get horizontalPadding =>\n      EdgeInsets.symmetric(horizontal: toDouble());\n```\n\n```dart\n// lib/common_widget/responsive_scrollable_card.dart, lines 7-25: class ResponsiveScrollableCard\nclass ResponsiveScrollableCard extends StatelessWidget {\n  const ResponsiveScrollableCard({super.key, required this.child});\n  final Widget child;\n  Widget build(BuildContext context);\n}\n```\n\n```dart\n// lib/utils/extensions.dart, lines 45-47: getter SizedBoxExtension.height\n  SizedBox get height => SizedBox(\n        height: toDouble(),\n      );\n```\n\n```dart\n// lib/utils/app_constant.dart, lines 32-42: class AppLabels\nclass AppLabels {\n  static const password = 'Password';\n  static const username = 'Username';\n  static const email = 'Email(test@test.com)';\n  static const login = 'Login';\n  static const signUp = \"Register\";\n  static const emptyEmail = \"Email can't be empty\";\n  static const emptyPassword = \"Password can't be empty\";\n  static const startConversation = 'Start your conversation now :)';\n}\n```\n\n```dart\n// lib/utils/stringValidator.dart, lines 31-45: class ValidatorInputFormatter\nclass ValidatorInputFormatter implements TextInputFormatter {\n  ValidatorInputFormatter({required this.editingValidator});\n  final StringValidator editingValidator;\n  TextEditingValue formatEditUpdate( TextEditingValue oldValue, TextEditingValue newValue);\n}\n```\n\n```dart\n// lib/utils/stringValidator.dart, lines 47-49: class EmailEditingRegexValidator\nclass EmailEditingRegexValidator extends RegexValidator {\n  EmailEditingRegexValidator() : super(regexSource: '^(|\\\\S)+\\$');\n}\n```\n\n```dart\n// lib/common_widget/primary_button.dart, lines 5-32: class PrimaryButton\nclass PrimaryButton extends StatelessWidget {\n  const PrimaryButton( {super.key, required this.text, this.isLoading = false, this.onPressed});\n  final String text;\n  final bool isLoading;\n  final VoidCallback? onPressed;\n  Widget build(BuildContext context);\n}\n```\n\n```dart\n// lib/common_widget/custom_text_button.dart, lines 5-27: class CustomTextButton\nclass CustomTextButton extends StatelessWidget {\n  const CustomTextButton( {super.key, required this.text, this.style, this.onPressed});\n  final String text;\n  final TextStyle? style;\n  final VoidCallback? onPressed;\n  Widget build(BuildContext context);\n}\n```\n\n```dart\n// lib/features/chat/presentation/chat_bubble.dart, lines 19-78: ChatBubble.build (similar code, score 0.61)\n  @override\n  Widget build(BuildContext context, WidgetRef ref) {\n    final profileNotifier = ref.read(profileNotifierProvider.notifier);\n\n    List<Widget> chatContents = [\n      if (!message.isMine)\n        GestureDetector(\n          onTap: () {\n            context.pushNamed(AppRoute.profile.name,\n                pathParameters: {'profileId': message.userId});\n          },\n          child: CircleAvatar(\n            child: FutureBuilder(\n                initialData: profileNotifier.profile,\n                future: profileNotifier.getProfile(message.userId),\n                builder: (context, snapshot) {\n                  if (snapshot.hasData) {\n                    final profile = snapshot.data as Profile;\n                    return Text(profile.username.substring(0, 2));\n                  }\n                  return const CircularProgressIndicator.adaptive();\n                }),\n          ),\n        ),\n      const SizedBox(width: 12),\n      Flexible(\n        child: Container(\n          padding: const EdgeInsets.symmetric(\n            vertical: 8,\n            horizontal: 12,\n          ),\n          decoration: BoxDecoration(\n            color: message.isMine\n                ? Theme.of(context).primaryColor\n                : Colors.grey[300],\n            borderRadius: BorderRadius.circular(8),\n          ),\n          child: Text(\n            message.message,\n            style:\n                TextStyle(color: message.isMine ? Colors.white : Colors.black),\n          ),\n        ),\n      ),\n      const SizedBox(width: 12),\n      Text(format(message.insertedAt, locale: 'en_short')),\n      const SizedBox(width: 60),\n    ];\n    if (message.isMine) {\n      chatContents = chatContents.reversed.toList();\n    }\n    return Padding(\n      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 18),\n      child: Row(\n        mainAxisAlignment:\n            message.isMine ? MainAxisAlignment.end : MainAxisAlignment.start,\n        children: chatContents,\n      ),\n    );\n  }\n```\n\n## Code to refactor\n```dart\n  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        TextFormField(\n                          controller: _email,\n                          decoration: const InputDecoration(\n                              hintText: AppLabels.email,\n                              prefixIcon: Icon(Icons.person)),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n                          inputFormatters: <TextInputFormatter>[\n                            ValidatorInputFormatter(\n                                editingValidator: EmailEditingRegexValidator()),\n                          ],\n                          autocorrect: false,\n                          textInputAction: TextInputAction.next,\n                          keyboardType: TextInputType.emailAddress,\n                          keyboardAppearance: Brightness.light,\n                        ),\n                        8.height,\n                        // Password field\n                        TextFormField(\n                          controller: _passwordController,\n                          decoration: InputDecoration(\n                            hintText: AppLabels.password,\n                            prefixIcon: const Icon(Icons.lock),\n                            suffixIcon: GestureDetector(\n                                onTap: () {\n                                  setState(() {\n                                    _passwordVisible = !_passwordVisible;\n                                  });\n                                },\n                                child: _passwordVisible\n                                    ? const Icon(Icons.visibility_off)\n                                    : const Icon(Icons.visibility)),\n                          ),\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          obscureText: _passwordVisible ? true : false,\n                          autocorrect: false,\n                          textInputAction: TextInputAction.done,\n                          keyboardAppearance: Brightness.light,\n                          onEditingComplete: () => _passwordEditingComplete(),\n                        ),\n\n                        8.height,\n                        PrimaryButton(\n                          text: _loginType ? AppLabels.login : AppLabels.signUp,\n                          isLoading: state.isLoading,\n                          onPressed:\n                              state.isLoading ? () => {} : () => _submit(),\n                        ),\n\n                        8.height,\n\n                        Row(\n                          mainAxisAlignment: MainAxisAlignment.center,\n                          children: [\n                            Text(!_loginType\n                                ? 'Already account?'\n                                : 'Create an account'),\n                            CustomTextButton(\n                              text: _loginType\n                                  ? AppLabels.signUp\n                                  : AppLabels.login,\n                              style: const TextStyle(\n                                  decoration: TextDecoration.underline),\n                              onPressed: _changeFormType,\n                            ),\n                          ],\n                        )\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n```\n",
+        "sha256": "ea2db9c83d7f02bb",
+        "approx_tokens": 2882,
+        "context_tokens": 1447,
+        "context": [
+          {
+            "text": "```dart\n// lib/features/auth/presentation/login_page.dart, lines 24-193: enclosing class _LoginPageState (outline)\nclass _LoginPageState extends ConsumerState<LoginPage> {\n  final _formKey = GlobalKey<FormState>();\n  final _node = FocusScopeNode();\n  final _email = TextEditingController();\n  final _passwordController = TextEditingController();\n  String get email;\n  String get password;\n  bool _submitted = false;\n  bool _loginType = true;\n  bool _passwordVisible = true;\n  void dispose();\n  Future<void> _submit();\n  void _passwordEditingComplete();\n  void _changeFormType();\n  // Widget build(BuildContext context) ... (contains the code to refactor)\n}\n```",
+            "method": "enclosing_class",
+            "source_path": "lib/features/auth/presentation/login_page.dart",
+            "start_line": 24,
+            "end_line": 193,
+            "symbol": "_LoginPageState",
+            "summary": true,
+            "approx_tokens": 165
+          },
+          {
+            "text": "```dart\n// lib/features/auth/state/auth_notifier.dart, lines 47-52: variable authNotifierProvider\nfinal authNotifierProvider =\n    StateNotifierProvider<AuthNotifier, AsyncValue<void>>((ref) {\n  final authRepository = ref.watch(authRepositoryProvider);\n\n  return AuthNotifier(authRepository: authRepository);\n});\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/features/auth/state/auth_notifier.dart",
+            "start_line": 47,
+            "end_line": 52,
+            "symbol": "authNotifierProvider",
+            "summary": false,
+            "approx_tokens": 79
+          },
+          {
+            "text": "```dart\n// lib/utils/async_value_ui.dart, lines 7-15: method AsyncValueUI.showAlertDialogOnError\n  void showAlertDialogOnError(BuildContext context) {\n    if (!isLoading && hasError) {\n      ConfirmDialog.show(\n        context: context,\n        title: 'Error',\n        content: error.toString(),\n      );\n    }\n  }\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/utils/async_value_ui.dart",
+            "start_line": 7,
+            "end_line": 15,
+            "symbol": "AsyncValueUI.showAlertDialogOnError",
+            "summary": false,
+            "approx_tokens": 80
+          },
+          {
+            "text": "```dart\n// lib/utils/extensions.dart, lines 61-62: getter SizedBoxExtension.horizontalPadding\n  EdgeInsets get horizontalPadding =>\n      EdgeInsets.symmetric(horizontal: toDouble());\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/utils/extensions.dart",
+            "start_line": 61,
+            "end_line": 62,
+            "symbol": "SizedBoxExtension.horizontalPadding",
+            "summary": false,
+            "approx_tokens": 47
+          },
+          {
+            "text": "```dart\n// lib/common_widget/responsive_scrollable_card.dart, lines 7-25: class ResponsiveScrollableCard\nclass ResponsiveScrollableCard extends StatelessWidget {\n  const ResponsiveScrollableCard({super.key, required this.child});\n  final Widget child;\n  Widget build(BuildContext context);\n}\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/common_widget/responsive_scrollable_card.dart",
+            "start_line": 7,
+            "end_line": 25,
+            "symbol": "ResponsiveScrollableCard",
+            "summary": true,
+            "approx_tokens": 74
+          },
+          {
+            "text": "```dart\n// lib/utils/extensions.dart, lines 45-47: getter SizedBoxExtension.height\n  SizedBox get height => SizedBox(\n        height: toDouble(),\n      );\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/utils/extensions.dart",
+            "start_line": 45,
+            "end_line": 47,
+            "symbol": "SizedBoxExtension.height",
+            "summary": false,
+            "approx_tokens": 40
+          },
+          {
+            "text": "```dart\n// lib/utils/app_constant.dart, lines 32-42: class AppLabels\nclass AppLabels {\n  static const password = 'Password';\n  static const username = 'Username';\n  static const email = 'Email(test@test.com)';\n  static const login = 'Login';\n  static const signUp = \"Register\";\n  static const emptyEmail = \"Email can't be empty\";\n  static const emptyPassword = \"Password can't be empty\";\n  static const startConversation = 'Start your conversation now :)';\n}\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/utils/app_constant.dart",
+            "start_line": 32,
+            "end_line": 42,
+            "symbol": "AppLabels",
+            "summary": true,
+            "approx_tokens": 116
+          },
+          {
+            "text": "```dart\n// lib/utils/stringValidator.dart, lines 31-45: class ValidatorInputFormatter\nclass ValidatorInputFormatter implements TextInputFormatter {\n  ValidatorInputFormatter({required this.editingValidator});\n  final StringValidator editingValidator;\n  TextEditingValue formatEditUpdate( TextEditingValue oldValue, TextEditingValue newValue);\n}\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/utils/stringValidator.dart",
+            "start_line": 31,
+            "end_line": 45,
+            "symbol": "ValidatorInputFormatter",
+            "summary": true,
+            "approx_tokens": 87
+          },
+          {
+            "text": "```dart\n// lib/utils/stringValidator.dart, lines 47-49: class EmailEditingRegexValidator\nclass EmailEditingRegexValidator extends RegexValidator {\n  EmailEditingRegexValidator() : super(regexSource: '^(|\\\\S)+\\$');\n}\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/utils/stringValidator.dart",
+            "start_line": 47,
+            "end_line": 49,
+            "symbol": "EmailEditingRegexValidator",
+            "summary": true,
+            "approx_tokens": 55
+          },
+          {
+            "text": "```dart\n// lib/common_widget/primary_button.dart, lines 5-32: class PrimaryButton\nclass PrimaryButton extends StatelessWidget {\n  const PrimaryButton( {super.key, required this.text, this.isLoading = false, this.onPressed});\n  final String text;\n  final bool isLoading;\n  final VoidCallback? onPressed;\n  Widget build(BuildContext context);\n}\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/common_widget/primary_button.dart",
+            "start_line": 5,
+            "end_line": 32,
+            "symbol": "PrimaryButton",
+            "summary": true,
+            "approx_tokens": 87
+          },
+          {
+            "text": "```dart\n// lib/common_widget/custom_text_button.dart, lines 5-27: class CustomTextButton\nclass CustomTextButton extends StatelessWidget {\n  const CustomTextButton( {super.key, required this.text, this.style, this.onPressed});\n  final String text;\n  final TextStyle? style;\n  final VoidCallback? onPressed;\n  Widget build(BuildContext context);\n}\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/common_widget/custom_text_button.dart",
+            "start_line": 5,
+            "end_line": 27,
+            "symbol": "CustomTextButton",
+            "summary": true,
+            "approx_tokens": 88
+          },
+          {
+            "text": "```dart\n// lib/features/chat/presentation/chat_bubble.dart, lines 19-78: ChatBubble.build (similar code, score 0.61)\n  @override\n  Widget build(BuildContext context, WidgetRef ref) {\n    final profileNotifier = ref.read(profileNotifierProvider.notifier);\n\n    List<Widget> chatContents = [\n      if (!message.isMine)\n        GestureDetector(\n          onTap: () {\n            context.pushNamed(AppRoute.profile.name,\n                pathParameters: {'profileId': message.userId});\n          },\n          child: CircleAvatar(\n            child: FutureBuilder(\n                initialData: profileNotifier.profile,\n                future: profileNotifier.getProfile(message.userId),\n                builder: (context, snapshot) {\n                  if (snapshot.hasData) {\n                    final profile = snapshot.data as Profile;\n                    return Text(profile.username.substring(0, 2));\n                  }\n                  return const CircularProgressIndicator.adaptive();\n                }),\n          ),\n        ),\n      const SizedBox(width: 12),\n      Flexible(\n        child: Container(\n          padding: const EdgeInsets.symmetric(\n            vertical: 8,\n            horizontal: 12,\n          ),\n          decoration: BoxDecoration(\n            color: message.isMine\n                ? Theme.of(context).primaryColor\n                : Colors.grey[300],\n            borderRadius: BorderRadius.circular(8),\n          ),\n          child: Text(\n            message.message,\n            style:\n                TextStyle(color: message.isMine ? Colors.white : Colors.black),\n          ),\n        ),\n      ),\n      const SizedBox(width: 12),\n      Text(format(message.insertedAt, locale: 'en_short')),\n      const SizedBox(width: 60),\n    ];\n    if (message.isMine) {\n      chatContents = chatContents.reversed.toList();\n    }\n    return Padding(\n      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 18),\n      child: Row(\n        mainAxisAlignment:\n            message.isMine ? MainAxisAlignment.end : MainAxisAlignment.start,\n        children: chatContents,\n      ),\n    );\n  }\n```",
+            "method": "vector",
+            "source_path": "lib/features/chat/presentation/chat_bubble.dart",
+            "start_line": 19,
+            "end_line": 78,
+            "symbol": "ChatBubble.build",
+            "score": 0.6071,
+            "summary": false,
+            "approx_tokens": 529
+          }
+        ]
+      }
+    },
+    "skipped_strategies": {}
+  },
+  {
+    "issue_key": "AaD2avwS8OHgBNPXEUrI",
+    "rule": "dart:S3358",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "file_path": "lib/features/auth/presentation/login_page.dart",
+    "start_line": 118,
+    "end_line": 118,
+    "snippet_start_line": 116,
+    "snippet_end_line": 118,
+    "scope_kind": "expression",
+    "target_snippet": "                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),",
+    "rule_info": {
+      "name": "Ternary operators should not be nested",
+      "type": "CODE_SMELL",
+      "impacts": [
+        "MAINTAINABILITY/MEDIUM"
+      ],
+      "description_source": "curated"
+    },
+    "prompts": {
+      "zero_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S3358 (Ternary operators should not be nested)\nMessage: Extract this nested ternary operation into an independent statement.\nFile: lib/features/auth/presentation/login_page.dart\nFlagged lines: 118 (the code below covers lines 116-118)\n\n## Rule description\nNested ternary operators (a conditional expression inside another\nconditional expression) are hard to read. Extract the inner conditional\ninto an independent statement, for example an if/else chain or a separate\nlocal variable or helper function, so each decision is stated once.\n\n## Context\nNo additional context is provided.\n\n## Code to refactor\n```dart\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n```\n",
+        "sha256": "084c00c7ef76603e",
+        "approx_tokens": 222,
+        "context_tokens": 0,
+        "context": []
+      },
+      "few_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S3358 (Ternary operators should not be nested)\nMessage: Extract this nested ternary operation into an independent statement.\nFile: lib/features/auth/presentation/login_page.dart\nFlagged lines: 118 (the code below covers lines 116-118)\n\n## Rule description\nNested ternary operators (a conditional expression inside another\nconditional expression) are hard to read. Extract the inner conditional\ninto an independent statement, for example an if/else chain or a separate\nlocal variable or helper function, so each decision is stated once.\n\n## Context\nExamples of the same kind of refactoring, from other code:\n\nExample 1: Replace a nested ternary in a variable with if/else\nBefore:\n```dart\nfinal label = count == 0 ? 'None' : count == 1 ? 'One' : 'Many';\n```\nAfter:\n```dart\nString label;\nif (count == 0) {\n  label = 'None';\n} else if (count == 1) {\n  label = 'One';\n} else {\n  label = 'Many';\n}\n```\n\nExample 2: Move a nested ternary out of a widget argument into a helper\nBefore:\n```dart\nIcon(\n  Icons.circle,\n  color: hasError ? Colors.red : isSyncing ? Colors.orange : Colors.green,\n)\n```\nAfter:\n```dart\nIcon(\n  Icons.circle,\n  color: _statusColor(),\n)\n\nColor _statusColor() {\n  if (hasError) return Colors.red;\n  if (isSyncing) return Colors.orange;\n  return Colors.green;\n}\n```\n\n## Code to refactor\n```dart\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n```\n",
+        "sha256": "4dab7cff6e8b060f",
+        "approx_tokens": 396,
+        "context_tokens": 168,
+        "context": [
+          {
+            "text": "Example 1: Replace a nested ternary in a variable with if/else\nBefore:\n```dart\nfinal label = count == 0 ? 'None' : count == 1 ? 'One' : 'Many';\n```\nAfter:\n```dart\nString label;\nif (count == 0) {\n  label = 'None';\n} else if (count == 1) {\n  label = 'One';\n} else {\n  label = 'Many';\n}\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Replace a nested ternary in a variable with if/else",
+            "summary": false,
+            "approx_tokens": 72
+          },
+          {
+            "text": "Example 2: Move a nested ternary out of a widget argument into a helper\nBefore:\n```dart\nIcon(\n  Icons.circle,\n  color: hasError ? Colors.red : isSyncing ? Colors.orange : Colors.green,\n)\n```\nAfter:\n```dart\nIcon(\n  Icons.circle,\n  color: _statusColor(),\n)\n\nColor _statusColor() {\n  if (hasError) return Colors.red;\n  if (isSyncing) return Colors.orange;\n  return Colors.green;\n}\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Move a nested ternary out of a widget argument into a helper",
+            "summary": false,
+            "approx_tokens": 96
+          }
+        ]
+      },
+      "repository_aware": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S3358 (Ternary operators should not be nested)\nMessage: Extract this nested ternary operation into an independent statement.\nFile: lib/features/auth/presentation/login_page.dart\nFlagged lines: 118 (the code below covers lines 116-118)\n\n## Rule description\nNested ternary operators (a conditional expression inside another\nconditional expression) are hard to read. Extract the inner conditional\ninto an independent statement, for example an if/else chain or a separate\nlocal variable or helper function, so each decision is stated once.\n\n## Context\nRelated code from this repository, for reference only. Do not return or modify it:\n\n```dart\n// lib/features/auth/presentation/login_page.dart, lines 24-193: enclosing class _LoginPageState (outline)\nclass _LoginPageState extends ConsumerState<LoginPage> {\n  final _formKey = GlobalKey<FormState>();\n  final _node = FocusScopeNode();\n  final _email = TextEditingController();\n  final _passwordController = TextEditingController();\n  String get email;\n  String get password;\n  bool _submitted = false;\n  bool _loginType = true;\n  bool _passwordVisible = true;\n  void dispose();\n  Future<void> _submit();\n  void _passwordEditingComplete();\n  void _changeFormType();\n  // Widget build(BuildContext context) ... (contains the code to refactor)\n}\n```\n\n```dart\n// lib/utils/app_constant.dart, lines 32-42: class AppLabels\nclass AppLabels {\n  static const password = 'Password';\n  static const username = 'Username';\n  static const email = 'Email(test@test.com)';\n  static const login = 'Login';\n  static const signUp = \"Register\";\n  static const emptyEmail = \"Email can't be empty\";\n  static const emptyPassword = \"Password can't be empty\";\n  static const startConversation = 'Start your conversation now :)';\n}\n```\n\n```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 16-21: EmailAndPasswordValidators.emailErrorText (similar code, score 0.54)\n  String? emailErrorText(String email) {\n    final bool showErrorText = !canSubmitEmail(email);\n    final String errorText =\n        email.isEmpty ? 'Email can\\'t be empty' : 'Invalid email';\n    return showErrorText ? errorText : null;\n  }\n```\n\n```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 8-10: EmailAndPasswordValidators.canSubmitEmail (similar code, score 0.48)\n  bool canSubmitEmail(String email) {\n    return emailSubmitValidator.isValid(email);\n  }\n```\n\n## Code to refactor\n```dart\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n```\n",
+        "sha256": "2c24e58b6734e03c",
+        "approx_tokens": 678,
+        "context_tokens": 443,
+        "context": [
+          {
+            "text": "```dart\n// lib/features/auth/presentation/login_page.dart, lines 24-193: enclosing class _LoginPageState (outline)\nclass _LoginPageState extends ConsumerState<LoginPage> {\n  final _formKey = GlobalKey<FormState>();\n  final _node = FocusScopeNode();\n  final _email = TextEditingController();\n  final _passwordController = TextEditingController();\n  String get email;\n  String get password;\n  bool _submitted = false;\n  bool _loginType = true;\n  bool _passwordVisible = true;\n  void dispose();\n  Future<void> _submit();\n  void _passwordEditingComplete();\n  void _changeFormType();\n  // Widget build(BuildContext context) ... (contains the code to refactor)\n}\n```",
+            "method": "enclosing_class",
+            "source_path": "lib/features/auth/presentation/login_page.dart",
+            "start_line": 24,
+            "end_line": 193,
+            "symbol": "_LoginPageState",
+            "summary": true,
+            "approx_tokens": 165
+          },
+          {
+            "text": "```dart\n// lib/utils/app_constant.dart, lines 32-42: class AppLabels\nclass AppLabels {\n  static const password = 'Password';\n  static const username = 'Username';\n  static const email = 'Email(test@test.com)';\n  static const login = 'Login';\n  static const signUp = \"Register\";\n  static const emptyEmail = \"Email can't be empty\";\n  static const emptyPassword = \"Password can't be empty\";\n  static const startConversation = 'Start your conversation now :)';\n}\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/utils/app_constant.dart",
+            "start_line": 32,
+            "end_line": 42,
+            "symbol": "AppLabels",
+            "summary": true,
+            "approx_tokens": 116
+          },
+          {
+            "text": "```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 16-21: EmailAndPasswordValidators.emailErrorText (similar code, score 0.54)\n  String? emailErrorText(String email) {\n    final bool showErrorText = !canSubmitEmail(email);\n    final String errorText =\n        email.isEmpty ? 'Email can\\'t be empty' : 'Invalid email';\n    return showErrorText ? errorText : null;\n  }\n```",
+            "method": "vector",
+            "source_path": "lib/features/auth/presentation/email_password_validators.dart",
+            "start_line": 16,
+            "end_line": 21,
+            "symbol": "EmailAndPasswordValidators.emailErrorText",
+            "score": 0.538,
+            "summary": false,
+            "approx_tokens": 100
+          },
+          {
+            "text": "```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 8-10: EmailAndPasswordValidators.canSubmitEmail (similar code, score 0.48)\n  bool canSubmitEmail(String email) {\n    return emailSubmitValidator.isValid(email);\n  }\n```",
+            "method": "vector",
+            "source_path": "lib/features/auth/presentation/email_password_validators.dart",
+            "start_line": 8,
+            "end_line": 10,
+            "symbol": "EmailAndPasswordValidators.canSubmitEmail",
+            "score": 0.4768,
+            "summary": false,
+            "approx_tokens": 62
+          }
+        ]
+      }
+    },
+    "skipped_strategies": {}
+  },
+  {
+    "issue_key": "AaD2avwS8OHgBNPXEUrJ",
+    "rule": "dart:S3358",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "file_path": "lib/features/auth/presentation/login_page.dart",
+    "start_line": 147,
+    "end_line": 149,
+    "snippet_start_line": 145,
+    "snippet_end_line": 149,
+    "scope_kind": "expression",
+    "target_snippet": "                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),",
+    "rule_info": {
+      "name": "Ternary operators should not be nested",
+      "type": "CODE_SMELL",
+      "impacts": [
+        "MAINTAINABILITY/MEDIUM"
+      ],
+      "description_source": "curated"
+    },
+    "prompts": {
+      "zero_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S3358 (Ternary operators should not be nested)\nMessage: Extract this nested ternary operation into an independent statement.\nFile: lib/features/auth/presentation/login_page.dart\nFlagged lines: 147-149 (the code below covers lines 145-149)\n\n## Rule description\nNested ternary operators (a conditional expression inside another\nconditional expression) are hard to read. Extract the inner conditional\ninto an independent statement, for example an if/else chain or a separate\nlocal variable or helper function, so each decision is stated once.\n\n## Context\nNo additional context is provided.\n\n## Code to refactor\n```dart\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n```\n",
+        "sha256": "1c38b73b86096749",
+        "approx_tokens": 242,
+        "context_tokens": 0,
+        "context": []
+      },
+      "few_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S3358 (Ternary operators should not be nested)\nMessage: Extract this nested ternary operation into an independent statement.\nFile: lib/features/auth/presentation/login_page.dart\nFlagged lines: 147-149 (the code below covers lines 145-149)\n\n## Rule description\nNested ternary operators (a conditional expression inside another\nconditional expression) are hard to read. Extract the inner conditional\ninto an independent statement, for example an if/else chain or a separate\nlocal variable or helper function, so each decision is stated once.\n\n## Context\nExamples of the same kind of refactoring, from other code:\n\nExample 1: Replace a nested ternary in a variable with if/else\nBefore:\n```dart\nfinal label = count == 0 ? 'None' : count == 1 ? 'One' : 'Many';\n```\nAfter:\n```dart\nString label;\nif (count == 0) {\n  label = 'None';\n} else if (count == 1) {\n  label = 'One';\n} else {\n  label = 'Many';\n}\n```\n\nExample 2: Move a nested ternary out of a widget argument into a helper\nBefore:\n```dart\nIcon(\n  Icons.circle,\n  color: hasError ? Colors.red : isSyncing ? Colors.orange : Colors.green,\n)\n```\nAfter:\n```dart\nIcon(\n  Icons.circle,\n  color: _statusColor(),\n)\n\nColor _statusColor() {\n  if (hasError) return Colors.red;\n  if (isSyncing) return Colors.orange;\n  return Colors.green;\n}\n```\n\n## Code to refactor\n```dart\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n```\n",
+        "sha256": "33a6f55a4e34b042",
+        "approx_tokens": 416,
+        "context_tokens": 168,
+        "context": [
+          {
+            "text": "Example 1: Replace a nested ternary in a variable with if/else\nBefore:\n```dart\nfinal label = count == 0 ? 'None' : count == 1 ? 'One' : 'Many';\n```\nAfter:\n```dart\nString label;\nif (count == 0) {\n  label = 'None';\n} else if (count == 1) {\n  label = 'One';\n} else {\n  label = 'Many';\n}\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Replace a nested ternary in a variable with if/else",
+            "summary": false,
+            "approx_tokens": 72
+          },
+          {
+            "text": "Example 2: Move a nested ternary out of a widget argument into a helper\nBefore:\n```dart\nIcon(\n  Icons.circle,\n  color: hasError ? Colors.red : isSyncing ? Colors.orange : Colors.green,\n)\n```\nAfter:\n```dart\nIcon(\n  Icons.circle,\n  color: _statusColor(),\n)\n\nColor _statusColor() {\n  if (hasError) return Colors.red;\n  if (isSyncing) return Colors.orange;\n  return Colors.green;\n}\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Move a nested ternary out of a widget argument into a helper",
+            "summary": false,
+            "approx_tokens": 96
+          }
+        ]
+      },
+      "repository_aware": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S3358 (Ternary operators should not be nested)\nMessage: Extract this nested ternary operation into an independent statement.\nFile: lib/features/auth/presentation/login_page.dart\nFlagged lines: 147-149 (the code below covers lines 145-149)\n\n## Rule description\nNested ternary operators (a conditional expression inside another\nconditional expression) are hard to read. Extract the inner conditional\ninto an independent statement, for example an if/else chain or a separate\nlocal variable or helper function, so each decision is stated once.\n\n## Context\nRelated code from this repository, for reference only. Do not return or modify it:\n\n```dart\n// lib/features/auth/presentation/login_page.dart, lines 24-193: enclosing class _LoginPageState (outline)\nclass _LoginPageState extends ConsumerState<LoginPage> {\n  final _formKey = GlobalKey<FormState>();\n  final _node = FocusScopeNode();\n  final _email = TextEditingController();\n  final _passwordController = TextEditingController();\n  String get email;\n  String get password;\n  bool _submitted = false;\n  bool _loginType = true;\n  bool _passwordVisible = true;\n  void dispose();\n  Future<void> _submit();\n  void _passwordEditingComplete();\n  void _changeFormType();\n  // Widget build(BuildContext context) ... (contains the code to refactor)\n}\n```\n\n```dart\n// lib/utils/app_constant.dart, lines 32-42: class AppLabels\nclass AppLabels {\n  static const password = 'Password';\n  static const username = 'Username';\n  static const email = 'Email(test@test.com)';\n  static const login = 'Login';\n  static const signUp = \"Register\";\n  static const emptyEmail = \"Email can't be empty\";\n  static const emptyPassword = \"Password can't be empty\";\n  static const startConversation = 'Start your conversation now :)';\n}\n```\n\n```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 23-28: EmailAndPasswordValidators.passwordErrorText (similar code, score 0.59)\n  String? passwordErrorText(String password) {\n    final bool showErrorText = !canSubmitPassword(password);\n    final String errorText =\n        password.isEmpty ? 'Password can\\'t be empty' : 'Password is too short';\n    return showErrorText ? errorText : null;\n  }\n```\n\n```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 12-14: EmailAndPasswordValidators.canSubmitPassword (similar code, score 0.54)\n  bool canSubmitPassword(String password) {\n    return passwordValidator.isValid(password);\n  }\n```\n\n```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 3-29: EmailAndPasswordValidators (similar code, score 0.50)\nmixin EmailAndPasswordValidators {\n  final StringValidator emailSubmitValidator = EmailSubmitRegexValidator();\n  final StringValidator passwordValidator = MinLengthStringValidator(8);\n  bool canSubmitEmail(String email);\n  bool canSubmitPassword(String password);\n  String? emailErrorText(String email);\n  String? passwordErrorText(String password);\n}\n```\n\n## Code to refactor\n```dart\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n```\n",
+        "sha256": "0530b767603e62ce",
+        "approx_tokens": 832,
+        "context_tokens": 578,
+        "context": [
+          {
+            "text": "```dart\n// lib/features/auth/presentation/login_page.dart, lines 24-193: enclosing class _LoginPageState (outline)\nclass _LoginPageState extends ConsumerState<LoginPage> {\n  final _formKey = GlobalKey<FormState>();\n  final _node = FocusScopeNode();\n  final _email = TextEditingController();\n  final _passwordController = TextEditingController();\n  String get email;\n  String get password;\n  bool _submitted = false;\n  bool _loginType = true;\n  bool _passwordVisible = true;\n  void dispose();\n  Future<void> _submit();\n  void _passwordEditingComplete();\n  void _changeFormType();\n  // Widget build(BuildContext context) ... (contains the code to refactor)\n}\n```",
+            "method": "enclosing_class",
+            "source_path": "lib/features/auth/presentation/login_page.dart",
+            "start_line": 24,
+            "end_line": 193,
+            "symbol": "_LoginPageState",
+            "summary": true,
+            "approx_tokens": 165
+          },
+          {
+            "text": "```dart\n// lib/utils/app_constant.dart, lines 32-42: class AppLabels\nclass AppLabels {\n  static const password = 'Password';\n  static const username = 'Username';\n  static const email = 'Email(test@test.com)';\n  static const login = 'Login';\n  static const signUp = \"Register\";\n  static const emptyEmail = \"Email can't be empty\";\n  static const emptyPassword = \"Password can't be empty\";\n  static const startConversation = 'Start your conversation now :)';\n}\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/utils/app_constant.dart",
+            "start_line": 32,
+            "end_line": 42,
+            "symbol": "AppLabels",
+            "summary": true,
+            "approx_tokens": 116
+          },
+          {
+            "text": "```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 23-28: EmailAndPasswordValidators.passwordErrorText (similar code, score 0.59)\n  String? passwordErrorText(String password) {\n    final bool showErrorText = !canSubmitPassword(password);\n    final String errorText =\n        password.isEmpty ? 'Password can\\'t be empty' : 'Password is too short';\n    return showErrorText ? errorText : null;\n  }\n```",
+            "method": "vector",
+            "source_path": "lib/features/auth/presentation/email_password_validators.dart",
+            "start_line": 23,
+            "end_line": 28,
+            "symbol": "EmailAndPasswordValidators.passwordErrorText",
+            "score": 0.5911,
+            "summary": false,
+            "approx_tokens": 108
+          },
+          {
+            "text": "```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 12-14: EmailAndPasswordValidators.canSubmitPassword (similar code, score 0.54)\n  bool canSubmitPassword(String password) {\n    return passwordValidator.isValid(password);\n  }\n```",
+            "method": "vector",
+            "source_path": "lib/features/auth/presentation/email_password_validators.dart",
+            "start_line": 12,
+            "end_line": 14,
+            "symbol": "EmailAndPasswordValidators.canSubmitPassword",
+            "score": 0.5383,
+            "summary": false,
+            "approx_tokens": 65
+          },
+          {
+            "text": "```dart\n// lib/features/auth/presentation/email_password_validators.dart, lines 3-29: EmailAndPasswordValidators (similar code, score 0.50)\nmixin EmailAndPasswordValidators {\n  final StringValidator emailSubmitValidator = EmailSubmitRegexValidator();\n  final StringValidator passwordValidator = MinLengthStringValidator(8);\n  bool canSubmitEmail(String email);\n  bool canSubmitPassword(String password);\n  String? emailErrorText(String email);\n  String? passwordErrorText(String password);\n}\n```",
+            "method": "vector",
+            "source_path": "lib/features/auth/presentation/email_password_validators.dart",
+            "start_line": 3,
+            "end_line": 29,
+            "symbol": "EmailAndPasswordValidators",
+            "score": 0.5,
+            "summary": true,
+            "approx_tokens": 124
+          }
+        ]
+      }
+    },
+    "skipped_strategies": {}
+  },
+  {
+    "issue_key": "AaD2avwJ8OHgBNPXEUrG",
+    "rule": "dart:S7115",
+    "message": "Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.",
+    "file_path": "lib/features/chat/presentation/chat_page.dart",
+    "start_line": 57,
+    "end_line": 57,
+    "snippet_start_line": 52,
+    "snippet_end_line": 59,
+    "scope_kind": "function",
+    "target_snippet": "                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });",
+    "rule_info": {
+      "name": "\"mounted\" should be checked before using a \"BuildContext \" after an async operation",
+      "type": "BUG",
+      "impacts": [
+        "RELIABILITY/HIGH"
+      ],
+      "description_source": "curated"
+    },
+    "prompts": {
+      "zero_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S7115 (\"mounted\" should be checked before using a \"BuildContext \" after an async operation)\nMessage: Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.\nFile: lib/features/chat/presentation/chat_page.dart\nFlagged lines: 57 (the code below covers lines 52-59)\n\n## Rule description\nAfter an await, the widget that owns a BuildContext may have been unmounted,\nso the context must not be used without checking that the same context is\nstill mounted. Checking an unrelated \"mounted\" (such as State.mounted when a\ndifferent BuildContext is used) does not protect the context. Guard each use\nafter an async gap with \"if (!context.mounted) return;\" (or\n\"context.mounted &&\") on the exact context being used.\n\n## Context\nNo additional context is provided.\n\n## Code to refactor\n```dart\n                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });\n```\n",
+        "sha256": "ff268dae2fe3041e",
+        "approx_tokens": 327,
+        "context_tokens": 0,
+        "context": []
+      },
+      "few_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S7115 (\"mounted\" should be checked before using a \"BuildContext \" after an async operation)\nMessage: Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.\nFile: lib/features/chat/presentation/chat_page.dart\nFlagged lines: 57 (the code below covers lines 52-59)\n\n## Rule description\nAfter an await, the widget that owns a BuildContext may have been unmounted,\nso the context must not be used without checking that the same context is\nstill mounted. Checking an unrelated \"mounted\" (such as State.mounted when a\ndifferent BuildContext is used) does not protect the context. Guard each use\nafter an async gap with \"if (!context.mounted) return;\" (or\n\"context.mounted &&\") on the exact context being used.\n\n## Context\nExamples of the same kind of refactoring, from other code:\n\nExample 1: Check the context that is actually used\nBefore:\n```dart\nFuture<void> _save(BuildContext context) async {\n  await repository.save();\n  if (mounted) {\n    Navigator.of(context).pop();\n  }\n}\n```\nAfter:\n```dart\nFuture<void> _save(BuildContext context) async {\n  await repository.save();\n  if (context.mounted) {\n    Navigator.of(context).pop();\n  }\n}\n```\n\n## Code to refactor\n```dart\n                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });\n```\n",
+        "sha256": "dc8f9523fd0873f8",
+        "approx_tokens": 424,
+        "context_tokens": 91,
+        "context": [
+          {
+            "text": "Example 1: Check the context that is actually used\nBefore:\n```dart\nFuture<void> _save(BuildContext context) async {\n  await repository.save();\n  if (mounted) {\n    Navigator.of(context).pop();\n  }\n}\n```\nAfter:\n```dart\nFuture<void> _save(BuildContext context) async {\n  await repository.save();\n  if (context.mounted) {\n    Navigator.of(context).pop();\n  }\n}\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Check the context that is actually used",
+            "summary": false,
+            "approx_tokens": 91
+          }
+        ]
+      },
+      "repository_aware": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S7115 (\"mounted\" should be checked before using a \"BuildContext \" after an async operation)\nMessage: Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.\nFile: lib/features/chat/presentation/chat_page.dart\nFlagged lines: 57 (the code below covers lines 52-59)\n\n## Rule description\nAfter an await, the widget that owns a BuildContext may have been unmounted,\nso the context must not be used without checking that the same context is\nstill mounted. Checking an unrelated \"mounted\" (such as State.mounted when a\ndifferent BuildContext is used) does not protect the context. Guard each use\nafter an async gap with \"if (!context.mounted) return;\" (or\n\"context.mounted &&\") on the exact context being used.\n\n## Context\nRelated code from this repository, for reference only. Do not return or modify it:\n\n```dart\n// lib/features/chat/presentation/chat_page.dart, lines 23-104: enclosing class _ChartPageState (outline)\nclass _ChartPageState extends ConsumerState<ChatPage> {\n  // Widget build(BuildContext context) ... (contains the code to refactor)\n}\n```\n\n```dart\n// lib/routing/app_router.dart, line 10: enum AppRoute\nenum AppRoute {\n  register,\n  login,\n  chat,\n  profile,\n}\n```\n\n```dart\n// lib/features/auth/state/auth_notifier.dart, lines 47-52: variable authNotifierProvider\nfinal authNotifierProvider =\n    StateNotifierProvider<AuthNotifier, AsyncValue<void>>((ref) {\n  final authRepository = ref.watch(authRepositoryProvider);\n\n  return AuthNotifier(authRepository: authRepository);\n});\n```\n\n```dart\n// lib/features/auth/data/auth_repository.dart, lines 45-56: method AuthRepository.logout\n  Future<void> logout() async {\n    LocalStorageManager.clearTokens();\n    try {\n      // update offline status\n      await updateStatus('OFFLINE', supabase.auth.currentUser!.id);\n      await supabase.auth.signOut();\n    } on AuthException catch (error) {\n      throw (error.message);\n    } catch (unexpectedErrorMessage) {\n      rethrow;\n    }\n  }\n```\n\n```dart\n// lib/features/auth/state/auth_notifier.dart, lines 36-44: method AuthNotifier.logout\n  Future<bool> logout() async {\n    state = const AsyncValue.loading();\n    try {\n      state = await AsyncValue.guard(() => authRepository.logout());\n    } catch (e, st) {\n      state = state = AsyncValue<void>.error(e, st);\n    }\n    return state.hasError == false;\n  }\n```\n\n```dart\n// lib/features/auth/state/auth_notifier.dart, lines 11-21: AuthNotifier.login (similar code, score 0.57)\n  Future<bool> login({required String email, required String password}) async {\n    state = const AsyncValue<void>.loading();\n    LocalStorageManager.clearTokens();\n    try {\n      state = await AsyncValue.guard(\n          () => authRepository.signIn(email: email, password: password));\n    } catch (error, st) {\n      state = AsyncValue<void>.error(error, st);\n    }\n    return state.hasError == false;\n  }\n```\n\n```dart\n// lib/features/auth/state/auth_notifier.dart, lines 6-7: AuthNotifier.AuthNotifier (similar code, score 0.55)\n  AuthNotifier({required this.authRepository})\n      : super(const AsyncValue<void>.data(null));\n```\n\n```dart\n// lib/features/auth/data/auth_repository.dart, lines 22-35: AuthRepository.signIn (similar code, score 0.55)\n  Future<void> signIn({required String email, required String password}) async {\n    LocalStorageManager.clearTokens();\n    try {\n      final response = await supabase.auth\n          .signInWithPassword(email: email, password: password);\n      // update online status\n      await updateStatus('ONLINE', response.user!.id);\n\n      LocalStorageManager.savePreferenceData(\n          AppConstant.accessToken, response.session!.accessToken);\n    } on AuthException catch (error) {\n      throw (error.message);\n    }\n  }\n```\n\n## Code to refactor\n```dart\n                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });\n```\n",
+        "sha256": "b1ba573f91d72743",
+        "approx_tokens": 1066,
+        "context_tokens": 725,
+        "context": [
+          {
+            "text": "```dart\n// lib/features/chat/presentation/chat_page.dart, lines 23-104: enclosing class _ChartPageState (outline)\nclass _ChartPageState extends ConsumerState<ChatPage> {\n  // Widget build(BuildContext context) ... (contains the code to refactor)\n}\n```",
+            "method": "enclosing_class",
+            "source_path": "lib/features/chat/presentation/chat_page.dart",
+            "start_line": 23,
+            "end_line": 104,
+            "symbol": "_ChartPageState",
+            "summary": true,
+            "approx_tokens": 63
+          },
+          {
+            "text": "```dart\n// lib/routing/app_router.dart, line 10: enum AppRoute\nenum AppRoute {\n  register,\n  login,\n  chat,\n  profile,\n}\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/routing/app_router.dart",
+            "start_line": 10,
+            "end_line": 10,
+            "symbol": "AppRoute",
+            "summary": true,
+            "approx_tokens": 31
+          },
+          {
+            "text": "```dart\n// lib/features/auth/state/auth_notifier.dart, lines 47-52: variable authNotifierProvider\nfinal authNotifierProvider =\n    StateNotifierProvider<AuthNotifier, AsyncValue<void>>((ref) {\n  final authRepository = ref.watch(authRepositoryProvider);\n\n  return AuthNotifier(authRepository: authRepository);\n});\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/features/auth/state/auth_notifier.dart",
+            "start_line": 47,
+            "end_line": 52,
+            "symbol": "authNotifierProvider",
+            "summary": false,
+            "approx_tokens": 79
+          },
+          {
+            "text": "```dart\n// lib/features/auth/data/auth_repository.dart, lines 45-56: method AuthRepository.logout\n  Future<void> logout() async {\n    LocalStorageManager.clearTokens();\n    try {\n      // update offline status\n      await updateStatus('OFFLINE', supabase.auth.currentUser!.id);\n      await supabase.auth.signOut();\n    } on AuthException catch (error) {\n      throw (error.message);\n    } catch (unexpectedErrorMessage) {\n      rethrow;\n    }\n  }\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/features/auth/data/auth_repository.dart",
+            "start_line": 45,
+            "end_line": 56,
+            "symbol": "AuthRepository.logout",
+            "summary": false,
+            "approx_tokens": 113
+          },
+          {
+            "text": "```dart\n// lib/features/auth/state/auth_notifier.dart, lines 36-44: method AuthNotifier.logout\n  Future<bool> logout() async {\n    state = const AsyncValue.loading();\n    try {\n      state = await AsyncValue.guard(() => authRepository.logout());\n    } catch (e, st) {\n      state = state = AsyncValue<void>.error(e, st);\n    }\n    return state.hasError == false;\n  }\n```",
+            "method": "imported_declaration",
+            "source_path": "lib/features/auth/state/auth_notifier.dart",
+            "start_line": 36,
+            "end_line": 44,
+            "symbol": "AuthNotifier.logout",
+            "summary": false,
+            "approx_tokens": 93
+          },
+          {
+            "text": "```dart\n// lib/features/auth/state/auth_notifier.dart, lines 11-21: AuthNotifier.login (similar code, score 0.57)\n  Future<bool> login({required String email, required String password}) async {\n    state = const AsyncValue<void>.loading();\n    LocalStorageManager.clearTokens();\n    try {\n      state = await AsyncValue.guard(\n          () => authRepository.signIn(email: email, password: password));\n    } catch (error, st) {\n      state = AsyncValue<void>.error(error, st);\n    }\n    return state.hasError == false;\n  }\n```",
+            "method": "vector",
+            "source_path": "lib/features/auth/state/auth_notifier.dart",
+            "start_line": 11,
+            "end_line": 21,
+            "symbol": "AuthNotifier.login",
+            "score": 0.5671,
+            "summary": false,
+            "approx_tokens": 132
+          },
+          {
+            "text": "```dart\n// lib/features/auth/state/auth_notifier.dart, lines 6-7: AuthNotifier.AuthNotifier (similar code, score 0.55)\n  AuthNotifier({required this.authRepository})\n      : super(const AsyncValue<void>.data(null));\n```",
+            "method": "vector",
+            "source_path": "lib/features/auth/state/auth_notifier.dart",
+            "start_line": 6,
+            "end_line": 7,
+            "symbol": "AuthNotifier.AuthNotifier",
+            "score": 0.5526,
+            "summary": false,
+            "approx_tokens": 55
+          },
+          {
+            "text": "```dart\n// lib/features/auth/data/auth_repository.dart, lines 22-35: AuthRepository.signIn (similar code, score 0.55)\n  Future<void> signIn({required String email, required String password}) async {\n    LocalStorageManager.clearTokens();\n    try {\n      final response = await supabase.auth\n          .signInWithPassword(email: email, password: password);\n      // update online status\n      await updateStatus('ONLINE', response.user!.id);\n\n      LocalStorageManager.savePreferenceData(\n          AppConstant.accessToken, response.session!.accessToken);\n    } on AuthException catch (error) {\n      throw (error.message);\n    }\n  }\n```",
+            "method": "vector",
+            "source_path": "lib/features/auth/data/auth_repository.dart",
+            "start_line": 22,
+            "end_line": 35,
+            "symbol": "AuthRepository.signIn",
+            "score": 0.5508,
+            "summary": false,
+            "approx_tokens": 159
+          }
+        ]
+      }
+    },
+    "skipped_strategies": {}
+  },
+  {
+    "issue_key": "AaD2avt48OHgBNPXEUrF",
+    "rule": "dart:S7055",
+    "message": "The referenced identifier is a wildcard.",
+    "file_path": "lib/features/chat/presentation/message_bar.dart",
+    "start_line": 111,
+    "end_line": 111,
+    "snippet_start_line": 110,
+    "snippet_end_line": 113,
+    "scope_kind": "catch",
+    "target_snippet": "    } catch (_) {\n      debugPrint('error =>$_');\n      // context.showErrorSnackBar(message: unexpectedErrorMessage);\n    }",
+    "rule_info": {
+      "name": "Wildcard variable shouldn't be used",
+      "type": "CODE_SMELL",
+      "impacts": [
+        "MAINTAINABILITY/MEDIUM"
+      ],
+      "description_source": "curated"
+    },
+    "prompts": {
+      "zero_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S7055 (Wildcard variable shouldn't be used)\nMessage: The referenced identifier is a wildcard.\nFile: lib/features/chat/presentation/message_bar.dart\nFlagged lines: 111 (the code below covers lines 110-113)\n\n## Rule description\n\"_\" is a wildcard: since Dart 3.7 it declares no variable and cannot be\nreferenced. Code that reads a parameter or catch variable named \"_\" relies\non pre-wildcard behavior. Give the variable a real name (for example \"e\" or\n\"error\") wherever it is actually used.\n\n## Context\nNo additional context is provided.\n\n## Code to refactor\n```dart\n    } catch (_) {\n      debugPrint('error =>$_');\n      // context.showErrorSnackBar(message: unexpectedErrorMessage);\n    }\n```\n",
+        "sha256": "4a7141a06b64780f",
+        "approx_tokens": 197,
+        "context_tokens": 0,
+        "context": []
+      },
+      "few_shot": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S7055 (Wildcard variable shouldn't be used)\nMessage: The referenced identifier is a wildcard.\nFile: lib/features/chat/presentation/message_bar.dart\nFlagged lines: 111 (the code below covers lines 110-113)\n\n## Rule description\n\"_\" is a wildcard: since Dart 3.7 it declares no variable and cannot be\nreferenced. Code that reads a parameter or catch variable named \"_\" relies\non pre-wildcard behavior. Give the variable a real name (for example \"e\" or\n\"error\") wherever it is actually used.\n\n## Context\nExamples of the same kind of refactoring, from other code:\n\nExample 1: Name a catch variable that is used\nBefore:\n```dart\ntry {\n  await upload();\n} catch (_) {\n  log('upload failed: $_');\n}\n```\nAfter:\n```dart\ntry {\n  await upload();\n} catch (e) {\n  log('upload failed: $e');\n}\n```\n\nExample 2: Name a callback parameter that is used\nBefore:\n```dart\nfinal names = users.map((_) => _.name).toList();\n```\nAfter:\n```dart\nfinal names = users.map((user) => user.name).toList();\n```\n\n## Code to refactor\n```dart\n    } catch (_) {\n      debugPrint('error =>$_');\n      // context.showErrorSnackBar(message: unexpectedErrorMessage);\n    }\n```\n",
+        "sha256": "abad124d1f35276d",
+        "approx_tokens": 307,
+        "context_tokens": 103,
+        "context": [
+          {
+            "text": "Example 1: Name a catch variable that is used\nBefore:\n```dart\ntry {\n  await upload();\n} catch (_) {\n  log('upload failed: $_');\n}\n```\nAfter:\n```dart\ntry {\n  await upload();\n} catch (e) {\n  log('upload failed: $e');\n}\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Name a catch variable that is used",
+            "summary": false,
+            "approx_tokens": 55
+          },
+          {
+            "text": "Example 2: Name a callback parameter that is used\nBefore:\n```dart\nfinal names = users.map((_) => _.name).toList();\n```\nAfter:\n```dart\nfinal names = users.map((user) => user.name).toList();\n```",
+            "method": "few_shot",
+            "source_path": "few_shot_examples.yaml",
+            "symbol": "Name a callback parameter that is used",
+            "summary": false,
+            "approx_tokens": 48
+          }
+        ]
+      },
+      "repository_aware": {
+        "text": "Refactor the code below to resolve the SonarQube issue described here.\n\n## Issue\nRule: dart:S7055 (Wildcard variable shouldn't be used)\nMessage: The referenced identifier is a wildcard.\nFile: lib/features/chat/presentation/message_bar.dart\nFlagged lines: 111 (the code below covers lines 110-113)\n\n## Rule description\n\"_\" is a wildcard: since Dart 3.7 it declares no variable and cannot be\nreferenced. Code that reads a parameter or catch variable named \"_\" relies\non pre-wildcard behavior. Give the variable a real name (for example \"e\" or\n\"error\") wherever it is actually used.\n\n## Context\nRelated code from this repository, for reference only. Do not return or modify it:\n\n```dart\n// lib/features/chat/presentation/message_bar.dart, lines 19-115: enclosing class _MessageBarState (outline)\nclass _MessageBarState extends ConsumerState<MessageBar> {\n  late final TextEditingController _textController;\n  Widget build(BuildContext context);\n  void initState();\n  void dispose();\n  // void _submitMessage() ... (contains the code to refactor)\n}\n```\n\n## Code to refactor\n```dart\n    } catch (_) {\n      debugPrint('error =>$_');\n      // context.showErrorSnackBar(message: unexpectedErrorMessage);\n    }\n```\n",
+        "sha256": "a411b7b51bf52e9c",
+        "approx_tokens": 302,
+        "context_tokens": 93,
+        "context": [
+          {
+            "text": "```dart\n// lib/features/chat/presentation/message_bar.dart, lines 19-115: enclosing class _MessageBarState (outline)\nclass _MessageBarState extends ConsumerState<MessageBar> {\n  late final TextEditingController _textController;\n  Widget build(BuildContext context);\n  void initState();\n  void dispose();\n  // void _submitMessage() ... (contains the code to refactor)\n}\n```",
+            "method": "enclosing_class",
+            "source_path": "lib/features/chat/presentation/message_bar.dart",
+            "start_line": 19,
+            "end_line": 115,
+            "symbol": "_MessageBarState",
+            "summary": true,
+            "approx_tokens": 93
+          }
+        ]
+      }
+    },
+    "skipped_strategies": {}
+  }
+]

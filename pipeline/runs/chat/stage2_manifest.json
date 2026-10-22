@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-10-22T18:15:18.789057+00:00",
+  "git_commit": "55854353ebdd6da7dd76e5175c7462ea32fb4092",
+  "dirty_files": [
+    "README.md",
+    "pipeline/runs/chat/chroma_db/chroma.sqlite3",
+    "pipeline/runs/chat/chroma_db/e3b9ca25-f452-4339-bbf3-e04461819068/data_level0.bin",
+    "pipeline/runs/chat/stage1_snippets.json",
+    "pipeline/runs/chat/stage2_prompts.json"
+  ],
+  "dirty_target_files": [],
+  "settings": {
+    "repo": "/Users/popo/development/slack_chat/chat",
+    "strategies": [
+      "zero_shot",
+      "few_shot",
+      "repository_aware"
+    ],
+    "context_budget_tokens": 1500,
+    "embedding_model": "all-MiniLM-L6-v2",
+    "vector_index": {
+      "built_at": "2026-10-22T04:30:55.487404+00:00",
+      "chunking": "dart_ast",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "git_commit": "2ce6007024993a3fecdf8182050e82b18689594e",
+      "hnsw:space": "cosine"
+    },
+    "max_symbol_matches": 3,
+    "min_vector_score": 0.45,
+    "vector_top_k": 3
+  },
+  "issues": 6,
+  "strategies": {
+    "zero_shot": {
+      "prompts": 6,
+      "approx_tokens": 2666,
+      "context_chunks": 0
+    },
+    "few_shot": {
+      "prompts": 6,
+      "approx_tokens": 3709,
+      "context_chunks": 10
+    },
+    "repository_aware": {
+      "prompts": 6,
+      "approx_tokens": 6363,
+      "context_chunks": 31
+    }
+  },
+  "rule_description_sources": {
+    "githubactions:S7637": "curated",
+    "dart:S3776": "curated",
+    "dart:S3358": "curated",
+    "dart:S7115": "curated",
+    "dart:S7055": "curated"
+  },
+  "skipped": {}
+}

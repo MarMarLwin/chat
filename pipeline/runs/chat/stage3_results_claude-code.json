@@ -1,0 +1,1436 @@
+[
+  {
+    "file_path": ".github/workflows/build.yaml",
+    "rule": "githubactions:S7637",
+    "original_snippet": "      - name: Set up Flutter\n        uses: subosito/flutter-action@v2\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+    "results": {
+      "zero_shot": {
+        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999695d5b6ec3a2400ec14f41 # v2.16.1\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+        "prompt_tokens": 682,
+        "completion_tokens": 375,
+        "total_tokens": 1057,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 682,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 375,
+          "output_tokens_details": {
+            "thinking_tokens": 273
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 682,
+              "output_tokens": 375,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 787,
+            "outputTokens": 21,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000892,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 682,
+            "outputTokens": 375,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.007671,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.008563,
+        "duration_ms": 4616,
+        "prompt_sha256": "748e016e6ece35c4"
+      },
+      "few_shot": {
+        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999653d83fa42bebf62476a62 # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+        "prompt_tokens": 890,
+        "completion_tokens": 270,
+        "total_tokens": 1160,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 890,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 270,
+          "output_tokens_details": {
+            "thinking_tokens": 171
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 890,
+              "output_tokens": 270,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 959,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001029,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 890,
+            "outputTokens": 270,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.006719999999999999,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.007748999999999999,
+        "duration_ms": 4579,
+        "prompt_sha256": "dd6da56e359ac755"
+      },
+      "repository_aware": {
+        "refactored_code": "      - name: Set up Flutter\n        uses: subosito/flutter-action@62f096cacda5168a3bd7b795cb49e8d9d0ea0686 # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+        "prompt_tokens": 1276,
+        "completion_tokens": 408,
+        "total_tokens": 1684,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 1,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 1275,
+          "output_tokens": 408,
+          "output_tokens_details": {
+            "thinking_tokens": 304
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 1,
+              "output_tokens": 408,
+              "cache_read_input_tokens": 1275,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1258,
+            "outputTokens": 14,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001328,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 1,
+            "outputTokens": 408,
+            "cacheReadInputTokens": 1275,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0065055,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.0078335,
+        "duration_ms": 5870,
+        "prompt_sha256": "418387b79115fcb3"
+      }
+    },
+    "issue_key": "AaD2avxO8OHgBNPXEUrR",
+    "message": "Use full commit SHA hash for this dependency.",
+    "start_line": 22,
+    "end_line": 22,
+    "snippet_start_line": 21,
+    "snippet_end_line": 26,
+    "scope_kind": "yaml_step"
+  },
+  {
+    "file_path": "lib/features/auth/presentation/login_page.dart",
+    "rule": "dart:S3776",
+    "original_snippet": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        TextFormField(\n                          controller: _email,\n                          decoration: const InputDecoration(\n                              hintText: AppLabels.email,\n                              prefixIcon: Icon(Icons.person)),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n                          inputFormatters: <TextInputFormatter>[\n                            ValidatorInputFormatter(\n                                editingValidator: EmailEditingRegexValidator()),\n                          ],\n                          autocorrect: false,\n                          textInputAction: TextInputAction.next,\n                          keyboardType: TextInputType.emailAddress,\n                          keyboardAppearance: Brightness.light,\n                        ),\n                        8.height,\n                        // Password field\n                        TextFormField(\n                          controller: _passwordController,\n                          decoration: InputDecoration(\n                            hintText: AppLabels.password,\n                            prefixIcon: const Icon(Icons.lock),\n                            suffixIcon: GestureDetector(\n                                onTap: () {\n                                  setState(() {\n                                    _passwordVisible = !_passwordVisible;\n                                  });\n                                },\n                                child: _passwordVisible\n                                    ? const Icon(Icons.visibility_off)\n                                    : const Icon(Icons.visibility)),\n                          ),\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          obscureText: _passwordVisible ? true : false,\n                          autocorrect: false,\n                          textInputAction: TextInputAction.done,\n                          keyboardAppearance: Brightness.light,\n                          onEditingComplete: () => _passwordEditingComplete(),\n                        ),\n\n                        8.height,\n                        PrimaryButton(\n                          text: _loginType ? AppLabels.login : AppLabels.signUp,\n                          isLoading: state.isLoading,\n                          onPressed:\n                              state.isLoading ? () => {} : () => _submit(),\n                        ),\n\n                        8.height,\n\n                        Row(\n                          mainAxisAlignment: MainAxisAlignment.center,\n                          children: [\n                            Text(!_loginType\n                                ? 'Already account?'\n                                : 'Create an account'),\n                            CustomTextButton(\n                              text: _loginType\n                                  ? AppLabels.signUp\n                                  : AppLabels.login,\n                              style: const TextStyle(\n                                  decoration: TextDecoration.underline),\n                              onPressed: _changeFormType,\n                            ),\n                          ],\n                        )\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }",
+    "results": {
+      "zero_shot": {
+        "refactored_code": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n                        _buildEmailField(),\n                        8.height,\n                        _buildPasswordField(),\n                        8.height,\n                        _buildSubmitButton(state),\n                        8.height,\n                        _buildAccountToggleRow(),\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n\n  Widget _buildEmailField() {\n    return TextFormField(\n      controller: _email,\n      decoration: const InputDecoration(\n          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      validator: _validateEmail,\n      inputFormatters: <TextInputFormatter>[\n        ValidatorInputFormatter(\n            editingValidator: EmailEditingRegexValidator()),\n      ],\n      autocorrect: false,\n      textInputAction: TextInputAction.next,\n      keyboardType: TextInputType.emailAddress,\n      keyboardAppearance: Brightness.light,\n    );\n  }\n\n  String? _validateEmail(String? email) {\n    if (!_submitted) return null;\n    return email!.isEmpty ? AppLabels.emptyEmail : null;\n  }\n\n  Widget _buildPasswordField() {\n    return TextFormField(\n      controller: _passwordController,\n      decoration: InputDecoration(\n        hintText: AppLabels.password,\n        prefixIcon: const Icon(Icons.lock),\n        suffixIcon: GestureDetector(\n            onTap: _togglePasswordVisibility,\n            child: Icon(_passwordVisible\n                ? Icons.visibility_off\n                : Icons.visibility)),\n      ),\n      validator: _validatePassword,\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      obscureText: _passwordVisible,\n      autocorrect: false,\n      textInputAction: TextInputAction.done,\n      keyboardAppearance: Brightness.light,\n      onEditingComplete: () => _passwordEditingComplete(),\n    );\n  }\n\n  void _togglePasswordVisibility() {\n    setState(() {\n      _passwordVisible = !_passwordVisible;\n    });\n  }\n\n  String? _validatePassword(String? password) {\n    if (!_submitted) return null;\n    return password!.isEmpty ? AppLabels.emptyPassword : null;\n  }\n\n  Widget _buildSubmitButton(AsyncValue state) {\n    return PrimaryButton(\n      text: _loginType ? AppLabels.login : AppLabels.signUp,\n      isLoading: state.isLoading,\n      onPressed: state.isLoading ? () => {} : () => _submit(),\n    );\n  }\n\n  Widget _buildAccountToggleRow() {\n    return Row(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Text(!_loginType ? 'Already account?' : 'Create an account'),\n        CustomTextButton(\n          text: _loginType ? AppLabels.signUp : AppLabels.login,\n          style: const TextStyle(decoration: TextDecoration.underline),\n          onPressed: _changeFormType,\n        ),\n      ],\n    );\n  }",
+        "prompt_tokens": 2019,
+        "completion_tokens": 3376,
+        "total_tokens": 5395,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2017,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 3376,
+          "output_tokens_details": {
+            "thinking_tokens": 1935
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 2017,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 3376,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 2017,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 2017
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1722,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001797,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 2,
+            "outputTokens": 3376,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 2017,
+            "webSearchRequests": 0,
+            "costUSD": 0.062748,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.06454499999999999,
+        "duration_ms": 25242,
+        "prompt_sha256": "037bbc4463ac4cbf"
+      },
+      "few_shot": {
+        "refactored_code": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        _buildEmailField(),\n                        8.height,\n                        // Password field\n                        _buildPasswordField(),\n\n                        8.height,\n                        _buildLoginButton(state),\n\n                        8.height,\n\n                        _buildSwitchFormTypeRow(),\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n\n  String? _validateEmail(String? email) {\n    if (!_submitted) return null;\n    return email!.isEmpty ? AppLabels.emptyEmail : null;\n  }\n\n  String? _validatePassword(String? password) {\n    if (!_submitted) return null;\n    return password!.isEmpty ? AppLabels.emptyPassword : null;\n  }\n\n  Widget _buildEmailField() {\n    return TextFormField(\n      controller: _email,\n      decoration: const InputDecoration(\n          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      validator: _validateEmail,\n      inputFormatters: <TextInputFormatter>[\n        ValidatorInputFormatter(\n            editingValidator: EmailEditingRegexValidator()),\n      ],\n      autocorrect: false,\n      textInputAction: TextInputAction.next,\n      keyboardType: TextInputType.emailAddress,\n      keyboardAppearance: Brightness.light,\n    );\n  }\n\n  Widget _buildPasswordVisibilityIcon() {\n    return GestureDetector(\n        onTap: () {\n          setState(() {\n            _passwordVisible = !_passwordVisible;\n          });\n        },\n        child: _passwordVisible\n            ? const Icon(Icons.visibility_off)\n            : const Icon(Icons.visibility));\n  }\n\n  Widget _buildPasswordField() {\n    return TextFormField(\n      controller: _passwordController,\n      decoration: InputDecoration(\n        hintText: AppLabels.password,\n        prefixIcon: const Icon(Icons.lock),\n        suffixIcon: _buildPasswordVisibilityIcon(),\n      ),\n      validator: _validatePassword,\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      obscureText: _passwordVisible,\n      autocorrect: false,\n      textInputAction: TextInputAction.done,\n      keyboardAppearance: Brightness.light,\n      onEditingComplete: () => _passwordEditingComplete(),\n    );\n  }\n\n  Widget _buildLoginButton(AsyncValue state) {\n    return PrimaryButton(\n      text: _loginType ? AppLabels.login : AppLabels.signUp,\n      isLoading: state.isLoading,\n      onPressed: state.isLoading ? () => {} : () => _submit(),\n    );\n  }\n\n  Widget _buildSwitchFormTypeRow() {\n    return Row(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Text(!_loginType ? 'Already account?' : 'Create an account'),\n        CustomTextButton(\n          text: _loginType ? AppLabels.signUp : AppLabels.login,\n          style: const TextStyle(decoration: TextDecoration.underline),\n          onPressed: _changeFormType,\n        ),\n      ],\n    );\n  }",
+        "prompt_tokens": 2616,
+        "completion_tokens": 1822,
+        "total_tokens": 4438,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 1,
+          "cache_creation_input_tokens": 2615,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 1822,
+          "output_tokens_details": {
+            "thinking_tokens": 345
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 2615,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 1,
+              "output_tokens": 1822,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 2615,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 2615
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 2225,
+            "outputTokens": 15,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0023,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 1,
+            "outputTokens": 1822,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 2615,
+            "webSearchRequests": 0,
+            "costUSD": 0.043023000000000006,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.045323,
+        "duration_ms": 14210,
+        "prompt_sha256": "5067aa8bf2444f9c"
+      },
+      "repository_aware": {
+        "refactored_code": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        _buildEmailField(),\n                        8.height,\n                        // Password field\n                        _buildPasswordField(),\n\n                        8.height,\n                        _buildSubmitButton(state),\n\n                        8.height,\n\n                        _buildChangeFormTypeRow(),\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }\n\n  String? _validateEmail(String? email) {\n    if (!_submitted) return null;\n    return email!.isEmpty ? AppLabels.emptyEmail : null;\n  }\n\n  String? _validatePassword(String? password) {\n    if (!_submitted) return null;\n    return password!.isEmpty ? AppLabels.emptyPassword : null;\n  }\n\n  Widget _buildEmailField() {\n    return TextFormField(\n      controller: _email,\n      decoration: const InputDecoration(\n          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      validator: _validateEmail,\n      inputFormatters: <TextInputFormatter>[\n        ValidatorInputFormatter(editingValidator: EmailEditingRegexValidator()),\n      ],\n      autocorrect: false,\n      textInputAction: TextInputAction.next,\n      keyboardType: TextInputType.emailAddress,\n      keyboardAppearance: Brightness.light,\n    );\n  }\n\n  Widget _buildPasswordVisibilityIcon() {\n    return _passwordVisible\n        ? const Icon(Icons.visibility_off)\n        : const Icon(Icons.visibility);\n  }\n\n  Widget _buildPasswordField() {\n    return TextFormField(\n      controller: _passwordController,\n      decoration: InputDecoration(\n        hintText: AppLabels.password,\n        prefixIcon: const Icon(Icons.lock),\n        suffixIcon: GestureDetector(\n            onTap: () {\n              setState(() {\n                _passwordVisible = !_passwordVisible;\n              });\n            },\n            child: _buildPasswordVisibilityIcon()),\n      ),\n      validator: _validatePassword,\n      autovalidateMode: AutovalidateMode.onUserInteraction,\n      obscureText: _passwordVisible ? true : false,\n      autocorrect: false,\n      textInputAction: TextInputAction.done,\n      keyboardAppearance: Brightness.light,\n      onEditingComplete: () => _passwordEditingComplete(),\n    );\n  }\n\n  Widget _buildSubmitButton(AsyncValue state) {\n    return PrimaryButton(\n      text: _loginType ? AppLabels.login : AppLabels.signUp,\n      isLoading: state.isLoading,\n      onPressed: state.isLoading ? () => {} : () => _submit(),\n    );\n  }\n\n  Widget _buildChangeFormTypeRow() {\n    return Row(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Text(!_loginType ? 'Already account?' : 'Create an account'),\n        CustomTextButton(\n          text: _loginType ? AppLabels.signUp : AppLabels.login,\n          style: const TextStyle(decoration: TextDecoration.underline),\n          onPressed: _changeFormType,\n        ),\n      ],\n    );\n  }",
+        "prompt_tokens": 4277,
+        "completion_tokens": 1888,
+        "total_tokens": 6165,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 1,
+          "cache_creation_input_tokens": 4276,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 1888,
+          "output_tokens_details": {
+            "thinking_tokens": 409
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 4276,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 1,
+              "output_tokens": 1888,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 4276,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 4276
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 3389,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.003474,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 1,
+            "outputTokens": 1888,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 4276,
+            "webSearchRequests": 0,
+            "costUSD": 0.053979,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.057453,
+        "duration_ms": 15434,
+        "prompt_sha256": "ea2db9c83d7f02bb"
+      }
+    },
+    "issue_key": "AaD2avwS8OHgBNPXEUrH",
+    "message": "Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+    "start_line": 81,
+    "end_line": 81,
+    "snippet_start_line": 80,
+    "snippet_end_line": 192,
+    "scope_kind": "member"
+  },
+  {
+    "file_path": "lib/features/auth/presentation/login_page.dart",
+    "rule": "dart:S3358",
+    "original_snippet": "                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),",
+    "results": {
+      "zero_shot": {
+        "refactored_code": "                          validator: (email) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            if (email!.isEmpty) {\n                              return AppLabels.emptyEmail;\n                            }\n                            return null;\n                          },",
+        "prompt_tokens": 607,
+        "completion_tokens": 149,
+        "total_tokens": 756,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 607,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 149,
+          "output_tokens_details": {
+            "thinking_tokens": 63
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 607,
+              "output_tokens": 149,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 726,
+            "outputTokens": 19,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000821,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 607,
+            "outputTokens": 149,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004056000000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.004877,
+        "duration_ms": 3176,
+        "prompt_sha256": "084c00c7ef76603e"
+      },
+      "few_shot": {
+        "refactored_code": "                          validator: (email) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            return email!.isEmpty ? AppLabels.emptyEmail : null;\n                          },",
+        "prompt_tokens": 923,
+        "completion_tokens": 197,
+        "total_tokens": 1120,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 923,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 197,
+          "output_tokens_details": {
+            "thinking_tokens": 124
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 923,
+              "output_tokens": 197,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 983,
+            "outputTokens": 21,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001088,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 923,
+            "outputTokens": 197,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.005724,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.006812,
+        "duration_ms": 4152,
+        "prompt_sha256": "4dab7cff6e8b060f"
+      },
+      "repository_aware": {
+        "refactored_code": "                          validator: (email) {\n                            if (!_submitted) return null;\n                            return email!.isEmpty\n                                ? AppLabels.emptyEmail\n                                : null;\n                          },",
+        "prompt_tokens": 1320,
+        "completion_tokens": 255,
+        "total_tokens": 1575,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 1,
+          "cache_creation_input_tokens": 1319,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 255,
+          "output_tokens_details": {
+            "thinking_tokens": 184
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1319,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 1,
+              "output_tokens": 255,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1319,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1319
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1266,
+            "outputTokens": 21,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001371,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 1,
+            "outputTokens": 255,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1319,
+            "webSearchRequests": 0,
+            "costUSD": 0.011742,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.013113000000000001,
+        "duration_ms": 3967,
+        "prompt_sha256": "2c24e58b6734e03c"
+      }
+    },
+    "issue_key": "AaD2avwS8OHgBNPXEUrI",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "start_line": 118,
+    "end_line": 118,
+    "snippet_start_line": 116,
+    "snippet_end_line": 118,
+    "scope_kind": "expression"
+  },
+  {
+    "file_path": "lib/features/auth/presentation/login_page.dart",
+    "rule": "dart:S3358",
+    "original_snippet": "                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),",
+    "results": {
+      "zero_shot": {
+        "refactored_code": "                          validator: (password) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            return password!.isEmpty\n                                ? AppLabels.emptyPassword\n                                : null;\n                          },",
+        "prompt_tokens": 617,
+        "completion_tokens": 162,
+        "total_tokens": 779,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 617,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 162,
+          "output_tokens_details": {
+            "thinking_tokens": 83
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 617,
+              "output_tokens": 162,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 736,
+            "outputTokens": 19,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000831,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 617,
+            "outputTokens": 162,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004281,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.005112,
+        "duration_ms": 2832,
+        "prompt_sha256": "1c38b73b86096749"
+      },
+      "few_shot": {
+        "refactored_code": "                          validator: (password) {\n                            if (!_submitted) return null;\n                            if (password!.isEmpty) return AppLabels.emptyPassword;\n                            return null;\n                          },",
+        "prompt_tokens": 933,
+        "completion_tokens": 155,
+        "total_tokens": 1088,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 933,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 155,
+          "output_tokens_details": {
+            "thinking_tokens": 85
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 933,
+              "output_tokens": 155,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 993,
+            "outputTokens": 18,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001083,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 933,
+            "outputTokens": 155,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.005124,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.006207,
+        "duration_ms": 2772,
+        "prompt_sha256": "33a6f55a4e34b042"
+      },
+      "repository_aware": {
+        "refactored_code": "                          validator: (password) {\n                            if (!_submitted) {\n                              return null;\n                            }\n                            return password!.isEmpty\n                                ? AppLabels.emptyPassword\n                                : null;\n                          },",
+        "prompt_tokens": 1529,
+        "completion_tokens": 323,
+        "total_tokens": 1852,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 1,
+          "cache_creation_input_tokens": 1528,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 323,
+          "output_tokens_details": {
+            "thinking_tokens": 244
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1528,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 1,
+              "output_tokens": 323,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1528,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1528
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1409,
+            "outputTokens": 18,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0014990000000000001,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 1,
+            "outputTokens": 323,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1528,
+            "webSearchRequests": 0,
+            "costUSD": 0.014016,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.015515000000000001,
+        "duration_ms": 4787,
+        "prompt_sha256": "0530b767603e62ce"
+      }
+    },
+    "issue_key": "AaD2avwS8OHgBNPXEUrJ",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "start_line": 147,
+    "end_line": 149,
+    "snippet_start_line": 145,
+    "snippet_end_line": 149,
+    "scope_kind": "expression"
+  },
+  {
+    "file_path": "lib/features/chat/presentation/chat_page.dart",
+    "rule": "dart:S7115",
+    "original_snippet": "                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });",
+    "results": {
+      "zero_shot": {
+        "refactored_code": "                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && mounted && context.mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });",
+        "prompt_tokens": 759,
+        "completion_tokens": 115,
+        "total_tokens": 874,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 759,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 115,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 759,
+              "output_tokens": 115,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 836,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000916,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 759,
+            "outputTokens": 115,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004002,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.0049180000000000005,
+        "duration_ms": 2551,
+        "prompt_sha256": "ff268dae2fe3041e"
+      },
+      "few_shot": {
+        "refactored_code": "                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && context.mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });",
+        "prompt_tokens": 913,
+        "completion_tokens": 111,
+        "total_tokens": 1024,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 913,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 111,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 913,
+              "output_tokens": 111,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 960,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0010400000000000001,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 913,
+            "outputTokens": 111,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.004404,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.005444,
+        "duration_ms": 3049,
+        "prompt_sha256": "dc8f9523fd0873f8"
+      },
+      "repository_aware": {
+        "refactored_code": "                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && context.mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });",
+        "prompt_tokens": 1940,
+        "completion_tokens": 111,
+        "total_tokens": 2051,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 1,
+          "cache_creation_input_tokens": 1939,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 111,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 1939,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 1,
+              "output_tokens": 111,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 1939,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1939
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 1724,
+            "outputTokens": 16,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.001804,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 1,
+            "outputTokens": 111,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 1939,
+            "webSearchRequests": 0,
+            "costUSD": 0.013302,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.015106,
+        "duration_ms": 2520,
+        "prompt_sha256": "b1ba573f91d72743"
+      }
+    },
+    "issue_key": "AaD2avwJ8OHgBNPXEUrG",
+    "message": "Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.",
+    "start_line": 57,
+    "end_line": 57,
+    "snippet_start_line": 52,
+    "snippet_end_line": 59,
+    "scope_kind": "function"
+  },
+  {
+    "file_path": "lib/features/chat/presentation/message_bar.dart",
+    "rule": "dart:S7055",
+    "original_snippet": "    } catch (_) {\n      debugPrint('error =>$_');\n      // context.showErrorSnackBar(message: unexpectedErrorMessage);\n    }",
+    "results": {
+      "zero_shot": {
+        "refactored_code": "    } catch (e) {\n      debugPrint('error =>$e');\n      // context.showErrorSnackBar(message: unexpectedErrorMessage);\n    }",
+        "prompt_tokens": 625,
+        "completion_tokens": 62,
+        "total_tokens": 687,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 625,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 62,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 625,
+              "output_tokens": 62,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 737,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000822,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 625,
+            "outputTokens": 62,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.002805,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.003627,
+        "duration_ms": 2368,
+        "prompt_sha256": "4a7141a06b64780f"
+      },
+      "few_shot": {
+        "refactored_code": "    } catch (e) {\n      debugPrint('error =>$e');\n      // context.showErrorSnackBar(message: unexpectedErrorMessage);\n    }",
+        "prompt_tokens": 804,
+        "completion_tokens": 62,
+        "total_tokens": 866,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 804,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 62,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 804,
+              "output_tokens": 62,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 888,
+            "outputTokens": 17,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000973,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 804,
+            "outputTokens": 62,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.0033420000000000004,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.004315,
+        "duration_ms": 1998,
+        "prompt_sha256": "abad124d1f35276d"
+      },
+      "repository_aware": {
+        "refactored_code": "    } catch (e) {\n      debugPrint('error =>$e');\n      // context.showErrorSnackBar(message: unexpectedErrorMessage);\n    }",
+        "prompt_tokens": 781,
+        "completion_tokens": 62,
+        "total_tokens": 843,
+        "model": "claude-code",
+        "settings": {
+          "via": "claude-code",
+          "effort": "high"
+        },
+        "finish_reason": "end_turn",
+        "served_by": "claude-sonnet-5",
+        "usage": {
+          "input_tokens": 781,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 62,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 781,
+              "output_tokens": 62,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard"
+        },
+        "model_usage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 852,
+            "outputTokens": 18,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000942,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty"
+          },
+          "claude-sonnet-5": {
+            "inputTokens": 781,
+            "outputTokens": 62,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.003273,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 64000,
+            "canonicalModel": "claude-sonnet-5",
+            "provider": "firstParty"
+          }
+        },
+        "equivalent_api_cost_usd": 0.004215,
+        "duration_ms": 2584,
+        "prompt_sha256": "a411b7b51bf52e9c"
+      }
+    },
+    "issue_key": "AaD2avt48OHgBNPXEUrF",
+    "message": "The referenced identifier is a wildcard.",
+    "start_line": 111,
+    "end_line": 111,
+    "snippet_start_line": 110,
+    "snippet_end_line": 113,
+    "scope_kind": "catch"
+  }
+]
