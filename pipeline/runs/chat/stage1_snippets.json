@@ -1,0 +1,74 @@
+[
+  {
+    "file_path": ".github/workflows/build.yaml",
+    "rule": "githubactions:S7637",
+    "message": "Use full commit SHA hash for this dependency.",
+    "target_snippet": "      - name: Set up Flutter\n        uses: subosito/flutter-action@44ac965b96f18d999695d4f9d5745e3f4bba48f # v2.16.0\n        with:\n          flutter-version: '3.24.0'\n          channel: stable\n          cache: true",
+    "issue_key": "AaD2avxO8OHgBNPXEUrR",
+    "start_line": 22,
+    "end_line": 22,
+    "snippet_start_line": 21,
+    "snippet_end_line": 26,
+    "scope_kind": "yaml_step"
+  },
+  {
+    "file_path": "lib/features/auth/presentation/login_page.dart",
+    "rule": "dart:S3776",
+    "message": "Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+    "target_snippet": "  @override\n  Widget build(BuildContext context) {\n    ref.listen<AsyncValue>(\n      authNotifierProvider,\n      (_, state) => state.showAlertDialogOnError(context),\n    );\n    final state = ref.watch(authNotifierProvider);\n    return Scaffold(\n        appBar: AppBar(\n          backgroundColor: Colors.black,\n          toolbarHeight: 0,\n        ),\n        body: GestureDetector(\n          onTap: () {\n            FocusScope.of(context).unfocus();\n          },\n          child: Container(\n            alignment: Alignment.center,\n            margin: 10.horizontalPadding,\n            child: Center(\n              child: ResponsiveScrollableCard(\n                child: FocusScope(\n                  node: _node,\n                  child: Form(\n                    key: _formKey,\n                    child: Column(\n                      crossAxisAlignment: CrossAxisAlignment.center,\n                      children: <Widget>[\n                        15.height,\n\n                        TextFormField(\n                          controller: _email,\n                          decoration: const InputDecoration(\n                              hintText: AppLabels.email,\n                              prefixIcon: Icon(Icons.person)),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),\n                          inputFormatters: <TextInputFormatter>[\n                            ValidatorInputFormatter(\n                                editingValidator: EmailEditingRegexValidator()),\n                          ],\n                          autocorrect: false,\n                          textInputAction: TextInputAction.next,\n                          keyboardType: TextInputType.emailAddress,\n                          keyboardAppearance: Brightness.light,\n                        ),\n                        8.height,\n                        // Password field\n                        TextFormField(\n                          controller: _passwordController,\n                          decoration: InputDecoration(\n                            hintText: AppLabels.password,\n                            prefixIcon: const Icon(Icons.lock),\n                            suffixIcon: GestureDetector(\n                                onTap: () {\n                                  setState(() {\n                                    _passwordVisible = !_passwordVisible;\n                                  });\n                                },\n                                child: _passwordVisible\n                                    ? const Icon(Icons.visibility_off)\n                                    : const Icon(Icons.visibility)),\n                          ),\n                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),\n                          autovalidateMode: AutovalidateMode.onUserInteraction,\n                          obscureText: _passwordVisible ? true : false,\n                          autocorrect: false,\n                          textInputAction: TextInputAction.done,\n                          keyboardAppearance: Brightness.light,\n                          onEditingComplete: () => _passwordEditingComplete(),\n                        ),\n\n                        8.height,\n                        PrimaryButton(\n                          text: _loginType ? AppLabels.login : AppLabels.signUp,\n                          isLoading: state.isLoading,\n                          onPressed:\n                              state.isLoading ? () => {} : () => _submit(),\n                        ),\n\n                        8.height,\n\n                        Row(\n                          mainAxisAlignment: MainAxisAlignment.center,\n                          children: [\n                            Text(!_loginType\n                                ? 'Already account?'\n                                : 'Create an account'),\n                            CustomTextButton(\n                              text: _loginType\n                                  ? AppLabels.signUp\n                                  : AppLabels.login,\n                              style: const TextStyle(\n                                  decoration: TextDecoration.underline),\n                              onPressed: _changeFormType,\n                            ),\n                          ],\n                        )\n                      ],\n                    ),\n                  ),\n                ),\n              ),\n            ),\n          ),\n        ));\n  }",
+    "issue_key": "AaD2avwS8OHgBNPXEUrH",
+    "start_line": 81,
+    "end_line": 81,
+    "snippet_start_line": 80,
+    "snippet_end_line": 192,
+    "scope_kind": "member"
+  },
+  {
+    "file_path": "lib/features/auth/presentation/login_page.dart",
+    "rule": "dart:S3358",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "target_snippet": "                          validator: (email) => !_submitted\n                              ? null\n                              : (email!.isEmpty ? AppLabels.emptyEmail : null),",
+    "issue_key": "AaD2avwS8OHgBNPXEUrI",
+    "start_line": 118,
+    "end_line": 118,
+    "snippet_start_line": 116,
+    "snippet_end_line": 118,
+    "scope_kind": "expression"
+  },
+  {
+    "file_path": "lib/features/auth/presentation/login_page.dart",
+    "rule": "dart:S3358",
+    "message": "Extract this nested ternary operation into an independent statement.",
+    "target_snippet": "                          validator: (password) => !_submitted\n                              ? null\n                              : (password!.isEmpty\n                                  ? AppLabels.emptyPassword\n                                  : null),",
+    "issue_key": "AaD2avwS8OHgBNPXEUrJ",
+    "start_line": 147,
+    "end_line": 149,
+    "snippet_start_line": 145,
+    "snippet_end_line": 149,
+    "scope_kind": "expression"
+  },
+  {
+    "file_path": "lib/features/chat/presentation/chat_page.dart",
+    "rule": "dart:S7115",
+    "message": "Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check.",
+    "target_snippet": "                      onPressedOk: () async {\n                        final authNotifier =\n                            ref.read(authNotifierProvider.notifier);\n                        final success = await authNotifier.logout();\n                        if (success && mounted) {\n                          context.replaceNamed(AppRoute.login.name);\n                        }\n                      });",
+    "issue_key": "AaD2avwJ8OHgBNPXEUrG",
+    "start_line": 57,
+    "end_line": 57,
+    "snippet_start_line": 52,
+    "snippet_end_line": 59,
+    "scope_kind": "function"
+  },
+  {
+    "file_path": "lib/features/chat/presentation/message_bar.dart",
+    "rule": "dart:S7055",
+    "message": "The referenced identifier is a wildcard.",
+    "target_snippet": "    } catch (_) {\n      debugPrint('error =>$_');\n      // context.showErrorSnackBar(message: unexpectedErrorMessage);\n    }",
+    "issue_key": "AaD2avt48OHgBNPXEUrF",
+    "start_line": 111,
+    "end_line": 111,
+    "snippet_start_line": 110,
+    "snippet_end_line": 113,
+    "scope_kind": "catch"
+  }
+]

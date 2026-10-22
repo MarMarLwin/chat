@@ -1,0 +1,52 @@
+{
+  "githubactions:S7637": {
+    "key": "githubactions:S7637",
+    "name": "External GitHub Actions and workflows should be pinned to a commit hash",
+    "type": "VULNERABILITY",
+    "impacts": [
+      "SECURITY/HIGH"
+    ],
+    "description": "Referencing an external action by a mutable tag or branch (for example\n\"@v2\" or \"@main\") lets the action's owner, or anyone who compromises the\naction's repository, change the code that runs in this workflow without any\nchange to the workflow file. Pin every external action to a full-length\ncommit SHA, and keep the human-readable version in a trailing comment\n(for example \"# v2.16.0\") so it can still be reviewed and updated.",
+    "description_source": "curated"
+  },
+  "dart:S3776": {
+    "key": "dart:S3776",
+    "name": "Cognitive Complexity of functions should not be too high",
+    "type": "CODE_SMELL",
+    "impacts": [
+      "MAINTAINABILITY/HIGH"
+    ],
+    "description": "Cognitive Complexity measures how hard a function's control flow is to\nunderstand. Each break in linear flow (if, else, ternary, loop, catch,\nswitch, logical-operator sequence) adds to the score, and nesting adds more.\nReduce it by extracting nested parts into well-named private methods or\nwidgets, using early returns, and flattening nested conditionals, while\nkeeping behavior unchanged.",
+    "description_source": "curated"
+  },
+  "dart:S3358": {
+    "key": "dart:S3358",
+    "name": "Ternary operators should not be nested",
+    "type": "CODE_SMELL",
+    "impacts": [
+      "MAINTAINABILITY/MEDIUM"
+    ],
+    "description": "Nested ternary operators (a conditional expression inside another\nconditional expression) are hard to read. Extract the inner conditional\ninto an independent statement, for example an if/else chain or a separate\nlocal variable or helper function, so each decision is stated once.",
+    "description_source": "curated"
+  },
+  "dart:S7115": {
+    "key": "dart:S7115",
+    "name": "\"mounted\" should be checked before using a \"BuildContext \" after an async operation",
+    "type": "BUG",
+    "impacts": [
+      "RELIABILITY/HIGH"
+    ],
+    "description": "After an await, the widget that owns a BuildContext may have been unmounted,\nso the context must not be used without checking that the same context is\nstill mounted. Checking an unrelated \"mounted\" (such as State.mounted when a\ndifferent BuildContext is used) does not protect the context. Guard each use\nafter an async gap with \"if (!context.mounted) return;\" (or\n\"context.mounted &&\") on the exact context being used.",
+    "description_source": "curated"
+  },
+  "dart:S7055": {
+    "key": "dart:S7055",
+    "name": "Wildcard variable shouldn't be used",
+    "type": "CODE_SMELL",
+    "impacts": [
+      "MAINTAINABILITY/MEDIUM"
+    ],
+    "description": "\"_\" is a wildcard: since Dart 3.7 it declares no variable and cannot be\nreferenced. Code that reads a parameter or catch variable named \"_\" relies\non pre-wildcard behavior. Give the variable a real name (for example \"e\" or\n\"error\") wherever it is actually used.",
+    "description_source": "curated"
+  }
+}

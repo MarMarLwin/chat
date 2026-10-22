@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-10-22T04:05:08.915553+00:00",
+  "git_commit": "0291f92bd50d5fa07027df987be207147f691f71",
+  "dirty_files": [
+    ".github/workflows/build.yaml",
+    "README.md",
+    "pipeline/README.md",
+    "pipeline/cli.py",
+    "pipeline/runs/chat/legacy/stage2_prompts_rag.json",
+    "pipeline/runs/chat/legacy/stage2_prompts_shots.json",
+    "pipeline/runs/chat/stage1_snippets.json",
+    "pipeline/runs/chat/stage2_manifest.json",
+    "pipeline/runs/chat/stage2_prompts.json",
+    "pipeline/runs/chat/stage3_results_claude-code.json",
+    "pipeline/stage3/apply.py",
+    "pipeline/stage3/providers/__init__.py",
+    "pipeline/stage3/refactor.py",
+    "pipeline/tests/test_apply.py",
+    "pipeline/workspace.py"
+  ],
+  "dirty_target_files": [
+    ".github/workflows/build.yaml"
+  ],
+  "settings": {
+    "repo": "/Users/popo/development/chat",
+    "strategies": [
+      "zero_shot",
+      "few_shot",
+      "repository_aware"
+    ],
+    "context_budget_tokens": 1500,
+    "embedding_model": "all-MiniLM-L6-v2",
+    "vector_index": {
+      "hnsw:space": "cosine",
+      "git_commit": "0291f92bd50d5fa07027df987be207147f691f71",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "chunking": "dart_ast",
+      "built_at": "2026-10-22T03:57:55.743504+00:00"
+    },
+    "max_symbol_matches": 3,
+    "min_vector_score": 0.45,
+    "vector_top_k": 3
+  },
+  "issues": 6,
+  "strategies": {
+    "zero_shot": {
+      "prompts": 6,
+      "approx_tokens": 2678,
+      "context_chunks": 0
+    },
+    "few_shot": {
+      "prompts": 6,
+      "approx_tokens": 3721,
+      "context_chunks": 10
+    },
+    "repository_aware": {
+      "prompts": 6,
+      "approx_tokens": 6342,
+      "context_chunks": 31
+    }
+  },
+  "rule_description_sources": {
+    "githubactions:S7637": "curated",
+    "dart:S3776": "curated",
+    "dart:S3358": "curated",
+    "dart:S7115": "curated",
+    "dart:S7055": "curated"
+  },
+  "skipped": {}
+}

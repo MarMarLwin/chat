@@ -1,0 +1,25 @@
+{
+  "applied_at": "2026-10-22T04:10:48.157107+00:00",
+  "model": "claude-code",
+  "strategy": "repository_aware",
+  "target": "working tree",
+  "results_file": "stage3_results_claude-code.json",
+  "applied": 1,
+  "already_applied": 0,
+  "conflict": 0,
+  "skipped": 0,
+  "issues": [
+    {
+      "issue_key": "AaD2avxO8OHgBNPXEUrR",
+      "rule": "githubactions:S7637",
+      "file_path": ".github/workflows/build.yaml",
+      "lines": [
+        21,
+        26
+      ],
+      "status": "applied",
+      "new_line_count": 6,
+      "reindented": false
+    }
+  ]
+}
