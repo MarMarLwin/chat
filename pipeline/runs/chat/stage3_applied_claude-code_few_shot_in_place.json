@@ -1,5 +1,5 @@
 {
-  "applied_at": "2026-10-22T17:53:32.423053+00:00",
+  "applied_at": "2026-10-28T05:06:04.246119+00:00",
   "model": "claude-code",
   "strategy": "few_shot",
   "target": "working tree",

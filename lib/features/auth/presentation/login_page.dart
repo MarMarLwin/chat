@@ -106,13 +106,18 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         15.height,
+
                         _buildEmailField(),
                         8.height,
+                        // Password field
                         _buildPasswordField(),
+
                         8.height,
-                        _buildSubmitButton(state),
+                        _buildLoginButton(state),
+
                         8.height,
-                        _buildAccountToggleRow(),
+
+                        _buildSwitchFormTypeRow(),
                       ],
                     ),
                   ),
@@ -121,6 +126,86 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             ),
           ),
         ));
+  }
+
+  String? _validateEmail(String? email) {
+    if (!_submitted) return null;
+    return email!.isEmpty ? AppLabels.emptyEmail : null;
+  }
+
+  String? _validatePassword(String? password) {
+    if (!_submitted) return null;
+    return password!.isEmpty ? AppLabels.emptyPassword : null;
+  }
+
+  Widget _buildEmailField() {
+    return TextFormField(
+      controller: _email,
+      decoration: const InputDecoration(
+          hintText: AppLabels.email, prefixIcon: Icon(Icons.person)),
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: _validateEmail,
+      inputFormatters: <TextInputFormatter>[
+        ValidatorInputFormatter(
+            editingValidator: EmailEditingRegexValidator()),
+      ],
+      autocorrect: false,
+      textInputAction: TextInputAction.next,
+      keyboardType: TextInputType.emailAddress,
+      keyboardAppearance: Brightness.light,
+    );
+  }
+
+  Widget _buildPasswordVisibilityIcon() {
+    return GestureDetector(
+        onTap: () {
+          setState(() {
+            _passwordVisible = !_passwordVisible;
+          });
+        },
+        child: _passwordVisible
+            ? const Icon(Icons.visibility_off)
+            : const Icon(Icons.visibility));
+  }
+
+  Widget _buildPasswordField() {
+    return TextFormField(
+      controller: _passwordController,
+      decoration: InputDecoration(
+        hintText: AppLabels.password,
+        prefixIcon: const Icon(Icons.lock),
+        suffixIcon: _buildPasswordVisibilityIcon(),
+      ),
+      validator: _validatePassword,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      obscureText: _passwordVisible,
+      autocorrect: false,
+      textInputAction: TextInputAction.done,
+      keyboardAppearance: Brightness.light,
+      onEditingComplete: () => _passwordEditingComplete(),
+    );
+  }
+
+  Widget _buildLoginButton(AsyncValue state) {
+    return PrimaryButton(
+      text: _loginType ? AppLabels.login : AppLabels.signUp,
+      isLoading: state.isLoading,
+      onPressed: state.isLoading ? () => {} : () => _submit(),
+    );
+  }
+
+  Widget _buildSwitchFormTypeRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(!_loginType ? 'Already account?' : 'Create an account'),
+        CustomTextButton(
+          text: _loginType ? AppLabels.signUp : AppLabels.login,
+          style: const TextStyle(decoration: TextDecoration.underline),
+          onPressed: _changeFormType,
+        ),
+      ],
+    );
   }
 
   Widget _buildEmailField() {

@@ -53,7 +53,7 @@ class _ChartPageState extends ConsumerState<ChatPage> {
                         final authNotifier =
                             ref.read(authNotifierProvider.notifier);
                         final success = await authNotifier.logout();
-                        if (success && mounted && context.mounted) {
+                        if (success && context.mounted) {
                           context.replaceNamed(AppRoute.login.name);
                         }
                       });
